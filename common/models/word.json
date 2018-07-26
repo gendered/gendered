@@ -39,9 +39,10 @@
       "model": "word-set",
       "foreignKey": ""
     },
-    "gender-equivalent": {
+    "equivalent-word": {
       "type": "hasOne",
-      "model": "word"
+      "model": "word",
+      "foreignKey": "equivalentId"
     }
   },
   "acls": [],
