@@ -2,10 +2,11 @@
 
 - Make sure you have [node](https://nodejs.org/en/download/) (has to be a version > 8) and npm installed.
 - You can check the version of node you have by running `node -v` in the terminal.
-- `cd` into the api folder and run `npm install`
+- `git clone` the repo
+-  run `npm install`
 - Run `npm run dev`. Website is at `http://localhost:8080/`
 
-The website is made using [Vue.js](https://vuejs.org/) You can find the code for the website in the `client/src` folder.
+The website is made using [Vue.js](https://vuejs.org/)
 
 
 # To get the API up and running
