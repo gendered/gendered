@@ -1,0 +1,49 @@
+{
+  "name": "word",
+  "plural": "words",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "word": {
+      "type": "string",
+      "required": true
+    },
+    "definition": {
+      "type": "string"
+    },
+    "tags": {
+      "type": [
+        "string"
+      ]
+    },
+    "synonyms": {
+      "type": [
+        "string"
+      ]
+    },
+    "gender": {
+      "type": "string",
+      "required": true
+    },
+    "equivalent": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "word-set": {
+      "type": "belongsTo",
+      "model": "word-set",
+      "foreignKey": ""
+    },
+    "gender-equivalent": {
+      "type": "hasOne",
+      "model": "word"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

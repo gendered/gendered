@@ -1,0 +1,25 @@
+{
+  "name": "word-set",
+  "plural": "word-sets",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "words": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    },
+    "gender": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
