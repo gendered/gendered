@@ -1,6 +1,6 @@
 {
-  "name": "word-set",
-  "plural": "word-sets",
+  "name": "Wordset",
+  "plural": "WordSets",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

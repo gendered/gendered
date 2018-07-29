@@ -1,5 +1,5 @@
 {
-  "name": "word",
+  "name": "Word",
   "plural": "words",
   "base": "PersistedModel",
   "idInjection": true,
@@ -34,15 +34,10 @@
   },
   "validations": [],
   "relations": {
-    "word-set": {
+    "wordSet": {
       "type": "belongsTo",
-      "model": "word-set",
+      "model": "Wordset",
       "foreignKey": ""
-    },
-    "equivalent-word": {
-      "type": "hasOne",
-      "model": "word",
-      "foreignKey": "equivalentId"
     }
   },
   "acls": [],

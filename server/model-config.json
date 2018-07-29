@@ -13,11 +13,11 @@
       "./mixins"
     ]
   },
-  "word": {
+  "Word": {
     "dataSource": "db",
     "public": true
   },
-  "word-set": {
+  "Wordset": {
     "dataSource": "db",
     "public": true
   }

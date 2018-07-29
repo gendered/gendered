@@ -4,10 +4,10 @@
       <span>{{ entry.word }}</span>
       <span>{{ entry.definition }}</span>
     </section>
-    <!-- <section :class="'word-set ' + word.gender">
-      <span>{{ word.word }}</span>
-      <span>{{ word.definition }}</span>
-    </section> -->
+    <section v-if="equivalent" :class="'word-set ' + equivalent.gender">
+      <span>{{ equivalent.word }}</span>
+      <span>{{ equivalent.definition }}</span>
+    </section>
   </div>
 </template>
 
@@ -20,21 +20,41 @@
     data() {
       return {
         entry: {},
-        entryOpposite: {}
+        entrySet: [],
+        equivalent: {},
+        equivalentSet: []
       }
     },
     created() {
-      let obj = JSON.stringify({ "where": { "word": this.word } });
-      const url = `${API}findOne?filter=${obj}`
-      fetch(url)
-      .then(res => res.json())
-      .then((res) => {
-        console.log(res);
+      let setData = (function(res) {
         this.entry = res;
-      })
-      .then(() => {
-        let genderEquivalent = this.entry.equivalent;
-      })
+        let equivalent = this.entry.equivalent;
+        if (equivalent) {
+          this.getWord(equivalent, (function(res) {
+            this.equivalent = res;
+          }).bind(this));
+          this.equivalentSet = this.getWordSet(equivalent);
+        }
+      }).bind(this);
+      this.getWord(this.word, setData);
+      this.entrySet = this.getWordSet(this.word)
+    },
+    methods: {
+      getWordSet(word) {
+
+      },
+      getWord(word, callback){
+        let obj = JSON.stringify({ "where": { "word": word } });
+        let url = `${API}findOne?filter=${obj}`
+        fetch(url)
+        .then(res => res.json())
+        .then((res) => {
+          if (callback) {
+            callback(res);
+          }
+          else return res;
+        })
+      },
     },
   };
 </script>
