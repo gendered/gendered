@@ -7,7 +7,7 @@ html, body {
 
 
 .filter-options {
-  
+
   ul {
     /*max-width: 60%;*/
     padding: 0;
@@ -28,10 +28,15 @@ html, body {
   }
 }
 
-.word-list { 
+.word-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   font-size: 2.5rem;
   font-weight: 400;
   font-family: garamond;
+  padding: 0;
+  margin: 0;
 
   a {
     text-decoration: none;
@@ -42,9 +47,9 @@ html, body {
     border-bottom: 2px solid black;
   }
 
-  ul {
-    padding: 0;
-    margin: 0;
+  .letter-list {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   li {
@@ -57,7 +62,7 @@ html, body {
   font-size: 2rem;
   padding: 1rem;
 
-  
+
   a {
     text-decoration: none;
     font-weight: bold;
@@ -73,6 +78,3 @@ html, body {
     padding: 0.5rem;
   }
 }
-
-
-
