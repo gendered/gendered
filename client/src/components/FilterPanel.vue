@@ -24,16 +24,12 @@ export default {
   },
 };
 </script>
-<style>
+
+<style lang="scss" scoped>
   .filter-list {
     padding: 0;
     margin: 0;
     display: inline-flex;
-
-    .filter {
-      margin: 0;
-      padding: 1rem;
-    }
   }
 
   @mixin active-filter {
@@ -42,6 +38,9 @@ export default {
   }
 
   .filter {
+    margin: 0;
+    padding: 1rem;
+
     input {
       border-radius: 0;
       font-size: 1rem;
@@ -51,7 +50,7 @@ export default {
     }
 
     input.active, input:hover {
-     @include active-filter;
+      @include active-filter;
     }
   }
 </style>
