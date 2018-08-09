@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="word-set-container">
     <section :class="'word-set ' + entry.gender">
-      <span>{{ entry.word }}</span>
-      <span>{{ entry.definition }}</span>
+      <h1>{{ entry.word }}</h1>
+      <p>{{ entry.definition }}</p>
     </section>
     <section v-if="equivalent" :class="'word-set ' + equivalent.gender">
-      <span>{{ equivalent.word }}</span>
-      <span>{{ equivalent.definition }}</span>
+      <h1>{{ equivalent.word }}</h1>
+      <p>{{ equivalent.definition }}</p>
     </section>
   </div>
 </template>

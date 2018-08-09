@@ -6,8 +6,9 @@ html, body {
 
 
 
-.filter-options {
 
+
+.filter-options {
   ul {
     /*max-width: 60%;*/
     padding: 0;
@@ -32,7 +33,7 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 400;
   font-family: garamond;
   padding: 0;
@@ -41,6 +42,7 @@ html, body {
   a {
     text-decoration: none;
     color: black;
+    /*line-height: 0;*/
   }
 
   a:hover {
@@ -55,13 +57,41 @@ html, body {
   li {
     line-height: 0.8em;
   }
+
+  .letter {
+    font-size: 3rem;
+    font-family: "helvetica neue", Arial, sans-serif;
+  }
+
+  .tag-list {
+    padding: 0.25rem 0;
+    font-size: 0.75rem;
+    font-family: "helvetica neue", Arial, sans-serif;
+    color: rgba(0,0,0,0.7);
+  }
+}
+
+.word-set-container {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+
+  h1 {
+    font-family: garamond;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+
+  p {
+    max-width: 20rem;
+  }
 }
 
 
 #nav {
   font-size: 2rem;
   padding: 1rem;
-
 
   a {
     text-decoration: none;
