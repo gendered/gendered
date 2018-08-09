@@ -1,12 +1,14 @@
 import WordList from '@/components/WordList'
 import FilterPanel from '@/components/FilterPanel'
 const API = 'http://localhost:3000/api/words';
+import SearchFilter from '@/components/SearchFilter'
 
 export default {
   name: 'Home',
   components: {
     WordList,
-    FilterPanel
+    FilterPanel,
+    SearchFilter,
   },
   data() {
     return {
@@ -23,6 +25,7 @@ export default {
         }
       ],
       words: [],
+      count: 0
     }
   },
   created() {
@@ -127,6 +130,17 @@ export default {
     },
     removeFilter(idx) {
       this.activeFilters.splice(idx, 1);
-    }
+    },
+    $_randomProperty: function (obj) {
+      var keys = Object.keys(obj);
+      return obj[keys[ keys.length * Math.random() << 0]];
+    },
+    getRandom() {
+      let data = this.words;
+      let randomEntry = this.$_randomProperty(this.$_randomProperty(data));
+      let randomWord = randomEntry['word'];
+      this.$router.push(`words/${randomWord}`);
+    },
+
   }
 }
