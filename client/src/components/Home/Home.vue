@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-	<SearchFilter></SearchFilter>
-	<input type="button" v-on:click="getRandom" value="Get Random Word" />
+	<!--<SearchFilter></SearchFilter>-->
+ 	<input type="button" v-on:click="getRandom" value="Get Random Word" />
 	<div class="filter-options">
 		<FilterPanel :options="sources" v-on:filter="handleFilter"></FilterPanel>
 		<FilterPanel :options="gender" v-on:filter="handleFilter"></FilterPanel>

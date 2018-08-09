@@ -32,25 +32,8 @@ export default {
     display: inline-flex;
   }
 
-  @mixin active-filter {
-    color: white;
-    background-color: black;
-  }
-
   .filter {
     margin: 0;
-    padding: 1rem;
-
-    input {
-      border-radius: 0;
-      font-size: 1rem;
-      border: 1px solid black;
-      padding: 0.5rem 1rem;
-      transition: all 0.1s;
-    }
-
-    input.active, input:hover {
-      @include active-filter;
-    }
+    padding: 1rem; 
   }
 </style>
