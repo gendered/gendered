@@ -1,11 +1,9 @@
 <template>
-  <div class="filter-options">
-    <ul v-if="options && options.length">
-       <li v-for="option in options">
-          <input type="submit" @click="clicked(option)" :value="option.type" />
-       </li>
-     </ul>
-  </div>
+  <ul v-if="options && options.length">
+     <li v-for="option in options">
+        <input type="submit" @click="clicked(option)" :value="option.type" />
+     </li>
+   </ul>
 </template>
 
 <script>
