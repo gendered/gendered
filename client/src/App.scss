@@ -5,22 +5,26 @@ html, body {
 }
 
 
-
-
-
 .filter-options {
+  position: fixed;
+  bottom: 0;
+  background: white;
+  width: 100%;
+  border-top: 1px solid black;
+
   ul {
-    /*max-width: 60%;*/
     padding: 0;
+    margin: 0;
   }
   li {
     margin: 0;
+    padding: 1rem;
   }
   input {
     border-radius: 0;
-    font-size: 1.25rem;
+    font-size: 1rem;
     border: 1px solid black;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     transition: all 0.1s;
   }
   input:hover {
@@ -49,10 +53,20 @@ html, body {
     border-bottom: 2px solid black;
   }
 
-  .letter-list {
-    display: flex;
-    flex-wrap: wrap;
+  .words {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
   }
+  .words > ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .letter-list {
+    display: grid;
+    grid-template-columns: 5% 95%;
+  }
+
 
   li {
     line-height: 0.8em;
@@ -61,6 +75,7 @@ html, body {
   .letter {
     font-size: 3rem;
     font-family: "helvetica neue", Arial, sans-serif;
+
   }
 
   .tag-list {

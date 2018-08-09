@@ -2,14 +2,16 @@
   <ul class="word-list">
      <li class="letter-list" v-for="(value, key) in words">
         <span class="letter">{{key}}</span>
-        <ul v-for="word in value">
+        <section class="words">
+          <ul v-for="word in value">
           <li>
             <a :href="'./words/' + word.word" :class="'word ' + word.gender">{{word.word}}</a>
             <ul class="tag-list" v-for="tag in word.tags">
             <span><i>{{tag}}</i></span>
             </ul>
           </li>
-        </ul>
+          </ul>
+        </section>
      </li>
    </ul>
 </template>
