@@ -44,19 +44,23 @@ export default {
         for (let letter in filtered) {
           const words = filtered[letter];
           filtered[letter] = words.filter(function(entry) {
+            let isValid = false;
             return (function () {
               for (let i = 0; i < len; i++) {
                 let option = activeFilters[i];
                 switch (option.category) {
                   case 'gender':
-                    return entry['gender'] === option.type;
+                    if (entry['gender'] === option.type) {
+                      isValid = true;
+                    }
+                    else break;
                   case 'source':
-                    if (entry['tags']) {
-                      return entry['tags'].includes(option.type);
+                    if (entry['tags'] && entry['tags'].includes(option.type)) {
+                      isValid = true;
                     }
                 }
-                return false;
               }
+              return isValid;
             }());
           });
         }
