@@ -13,14 +13,14 @@ export default {
   data() {
     return {
       activeFilters: [],
-      tags: [],
-      sex: [
+      sources: [],
+      gender: [
         {
-          'name': 'sex',
+          'category': 'gender',
           'type': 'female'
         },
         {
-          'name': 'sex',
+          'category': 'gender',
           'type': 'male'
         }
       ],
@@ -47,10 +47,10 @@ export default {
             return (function () {
               for (let i = 0; i < len; i++) {
                 let option = activeFilters[i];
-                switch (option.name) {
-                  case 'sex':
+                switch (option.category) {
+                  case 'gender':
                     return entry['gender'] === option.type;
-                  case 'tag':
+                  case 'source':
                     if (entry['tags']) {
                       return entry['tags'].includes(option.type);
                     }
@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     alphabetize(data) {
-      let allTags = new Set([]);
+      let allSources = new Set([]);
       let obj = {};
       for (let i = 0; i < data.length; i++) {
         const item = data[i]
@@ -75,8 +75,8 @@ export default {
         if (tags) {
           for (let i = 0; i < tags.length; i++) {
             let tag = tags[i];
-            if (!allTags.has(tag)) {
-              allTags.add(tag)
+            if (!allSources.has(tag)) {
+              allSources.add(tag)
             }
           }
         }
@@ -87,12 +87,12 @@ export default {
           obj[letter].push(item);
         }
       }
-      this.createTags(Array.from(allTags));
+      this.createSources(Array.from(allSources));
       return this.sort(obj);
     },
-    createTags(arr) {
-      this.tags = arr.map((item) => {
-        return {'name': 'tag', 'type': item }
+    createSources(arr) {
+      this.sources = arr.map((item) => {
+        return {'category': 'source', 'type': item }
       });
     },
     sort(unordered) {
@@ -105,15 +105,15 @@ export default {
     handleFilter(option) {
       let activeFilters = this.activeFilters;
       let index = -1;
-      const name = option.name;
+      const category = option.category;
       const type = option.type;
       let obj = {
-        'name': name,
+        'category': category,
         'type': type
       };
       // if it's not you can add or remove
       if (activeFilters) {
-        index = this.activeFilters.findIndex(i => i.name === option.name);
+        index = this.activeFilters.findIndex(i => i.type === option.type);
         if (index === -1) {
           this.addFilter(obj);
         }
@@ -141,6 +141,5 @@ export default {
       let randomWord = randomEntry['word'];
       this.$router.push(`words/${randomWord}`);
     },
-
   }
 }

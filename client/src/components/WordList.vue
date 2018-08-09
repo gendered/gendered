@@ -6,8 +6,9 @@
           <ul v-for="word in value">
           <li>
             <a :href="'./words/' + word.word" :class="'word ' + word.gender">{{word.word}}</a>
+            <span><i>{{word.gender}}</i></span>
             <ul class="tag-list" v-for="tag in word.tags">
-            <span><i>{{tag}}</i></span>
+              <li><i>{{tag}}</i></li>
             </ul>
           </li>
           </ul>
