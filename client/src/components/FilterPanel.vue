@@ -1,7 +1,7 @@
 <template>
   <ul v-if="options && options.length">
-     <li v-for="option in options">
-        <input type="submit" @click="clicked(option)" :value="option.type" />
+     <li class="filter" v-for="option in options">
+        <input v-bind:class="{ active: option.active }" type="submit" @click="clicked(option)" :value="option.type" />
      </li>
    </ul>
 </template>
@@ -24,3 +24,9 @@ export default {
   },
 };
 </script>
+<style>
+  .filter input.active {
+    color: white;
+    background-color: black;
+  }
+</style>

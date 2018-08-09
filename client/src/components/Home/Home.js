@@ -17,11 +17,13 @@ export default {
       gender: [
         {
           'category': 'gender',
-          'type': 'female'
+          'type': 'female',
+          'active': false
         },
         {
           'category': 'gender',
-          'type': 'male'
+          'type': 'male',
+          'active': false
         }
       ],
       words: [],
@@ -96,7 +98,7 @@ export default {
     },
     createSources(arr) {
       this.sources = arr.map((item) => {
-        return {'category': 'source', 'type': item }
+        return {'category': 'source', 'type': item, 'active': false }
       });
     },
     sort(unordered) {
@@ -120,9 +122,11 @@ export default {
         index = this.activeFilters.findIndex(i => i.type === option.type);
         if (index === -1) {
           this.addFilter(obj);
+          option.active = true;
         }
         else {
           this.removeFilter(index);
+          option.active = false;
         }
       }
       else {
