@@ -1,3 +1,12 @@
+aside {
+  position: fixed;
+  right: 0;
+
+  input {
+    margin: .5rem;
+  }
+}
+
 ul {
   display: flex;
   flex-wrap: wrap;
@@ -11,8 +20,12 @@ ul {
 input {
   border-radius: 0;
   font-size: 1rem;
+  margin: 0 .5rem;
   border: 1px solid black;
   padding: 0.5rem 1rem;
+}
+
+input:not([type='text']) {
   transition: all 0.1s;
 }
 
@@ -21,7 +34,7 @@ input {
   background-color: black;
 }
 
-input.active, input:hover {
+input.active, input:not([type='text']):hover {
   @include active-filter;
 }
 
