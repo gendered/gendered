@@ -5,8 +5,4 @@ module.exports = function(app) {
 		let word = entry['word'];
 		Word.upsertWithWhere({ 'word': word }, entry, function(err, record) {});
 	});
-	var WordSet = app.models.WordSet;
-	assembly.parts.add(partId, function(err) {
-	  //...
-	});
 };
