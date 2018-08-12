@@ -4,76 +4,25 @@ html, body {
   font-family: "helvetica neue", Arial, sans-serif;
 }
 
-.word-list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  font-size: 1.5rem;
-  font-weight: 400;
+h1 {
   font-family: garamond;
-  padding: 0;
-  margin: 0;
-
-  a {
-    text-decoration: none;
-    color: black;
-    /*line-height: 0;*/
-  }
-
-  a:hover {
-    border-bottom: 2px solid black;
-  }
-
-  .words {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-  }
-  .words > ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  .letter-list {
-    display: grid;
-    grid-template-columns: 5% 95%;
-  }
-
-
-  li {
-    line-height: 0.8em;
-  }
-
-  .letter {
-    font-size: 3rem;
-    font-family: "helvetica neue", Arial, sans-serif;
-
-  }
-
-  .tag-list {
-    padding: 0.25rem 0;
-    font-size: 0.75rem;
-    font-family: "helvetica neue", Arial, sans-serif;
-    color: rgba(0,0,0,0.7);
-  }
+  font-size: 3rem;
+  font-weight: 400;
 }
 
-.word-set-container {
-  margin: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-
-  h1 {
-    font-family: garamond;
-    font-size: 3rem;
-    font-weight: 400;
-  }
-
-  p {
-    max-width: 20rem;
-  }
+p {
+  max-width: 20rem;
+}
+  
+a {
+  text-decoration: none;
+  color: black;
+  /*line-height: 0;*/
 }
 
+a:hover {
+  border-bottom: 2px solid black;
+}
 
 #nav {
   font-size: 2rem;
@@ -88,6 +37,7 @@ html, body {
       border-bottom: 2px solid black;
     }
   }
+
   input {
     float: right;
     /*height: 2rem;*/

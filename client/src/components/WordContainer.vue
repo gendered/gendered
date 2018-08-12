@@ -1,34 +1,32 @@
 <template>
   <div class="word-set-container">
-    <section :class="'word-set ' + entry.gender">
-      <h1>{{ entry.word }}</h1>
-      <p>{{ entry.definition }}</p>
-      <ul class="word-set" v-for="syn in entry.syns">
-        <li v-if="syn != entry.word"><a :href="'./words/' + syn">{{syn}}</a></li>
-      </ul>
-    </section>
-    <section v-if="equivalent" :class="'word-set ' + equivalent.gender">
-      <h1>{{ equivalent.word }}</h1>
-      <p>{{ equivalent.definition }}</p>
-      <ul class="word-set" v-for="syn in equivalent.syns">
-        <li v-if="syn != equivalent.word">
-          <a :href="'./words/' + syn">{{syn}}</a>
-        </li>
-      </ul>
-    </section>
+    <Word v-if="entry"></Word>
+    <Word v-if="equivalent"></Word>
   </div>
 </template>
+<style lang="scss">
+  .word-set-container {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+</style>
 
 <script>
   const API = 'http://localhost:3000/api/words/';
+  import Word from '@/components/Word'
 
   export default {
-    name: 'WordSet',
+    name: 'WordContainer',
+    components: {
+      Word,
+    },
     props: ['word'],
     data() {
       return {
-        entry: {},
-        equivalent: {},
+        entry: null,
+        equivalent: null,
       }
     },
     created() {
@@ -44,9 +42,6 @@
       this.getWord(this.word, setData);
     },
     methods: {
-      getWordSet(word) {
-
-      },
       getWord(word, callback){
         let obj = JSON.stringify({ "where": { "word": word } });
         let url = `${API}findOne?filter=${obj}`

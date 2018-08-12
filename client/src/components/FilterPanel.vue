@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .filter-list {
     padding: 0;
     margin: 0;

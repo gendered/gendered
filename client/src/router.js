@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home/Home.vue'
 import About from '@/components/About';
-import WordSet from '@/components/WordSet';
+import WordContainer from '@/components/WordContainer';
 
 Vue.use(Router);
 
@@ -22,7 +22,7 @@ export default new Router({
     {
      path: '/words/:word',
      name: 'word',
-     component: WordSet,
+     component: WordContainer,
      props: true
    }
   ],
