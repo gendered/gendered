@@ -3,10 +3,18 @@
     <section :class="'word-set ' + entry.gender">
       <h1>{{ entry.word }}</h1>
       <p>{{ entry.definition }}</p>
+      <ul class="word-set" v-for="syn in entry.syns">
+        <li v-if="syn != entry.word"><a :href="'./words/' + syn">{{syn}}</a></li>
+      </ul>
     </section>
     <section v-if="equivalent" :class="'word-set ' + equivalent.gender">
       <h1>{{ equivalent.word }}</h1>
       <p>{{ equivalent.definition }}</p>
+      <ul class="word-set" v-for="syn in equivalent.syns">
+        <li v-if="syn != equivalent.word">
+          <a :href="'./words/' + syn">{{syn}}</a>
+        </li>
+      </ul>
     </section>
   </div>
 </template>
@@ -20,9 +28,7 @@
     data() {
       return {
         entry: {},
-        entrySet: [],
         equivalent: {},
-        equivalentSet: []
       }
     },
     created() {
@@ -33,11 +39,9 @@
           this.getWord(equivalent, (function(res) {
             this.equivalent = res;
           }).bind(this));
-          this.equivalentSet = this.getWordSet(equivalent);
         }
       }).bind(this);
       this.getWord(this.word, setData);
-      this.entrySet = this.getWordSet(this.word)
     },
     methods: {
       getWordSet(word) {
