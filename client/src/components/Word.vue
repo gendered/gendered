@@ -1,5 +1,5 @@
 <template>
-  <section :class="'word-set ' + entry.gender">
+  <section>
     <h1>{{ entry.word }}</h1>
     <p>{{ entry.definition }}</p>
     <ul class="word-set" v-for="syn in entry.syns">

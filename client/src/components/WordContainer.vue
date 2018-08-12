@@ -1,7 +1,7 @@
 <template>
   <div class="word-set-container">
-    <Word v-if="entry"></Word>
-    <Word v-if="equivalent"></Word>
+    <Word v-if="entry" :entry="entry"></Word>
+    <Word v-if="equivalent"  :entry="equivalent"></Word>
   </div>
 </template>
 <style lang="scss">
@@ -42,6 +42,9 @@
       this.getWord(this.word, setData);
     },
     methods: {
+      getWordSet(word) {
+
+      },
       getWord(word, callback){
         let obj = JSON.stringify({ "where": { "word": word } });
         let url = `${API}findOne?filter=${obj}`
