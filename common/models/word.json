@@ -33,13 +33,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "wordSet": {
-      "type": "belongsTo",
-      "model": "Wordset",
-      "foreignKey": ""
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }
