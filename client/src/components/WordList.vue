@@ -3,8 +3,8 @@
      <li class="letter-list" v-for="(value, key) in words">
         <span class="letter">{{key}}</span>
         <section class="words">
-          <ul v-for="word in value">
-          <li>
+          <ul v-for="(word, index) in value">
+          <li v-if="index < 20">
             <a :href="'./words/' + word.word" :class="'word ' + word.gender">{{word.word}}</a>     
           </li>
           </ul>
