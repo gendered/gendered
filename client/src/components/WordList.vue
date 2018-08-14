@@ -29,6 +29,7 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
     }
+
     .words > ul {
       padding: 0;
       margin: 0;
@@ -36,7 +37,8 @@
 
     .letter-list {
       display: grid;
-      grid-template-columns: 5% 95%;
+      grid-template-columns: 15% 75%;
+      align-items: center;
     }
 
 
@@ -45,7 +47,7 @@
     }
 
     .letter {
-      font-size: 3rem;
+      font-size: 200px;
       font-family: "helvetica neue", Arial, sans-serif;
     }
   }

@@ -8,7 +8,6 @@
 		<WordList v-bind:words="filteredWords"></WordList>
 	</keep-alive>
 	<div class="filter-options">
-		<FilterPanel :options="sources" v-on:filter="handleFilter"></FilterPanel>
 		<FilterPanel :options="gender" v-on:filter="handleFilter"></FilterPanel>
 	</div>
   </div>

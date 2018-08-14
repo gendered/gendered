@@ -13,7 +13,6 @@ export default {
   data() {
     return {
       activeFilters: [],
-      sources: [],
       gender: [
         {
           'category': 'gender',
@@ -56,10 +55,6 @@ export default {
                       isValid = true;
                     }
                     else break;
-                  case 'source':
-                    if (entry['tags'] && entry['tags'].includes(option.type)) {
-                      isValid = true;
-                    }
                 }
               }
               return isValid;
@@ -76,16 +71,6 @@ export default {
       let obj = {};
       for (let i = 0; i < data.length; i++) {
         const item = data[i]
-        // Get all tags being used
-        const tags = item.tags;
-        if (tags) {
-          for (let i = 0; i < tags.length; i++) {
-            let tag = tags[i];
-            if (!allSources.has(tag)) {
-              allSources.add(tag)
-            }
-          }
-        }
         const letter = item.word[0].toUpperCase();
         if(!obj[letter]) {
           obj[letter] = [item];
@@ -93,13 +78,7 @@ export default {
           obj[letter].push(item);
         }
       }
-      this.createSources(Array.from(allSources));
       return this.sort(obj);
-    },
-    createSources(arr) {
-      this.sources = arr.map((item) => {
-        return {'category': 'source', 'type': item, 'active': false }
-      });
     },
     sort(unordered) {
       const ordered = {};
