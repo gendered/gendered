@@ -14,7 +14,7 @@
 </style>
 
 <script>
-  const API = 'http://localhost:3000/api/words/';
+  const API = 'https://gendered-api.glitch.me/api/words';
   import Word from '@/components/Word'
 
   export default {

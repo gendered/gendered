@@ -1,37 +1,20 @@
 {
-  "name": "api",
-  "version": "1.0.0",
-  "main": "server/server.js",
-  "engines": {
-    "node": ">=4"
-  },
+  "name": "gendered",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "lint": "eslint .",
-    "posttest": "npm run lint && nsp check",
-    "dev": "npm run lb-start & npm run vue-serve",
-    "prod": "npm run vue-build && npm start",
-    "start": "node .",
-    "lb-start": "nodemon",
-    "vue-serve": "cd client && vue-cli-service serve",
-    "vue-build": "cd client && vue-cli-service build"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "compression": "^1.0.3",
-    "cors": "^2.5.2",
-    "helmet": "^3.10.0",
-    "loopback-boot": "^2.6.5",
-    "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^3.0.0",
-    "loopback-component-explorer": "^6.0.0",
-    "loopback": "^3.19.0",
-    "vue": "^2.5.16",
+    "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.15",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
     "@vue/cli-service": "^3.0.0-beta.15",
-    "@vue/eslint-config-airbnb": "^3.0.0-rc.3",
     "eslint": "^3.19.0",
     "eslint-config-loopback": "^8.0.0",
     "node-sass": "^4.9.2",
@@ -40,16 +23,6 @@
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.16"
   },
-  "repository": {
-    "type": "",
-    "url": ""
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "client/*"
-    ],
-    "delay": "2500"
-  },
   "eslintConfig": {
     "root": true,
     "env": {
@@ -57,7 +30,7 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "@vue/airbnb"
+      "eslint:recommended"
     ],
     "rules": {},
     "parserOptions": {
@@ -73,7 +46,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "license": "UNLICENSED",
-  "description": "api"
+  ]
 }

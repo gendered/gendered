@@ -1,6 +1,6 @@
 import WordList from '@/components/WordList'
 import FilterPanel from '@/components/FilterPanel'
-const API = 'http://localhost:3000/api/words';
+const API = 'https://gendered-api.glitch.me/api/words';
 import SearchFilter from '@/components/SearchFilter'
 
 export default {
