@@ -20,6 +20,10 @@ a {
   /*line-height: 0;*/
 }
 
+button {
+  width: fit-content;
+}
+
 a:hover {
   border-bottom: 2px solid black;
 }
