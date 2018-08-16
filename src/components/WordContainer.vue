@@ -42,12 +42,8 @@
       this.getWord(this.word, setData);
     },
     methods: {
-      getWordSet(word) {
-
-      },
       getWord(word, callback){
-        let obj = JSON.stringify({ "where": { "word": word } });
-        let url = `${API}findOne?filter=${obj}`
+        let url = `${API}/${word}`;
         fetch(url)
         .then(res => res.json())
         .then((res) => {

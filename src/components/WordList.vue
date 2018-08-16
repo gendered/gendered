@@ -21,7 +21,6 @@
     font-weight: 400;
     font-family: garamond;
     padding: 0;
-    overflow-x: hidden;
     margin: 0;
     margin-bottom: 5%;
 
