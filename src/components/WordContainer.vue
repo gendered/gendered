@@ -1,8 +1,7 @@
 <template>
-    <div class="word-set-container">
-      <Word v-if="entry" :entry="entry"></Word>
-      <Word v-if="equivalent"  :entry="equivalent"></Word>
-    </div>
+  <div class="word-set-container" >
+    <Word v-if="entry" :entry="entry"></Word>
+    <Word v-if="equivalent" :entry="equivalent"></Word>
   </div>
 </template>
 <style lang="scss">
@@ -36,7 +35,6 @@
         console.log('res', res);
         this.entry = res;
         let equivalent = this.entry.equivalent;
-        console.log(equivalent);
         if (equivalent) {
           this.getWord(equivalent, (function(res) {
             this.equivalent = res;

@@ -13,7 +13,7 @@
        </li>
      </ul>
     <div v-if="showSet && currentWord" class="modal">
-      <WordContainer :word="currentWord"></WordContainer>
+      <WordContainer v-on:change-word="changeWord" :word="currentWord"></WordContainer>
       <button v-on:click="closeWordSet">Close</button>
     </div>
   </div>
@@ -102,6 +102,10 @@
         this.showSet = false;
         this.currentWord = null;
       },
+      changeWord(word) {
+        console.log('changing');
+        this.currentWord = word;
+      }
     },
   };
 </script>
