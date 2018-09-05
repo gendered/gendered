@@ -4,8 +4,8 @@
         <span class="letter">{{key}}</span>
         <section class="words">
           <ul v-for="(word, index) in value">
-          <li v-if="index < 20">
-            <a :href="'./words/' + word.word" :class="'word ' + word.gender">{{word.word}}</a>     
+          <li>
+            <a :href="'./words/' + word.word" :class="'word ' + word.gender">{{word.word}}</a>
           </li>
           </ul>
         </section>
@@ -37,7 +37,6 @@
     .letter-list {
       display: grid;
       grid-template-columns: 15% 75%;
-      align-items: center;
     }
 
 
@@ -48,6 +47,8 @@
     .letter {
       font-size: 200px;
       font-family: "helvetica neue", Arial, sans-serif;
+      position: relative;
+      margin-top: 40%;
     }
   }
 </style>
