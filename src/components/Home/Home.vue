@@ -5,7 +5,7 @@
 	 	<input type="button" v-on:click="getRandom" value="Get Random Word" />
 	 </aside>
 	<keep-alive>
-		<WordList v-bind:words="filteredWords"></WordList>
+		<WordLists v-bind:words="filteredWords"></WordLists>
 	</keep-alive>
 	<div class="filter-options">
 		<FilterPanel :options="gender" v-on:filter="handleFilter"></FilterPanel>
