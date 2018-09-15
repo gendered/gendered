@@ -2,7 +2,7 @@
 <div>
   <ul class="words">
     <li v-for="(word, index) in value" v-if="index < displayCount || !preview">
-      <a :href="'./words/' + word.word" :class="'word ' + word.gender">{{word.word}}</a>
+      <button :class="'word ' + word.gender" v-on:click="showWordSet(word.word)">{{word.word}}</button>
     </li>
   </ul>
   <button class="toggle" v-on:click="toggleDisplay">+</button>
@@ -14,6 +14,12 @@
     padding: 0;
     margin: 0;
     grid-template-columns: repeat(6, 1fr);
+  }
+
+  li > button {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: garamond;
   }
 </style>
 <script>
@@ -32,6 +38,9 @@ export default {
       toggleButton.textContent = this.preview ? "-" : "+";
       this.preview = !this.preview;
     },
+    showWordSet(word){
+      this.$emit('show-word-set', word);
+    }
   }
 };
 </script>

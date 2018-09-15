@@ -3,7 +3,7 @@
     <ul v-on="listeners" class="word-list">
        <li class="letter-list" v-for="(value, key) in words">
           <span class="letter">{{key}}</span>
-          <WordList v-bind:value="value"></WordList>
+          <WordList v-on:show-word-set="showWordSet" v-bind:value="value"></WordList>
        </li>
      </ul>
      <div v-if="showSet && currentWord" class="modal">
@@ -39,20 +39,20 @@
       position: relative;
       margin-top: 40%;
     }
+  }
 
-    .modal {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      z-index: 9998;
-      top: 0;
-      right: 0;
-      width: 50%;
-      height: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-      transition: opacity .3s ease;
-    }
+  .modal {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    transition: opacity .3s ease;
   }
 </style>
 <script>

@@ -13,7 +13,7 @@ h1 {
 p {
   max-width: 20rem;
 }
-  
+
 a {
   text-decoration: none;
   color: black;
@@ -21,6 +21,8 @@ a {
 }
 
 button {
+  outline: 0;
+  border: 0;
   width: fit-content;
 }
 
