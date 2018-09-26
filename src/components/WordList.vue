@@ -2,7 +2,7 @@
 <div>
   <ul class="words">
     <li v-for="(word, index) in value" v-if="index < displayCount || !preview">
-      <button :class="'word ' + word.gender" v-on:click="showWordSet(word.word)">{{word.word}}</button>
+      <button :class="'word ' + word.gender" v-on:click="showWordSet(word)">{{word.word}}</button>
     </li>
   </ul>
   <button class="toggle" v-on:click="toggleDisplay">+</button>
@@ -39,7 +39,7 @@ export default {
       this.preview = !this.preview;
     },
     showWordSet(word){
-      this.$emit('show-word-set', word);
+      this.$emit('show-word-set', word.word, word.gender);
     }
   }
 };

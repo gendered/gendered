@@ -58,6 +58,7 @@
 <script>
 import WordList from '@/components/WordList'
 import WordContainer from '@/components/WordContainer'
+let db;
 
 export default {
   name: 'WordLists',
@@ -80,10 +81,69 @@ export default {
       return null
     },
   },
+  mounted() {
+    let request = window.indexedDB.open('words', 1);
+    const displayWordGraph = this.displayWordGraph.bind(this);
+
+    request.onerror = function() {
+      console.log('Database failed to open');
+    };
+
+    // onsuccess handler signifies that the database opened successfully
+    request.onsuccess = function() {
+      console.log('Database opened successfully');
+
+      // Store the opened database object in the db variable. This is used a lot below
+      db = request.result;
+
+      // Run the displayData() function to display the words already in the IDB
+      displayWordGraph();
+    };
+
+    request.onupgradeneeded = function(e) {
+      // Grab a reference to the opened database
+      let db = e.target.result;
+
+      // Create an objectStore to store our words in (basically like a single table)
+      // including a auto-incrementing key
+      let objectStore = db.createObjectStore('words', { keyPath: 'id', autoIncrement:true });
+
+      // Define what data items the objectStore will contain
+      objectStore.createIndex('name', 'name', { unique: true });
+      objectStore.createIndex('gender', 'gender', { unique: false });
+
+      console.log('Database setup complete');
+    };
+  },
   methods: {
-    showWordSet(word){
+    showWordSet(word, gender){
       this.showSet = true;
       this.currentWord = word;
+      const displayWordGraph = this.displayWordGraph.bind(this);
+      // grab the values entered into the form fields and store them in an object ready for being inserted into the DB
+      console.log(word);
+      let newItem = { 'name': word, 'gender': gender };
+      console.log(newItem);
+      // open a read/write db transaction, ready for adding the data
+      let transaction = db.transaction(['words'], 'readwrite');
+
+      // call an object store that's already been added to the database
+      let objectStore = transaction.objectStore('words');
+
+      // Make a request to add our newItem object to the object store
+      var request = objectStore.add(newItem);
+
+      // Report on the success of the transaction completing, when everything is done
+      transaction.oncomplete = function() {
+        console.log('Transaction completed: database modification finished.');
+
+        // update the display of data to show the newly added item, by running displayData() again.
+        displayWordGraph();
+      };
+
+      transaction.onerror = function() {
+        console.log('Transaction not opened due to error');
+      };
     },
     closeWordSet() {
       this.showSet = false;
@@ -93,6 +153,27 @@ export default {
       console.log('changing');
       this.currentWord = word;
     },
+    displayWordGraph() {
+      let objectStore = db.transaction('words').objectStore('words');
+       if ('getAll' in objectStore) {
+          // IDBObjectStore.getAll() will return the full set of items in our store.
+          objectStore.getAll().onsuccess = function(event) {
+            console.log(event.target.result);
+          };
+        } else {
+          // Fallback to the traditional cursor approach if getAll isn't supported.
+          var words = [];
+          objectStore.openCursor().onsuccess = function(event) {
+            var cursor = event.target.result;
+            if (cursor) {
+              words.push(cursor.value);
+              cursor.continue();
+            } else {
+              console.log(words);
+            }
+          };
+        }
+    }
   }
 };
 </script>
