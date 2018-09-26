@@ -26,11 +26,15 @@ button {
   width: fit-content;
 }
 
+header {
+  display: flex;
+}
+
 a:hover {
   border-bottom: 2px solid black;
 }
 
-#nav {
+nav, .logo {
   font-size: 2rem;
   padding: 1rem;
 
@@ -39,14 +43,21 @@ a:hover {
     font-weight: bold;
     margin-right: 1.5rem;
     color: black;
+
     &.router-link-exact-active {
       border-bottom: 2px solid black;
     }
   }
+}
 
-  input {
-    float: right;
-    /*height: 2rem;*/
-    padding: 0.5rem;
+.logo {
+  width: fit-content;
+
+  a:first-child {
+    display: block;
+  }
+
+  span{
+    font-size: .6em;
   }
 }
