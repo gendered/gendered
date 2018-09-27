@@ -3,8 +3,10 @@
     <ul v-on="listeners" class="letter-list">
       <!-- want to give .letter-list grid layout 12 columns  -->
        <li class="word-list" v-for="(value, key) in words">
-          <span class="letter">{{key}}</span>
-          <button class="toggle" v-on:click="toggleDisplay">+</button>
+          <div>
+            <span class="letter">{{key}}</span>
+            <button class="toggle" v-on:click="toggleDisplay">+</button>
+          </div>
           <WordList v-on:show-word-set="showWordSet" v-bind:displayCount="displayCount" v-bind:preview="preview" v-bind:value="value"></WordList>
        </li>
      </ul>
