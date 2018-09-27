@@ -1,5 +1,5 @@
 import Main from '@/components/Main'
-import FilterPanel from '@/components/FilterPanel'
+import Footer from '@/components/Footer'
 const API = 'https://gendered-api.glitch.me/api/words';
 import SearchFilter from '@/components/SearchFilter'
 
@@ -7,24 +7,12 @@ export default {
   name: 'Home',
   components: {
     Main,
-    FilterPanel,
+    Footer,
     SearchFilter,
   },
   data() {
     return {
       activeFilters: [],
-      gender: [
-        {
-          'category': 'gender',
-          'type': 'female',
-          'active': false
-        },
-        {
-          'category': 'gender',
-          'type': 'male',
-          'active': false
-        }
-      ],
       words: [],
       count: 0
     }

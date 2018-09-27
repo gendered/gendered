@@ -43,11 +43,3 @@ input:not([type='text']) {
 input.active, input:not([type='text']):hover {
   @include active-filter;
 }
-
-.filter-options {
-  position: fixed;
-  bottom: 0;
-  background: white;
-  width: 100%;
-  border-top: 1px solid black;
-}

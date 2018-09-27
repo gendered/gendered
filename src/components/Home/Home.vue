@@ -9,10 +9,7 @@
 		<!-- contians 26 WordList components -->
 		<Main v-bind:words="filteredWords"></Main>
 	</keep-alive>	
-	<div class="filter-options">
-		<FilterPanel :options="gender" v-on:filter="handleFilter"></FilterPanel>
-	</div>
-
+	<Footer v-on:filter="handleFilter"></Footer>
   </div>
 </template>
 
