@@ -1,4 +1,4 @@
-import WordLists from '@/components/WordLists'
+import Main from '@/components/Main'
 import FilterPanel from '@/components/FilterPanel'
 const API = 'https://gendered-api.glitch.me/api/words';
 import SearchFilter from '@/components/SearchFilter'
@@ -6,7 +6,7 @@ import SearchFilter from '@/components/SearchFilter'
 export default {
   name: 'Home',
   components: {
-    WordLists,
+    Main,
     FilterPanel,
     SearchFilter,
   },

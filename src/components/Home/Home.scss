@@ -1,3 +1,7 @@
+.home {
+  
+}
+
 aside {
   position: fixed;
   right: 0;
@@ -9,12 +13,12 @@ aside {
 }
 
 ul {
-  display: flex;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-wrap: wrap;
   list-style: none;
 
   li {
-    padding: 15px;
+    // padding: 15px;
   }
 }
 
@@ -23,6 +27,7 @@ input {
   font-size: 1rem;
   margin: 0 .5rem;
   border: 1px solid black;
+  box-shadow: 2px 3px 0px black;
   padding: 0.5rem 1rem;
 }
 

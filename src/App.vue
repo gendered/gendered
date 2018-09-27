@@ -10,6 +10,7 @@
 	      <router-link to="/contribute">Contribute</router-link>
 	    </nav>
 	</header>
+	<!-- when we're on home it's home, it's the view of whatever page we're on -->
 	<router-view></router-view>
 </div>
 </template>
