@@ -33,6 +33,7 @@
 
     .word-list {
       display: grid;
+      grid-gap: 1rem;
       grid-template-columns: repeat(12, 1fr);
     }
 

@@ -1,31 +1,11 @@
-.home {
-  
-}
-
-aside {
-  position: fixed;
-  right: 0;
-
-  input {
-    margin: .5rem;
-    display: block;
-  }
-}
-
 ul {
-  // display: flex;
-  // flex-wrap: wrap;
   list-style: none;
-
-  li {
-    // padding: 15px;
-  }
 }
 
 input {
   border-radius: 0;
   font-size: 1rem;
-  margin: 0 .5rem;
+  // margin: 0 .5rem;
   border: 1px solid black;
   box-shadow: 2px 3px 0px black;
   padding: 0.5rem 1rem;
@@ -42,4 +22,30 @@ input:not([type='text']) {
 
 input.active, input:not([type='text']):hover {
   @include active-filter;
+}
+
+.filter-options {
+  position: fixed;
+  bottom: 0;
+  background: white;
+  width: 100%;
+  border-top: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem 2rem;
+
+  ul.filter-list {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    
+    li.filter {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  }
 }
