@@ -1,7 +1,7 @@
 <template>
   <ul class="words">
     <li v-for="(word, index) in value" v-if="index < displayCount || !preview">
-      <button :class="'word ' + word.gender" v-on:click="showWordSet(word)">{{word.word}}</button>
+      <button :class="'word ' + word.state +  ' ' + word.gender" v-on:click="showWordSet(word)">{{word.word}}</button>
     </li>
   </ul>
 </template>
@@ -18,6 +18,16 @@
     font-size: 1rem;
     font-weight: 400;
     // font-family: garamond;
+  }
+
+  .highlight {
+    &.female{
+      background: blue;
+    } 
+
+    &.male {
+      background: red;
+    }
   }
 </style>
 <script>

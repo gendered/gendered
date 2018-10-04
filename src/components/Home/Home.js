@@ -29,9 +29,21 @@ export default {
     filteredWords () {
       var filtered = Object.assign({}, this.words);
       const filter = new RegExp(this.searchText, 'i');
+      var activeFilters = this.activeFilters;
+      const len = activeFilters.length;
       for (let letter in filtered) {
         const words = filtered[letter];
         filtered[letter] = words.filter(entry => {
+          for (let i = 0; i < len; i++) {
+            let option = activeFilters[i];
+            switch (option.category) {
+              case 'gender':
+                if (entry['gender'] === option.type) {
+                  entry.state = 'highlight';
+                }
+                else break;
+              }
+          }
           if (entry['word'] !== undefined) { return entry['word'].match(filter) }
           else return true;
         });
