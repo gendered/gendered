@@ -14,7 +14,8 @@ export default {
     return {
       activeFilters: [],
       words: [],
-      count: 0
+      count: 0,
+      searchText: ''
     }
   },
   created() {
@@ -27,33 +28,21 @@ export default {
   computed: {
     filteredWords () {
       var filtered = Object.assign({}, this.words);
-      var activeFilters = this.activeFilters;
-      const len = activeFilters.length;
-      if (len > 0) {
-        for (let letter in filtered) {
-          const words = filtered[letter];
-          filtered[letter] = words.filter(function(entry) {
-            let isValid = false;
-            return (function () {
-              for (let i = 0; i < len; i++) {
-                let option = activeFilters[i];
-                switch (option.category) {
-                  case 'gender':
-                    if (entry['gender'] === option.type) {
-                      isValid = true;
-                    }
-                    else break;
-                }
-              }
-              return isValid;
-            }());
-          });
-        }
+      const filter = new RegExp(this.searchText, 'i');
+      for (let letter in filtered) {
+        const words = filtered[letter];
+        filtered[letter] = words.filter(entry => {
+          if (entry['word'] !== undefined) { return entry['word'].match(filter) }
+          else return true;
+        });
       }
       return filtered;
-    }
+    },
   },
   methods: {
+    updateSearchText(value) {
+      this.searchText = value;
+    },
     alphabetize(data) {
       let allSources = new Set([]);
       let obj = {};

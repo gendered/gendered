@@ -1,7 +1,7 @@
 <template>
   <div class="home">
   	<aside>
-		<SearchFilter></SearchFilter>
+		<SearchFilter v-on:input="updateSearchText"></SearchFilter>
 	 	<input type="button" v-on:click="getRandom" value="Get Random Word" />
 	 </aside>
 	<keep-alive>
