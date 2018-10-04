@@ -11,14 +11,24 @@
     grid-column: span 10;
     padding: 0;
     margin: 0;
+    margin-bottom: 2rem;
     grid-template-columns: repeat(5, 1fr);
+
+    li {
+      margin: 0;
+      line-height: 0;
+      button {
+        padding: 0;
+        font-size: 1rem;
+        font-weight: 400;
+      } 
+      button:hover {
+        cursor: pointer;
+      }
+    }
   }
 
-  li > button {
-    font-size: 1rem;
-    font-weight: 400;
-    // font-family: garamond;
-  }
+  
 </style>
 <script>
 export default {

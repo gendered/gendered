@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-  	<aside>
+  	<!-- <aside>
 		<SearchFilter></SearchFilter>
-	 	<input type="button" v-on:click="getRandom" value="Get Random Word" />
-	 </aside>
+	 	<input class="btn" type="button" v-on:click="getRandom" value="Get Random Word" />
+	 </aside> -->
 	<keep-alive>
 		<!-- list of words for each letter -->
 		<!-- contians 26 WordList components -->

@@ -5,10 +5,14 @@
 	   		<router-link to="/">The Gendered Project</router-link> 
 	     	<span>A library of gendered words </span>
 	    </section>
-	    <nav>
+	    <!-- <nav> -->
 	      <router-link to="/about">About</router-link>
 	      <router-link to="/contribute">Contribute</router-link>
-	    </nav>
+	    <!-- </nav> -->
+	    <!-- <aside> -->
+			<SearchFilter></SearchFilter>
+		 	<input class="btn" type="button" v-on:click="getRandom" value="Get Random Word" />
+		 <!-- </aside> -->
 	</header>
 	<!-- when we're on home it's home, it's the view of whatever page we're on -->
 	<router-view></router-view>
