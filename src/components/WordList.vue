@@ -36,7 +36,7 @@
     &.male {
       background: red;
     }
-  }
+  }  
 </style>
 <script>
 export default {
