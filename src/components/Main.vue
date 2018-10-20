@@ -2,7 +2,7 @@
   <div class="container">
     <ul v-on="listeners" class="letter-list">
       <!-- want to give .letter-list grid layout 12 columns  -->
-       <li class="word-list" v-for="(value, key) in words">
+       <li class="word-list" v-for="(value, key) in words" v-if="value.length > 0">
           <div>
             <span class="letter">{{key}}</span>
             <button class="toggle" v-on:click="toggleDisplay">+</button>
