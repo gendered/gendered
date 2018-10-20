@@ -6,7 +6,7 @@
 </template>
 <style lang="scss">
   .word-set-container {
-    padding: 1rem;
+    // padding: 1rem;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-gap: 2rem;
