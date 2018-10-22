@@ -30,6 +30,7 @@
     padding: 0;
     margin: 0;
     grid-column: span 12;
+    grid-gap: 1rem;
 
     .word-list {
       display: grid;
@@ -37,15 +38,25 @@
       grid-template-columns: repeat(12, 1fr);
     }
 
-    // li {
-    //   line-height: 0.8em;
-    // }
-
     .letter {
-      font-size: 3.5rem;
+      font-size: 5.063rem;
       margin-top: 0;
+      line-height: 0.85em;
       font-family: "helvetica neue", Arial, sans-serif;
       position: relative;
+    }
+
+    .toggle {
+      font-size: 1.5rem;
+      margin-right: 0;
+      -webkit-transition: all 0.5s ease;
+         -moz-transition: all 0.5s ease;
+           -o-transition: all 0.5s ease;
+              transition: all 0.5s ease;
+    }
+    .toggle:hover {
+      font-style: italic;
+      cursor: pointer;
     }
   }
 
@@ -56,11 +67,22 @@
     z-index: 9998;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 38.2%;
     height: 100%;
     background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    box-shadow: -2px 2px 3px rgba(0, 0, 0, .33);
     transition: opacity .3s ease;
+    padding: 5rem 2rem;
+
+    button {
+      position: fixed;
+      bottom: 1.5rem;
+      font-size: 1rem;
+      background: none;
+    }
+    button:hover {
+      cursor: pointer;
+    }
   }
 </style>
 <script>

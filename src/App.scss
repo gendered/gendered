@@ -4,14 +4,31 @@ html, body {
   font-family: "helvetica neue", Arial, sans-serif;
 }
 
+h1, h2, h3 {
+  margin: 0.67em 0;
+  letter-spacing: -0.0425em;
+}
+
 h1 {
-  font-family: garamond;
-  font-size: 3rem;
+  font-size: 5.063rem;
   font-weight: 400;
 }
 
+h2 {
+  font-size: 3.375rem;
+}
+
+h3 {
+  font-size: 2.25rem;
+}
+
+p, li {
+  font-size: 1.25rem;
+  line-height: 1.5em;
+}
+
 p {
-  max-width: 20rem;
+  max-width: 32em;
 }
 
 a {
@@ -31,7 +48,7 @@ header {
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 1rem;
   // border: 1px solid black;
-  padding: 1rem 2rem;
+  padding: 3rem 2rem;
 
   .logo {
     grid-column-start: 2;
@@ -51,28 +68,8 @@ header {
     margin: 0;
     grid-column-start: 11;
     grid-column-end: 13;
-    // display: none;
   }
 }
-
-// a:hover {
-//   border-bottom: 2px solid black;
-// }
-
-// nav, .logo {
-//   padding: 1rem;
-
-//   a {
-//     text-decoration: none;
-//     font-weight: bold;
-//     margin-right: 1.5rem;
-//     color: black;
-
-//     &.router-link-exact-active {
-//       border-bottom: 2px solid black;
-//     }
-//   }
-// }
 
 .logo {
   width: fit-content;
