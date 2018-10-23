@@ -29,11 +29,15 @@ export default {
   .filter-list {
     padding: 0;
     margin: 0;
-    display: inline-flex;
-  }
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(12, 1fr);
+    justify-items: end;
 
-  .filter {
-    margin: 0;
-    padding: 1rem; 
+    .filter {
+      margin: 0;
+      grid-column-start: 12;
+      grid-column-end: 13;
+    }
   }
 </style>
