@@ -1,7 +1,7 @@
 <template>
   <ul class="words">
     <li v-for="(word, index) in value" v-if="index < displayCount || !preview">
-      <button :class="'word ' + word.state +  ' ' + word.gender" v-on:click="showWordSet(word)">{{word.word}}</button>
+      <router-link :to="{name: 'word', params: {word: word.word}}" :class="`word ${word.state} ${word.gender}`">{{word.word}}</router-link>
     </li>
   </ul>
 </template>
@@ -48,11 +48,6 @@
 <script>
 export default {
   name: 'WordList',
-  props: ['value', 'preview', 'displayCount'],
-  methods: {
-    showWordSet(word){
-      this.$emit('show-word-set', word.word, word.gender);
-    }
-  }
+  props: ['value', 'preview', 'displayCount']
 };
 </script>

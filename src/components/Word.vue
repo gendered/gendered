@@ -3,7 +3,9 @@
     <h1>{{ entry.word }}</h1>
     <p>{{ entry.definition }}</p>
     <ul class="word-set">
-      <li v-for="syn in entry.syns" v-if="syn != entry.word"><button v-on:click="changeWord(syn)">{{syn}}</button></li>
+      <li v-for="syn in entry.syns" v-if="syn != entry.word">
+        <router-link :to="{name: 'word', params: {word: syn}}">{{syn}}</router-link>
+      </li>
     </ul>
     <ul class="tag-list">
       <li v-for="tag in entry.tags">{{tag}}</li>
@@ -21,10 +23,5 @@
   export default {
     name: 'Word',
     props: ['entry'],
-    methods: {
-      changeWord(word) {
-        this.$emit('change-word', word);
-      }
-    },
   };
 </script>

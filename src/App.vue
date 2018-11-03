@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-on:click='closeModal'>
   	<header>
 	    <section class="logo">
 	   		<router-link to="/">The Gendered Project</router-link> 
@@ -12,4 +12,17 @@
 	<router-view></router-view>
 </div>
 </template>
+<script>
+import router from './router';
+export default {
+  name: 'App',
+  methods: {
+  	closeModal: function(e) {
+  		const params = this.$route.params;
+  		const target = e.target;
+  		if (params.word && !target.classList.contains('word')) router.push({ name: 'home' })
+  	}
+  }
+};
+</script>
 <style src="./App.scss"></style>

@@ -1,19 +1,18 @@
 <template>
   <div class="container">
-    <ul v-on="listeners" class="letter-list">
+    <ul class="letter-list">
       <!-- want to give .letter-list grid layout 12 columns  -->
        <li class="word-list" v-for="(value, key) in words" v-if="value.length > 0">
           <div>
             <span class="letter">{{key}}</span>
             <button class="toggle" v-on:click="toggleDisplay">+</button>
           </div>
-          <WordList v-on:show-word-set="showWordSet" v-bind:displayCount="displayCount" v-bind:preview="preview" v-bind:value="value"></WordList>
+          <WordList v-bind:displayCount="displayCount" v-bind:preview="preview" v-bind:value="value"></WordList>
        </li>
      </ul>
-     <div v-if="showSet && currentWord" class="modal">
-       <WordContainer v-on:change-word="changeWord" :word="currentWord"></WordContainer>
-       <button v-on:click="closeWordSet">Close</button>
-     </div>
+    <div>
+      <router-view :key="$route.fullPath" />
+    </div>
   </div>
 </template>
 <style lang="scss">
@@ -99,19 +98,9 @@ export default {
   props: ['words'],
   data() {
     return {
-      showSet: false,
-      currentWord: null,
       preview: true,
       displayCount: 24,
     }
-  },
-  computed: {
-    listeners() {
-      if (this.showSet) {
-        return { click: this.closeWordSet }
-      }
-      return null
-    },
   },
   mounted() {
     let request = window.indexedDB.open('words', 1);
@@ -149,41 +138,31 @@ export default {
   },
   methods: {
     showWordSet(word, gender){
-      this.showSet = true;
-      this.currentWord = word;
-      const displayWordGraph = this.displayWordGraph.bind(this);
-      // grab the values entered into the form fields and store them in an object ready for being inserted into the DB
-      console.log(word);
-      let newItem = { 'name': word, 'gender': gender };
-      console.log(newItem);
-      // open a read/write db transaction, ready for adding the data
-      let transaction = db.transaction(['words'], 'readwrite');
+      // const displayWordGraph = this.displayWordGraph.bind(this);
+      // // grab the values entered into the form fields and store them in an object ready for being inserted into the DB
+      // console.log(word);
+      // let newItem = { 'name': word, 'gender': gender };
+      // console.log(newItem);
+      // // open a read/write db transaction, ready for adding the data
+      // let transaction = db.transaction(['words'], 'readwrite');
 
-      // call an object store that's already been added to the database
-      let objectStore = transaction.objectStore('words');
+      // // call an object store that's already been added to the database
+      // let objectStore = transaction.objectStore('words');
 
-      // Make a request to add our newItem object to the object store
-      var request = objectStore.add(newItem);
+      // // Make a request to add our newItem object to the object store
+      // var request = objectStore.add(newItem);
 
-      // Report on the success of the transaction completing, when everything is done
-      transaction.oncomplete = function() {
-        console.log('Transaction completed: database modification finished.');
+      // // Report on the success of the transaction completing, when everything is done
+      // transaction.oncomplete = function() {
+      //   console.log('Transaction completed: database modification finished.');
 
-        // update the display of data to show the newly added item, by running displayData() again.
-        displayWordGraph();
-      };
+      //   // update the display of data to show the newly added item, by running displayData() again.
+      //   displayWordGraph();
+      // };
 
-      transaction.onerror = function() {
-        console.log('Transaction not opened due to error');
-      };
-    },
-    closeWordSet() {
-      this.showSet = false;
-      this.currentWord = null;
-    },
-    changeWord(word) {
-      console.log('changing');
-      this.currentWord = word;
+      // transaction.onerror = function() {
+      //   console.log('Transaction not opened due to error');
+      // };
     },
     toggleDisplay() {
       const toggleButton = document.querySelector(".toggle");
@@ -192,24 +171,24 @@ export default {
     },
     displayWordGraph() {
       let objectStore = db.transaction('words').objectStore('words');
-       if ('getAll' in objectStore) {
-          // IDBObjectStore.getAll() will return the full set of items in our store.
-          objectStore.getAll().onsuccess = function(event) {
-            console.log(event.target.result);
-          };
-        } else {
-          // Fallback to the traditional cursor approach if getAll isn't supported.
-          var words = [];
-          objectStore.openCursor().onsuccess = function(event) {
-            var cursor = event.target.result;
-            if (cursor) {
-              words.push(cursor.value);
-              cursor.continue();
-            } else {
-              console.log(words);
-            }
-          };
-        }
+      if ('getAll' in objectStore) {
+        // IDBObjectStore.getAll() will return the full set of items in our store.
+        objectStore.getAll().onsuccess = function(event) {
+          console.log(event.target.result);
+        };
+      } else {
+        // Fallback to the traditional cursor approach if getAll isn't supported.
+        var words = [];
+        objectStore.openCursor().onsuccess = function(event) {
+          var cursor = event.target.result;
+          if (cursor) {
+            words.push(cursor.value);
+            cursor.continue();
+          } else {
+            console.log(words);
+          }
+        };
+      }
     }
   }
 };

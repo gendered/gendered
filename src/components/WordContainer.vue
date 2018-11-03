@@ -1,8 +1,11 @@
 <template>
-  <div class="word-set-container" >
+<div class="modal">
+  <div class="w-80 w-60-ns center word-set-container">
     <Word v-if="entry" :entry="entry"></Word>
     <Word v-if="equivalent" :entry="equivalent"></Word>
   </div>
+  <router-link :to="{ name: 'home' }">Close</router-link>
+</div>
 </template>
 <style lang="scss">
   .word-set-container {
@@ -28,18 +31,19 @@
       }
     },
     created() {
+      const currentWord = this.$route.params.word;
       let setData = (function(res) {
-        console.log('res', res);
         this.entry = res;
         let equivalent = this.entry.equivalent;
         if (equivalent) {
-          this.getWord(equivalent, (function(res) {
-            this.equivalent = res;
-            console.log(res);
+          this.getWord(
+            equivalent, 
+            (function(res) {
+              this.equivalent = res;
           }).bind(this));
         }
       }).bind(this);
-      this.getWord(this.word, setData);
+      this.getWord(currentWord, setData);
     },
     methods: {
       getWord(word, callback){

@@ -13,7 +13,15 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      children: [
+        {
+          path: '/words/:word',
+          name: 'word',
+          component: WordContainer,
+          props: true
+        }
+      ]
     },
     {
       path: '/about',
@@ -24,12 +32,6 @@ export default new Router({
       path: '/contribute',
       name: 'contribute',
       component: Contribute,
-    },
-    {
-     path: '/words/:word',
-     name: 'word',
-     component: WordContainer,
-     props: true
-   }
+    }
   ],
 });
