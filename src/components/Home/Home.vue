@@ -14,4 +14,4 @@
 </template>
 
 <script src="./Home.js"></script>
-<style src="./Home.scss"></style>
+<style lang="scss" src="./Home.scss"></style>

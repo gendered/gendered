@@ -1,14 +1,8 @@
 <template>
   <div class="container">
     <ul class="letter-list">
-      <!-- want to give .letter-list grid layout 12 columns  -->
-       <li class="word-list" v-for="(value, key) in words" v-if="value.length > 0">
-          <div>
-            <span class="letter">{{key}}</span>
-            <button class="toggle" v-on:click="toggleDisplay">+</button>
-          </div>
-          <WordList v-bind:displayCount="displayCount" v-bind:preview="preview" v-bind:value="value"></WordList>
-       </li>
+        <!-- want to give .letter-list grid layout 12 columns  -->
+        <WordList v-for="(value, key) in words" v-if="value.length > 0" v-bind:list="value" v-bind:letter="key"></WordList>
      </ul>
     <div>
       <router-view :key="$route.fullPath" />
@@ -30,33 +24,6 @@
     margin: 0;
     grid-column: span 12;
     grid-gap: 1rem;
-
-    .word-list {
-      display: grid;
-      grid-gap: 1rem;
-      grid-template-columns: repeat(12, 1fr);
-    }
-
-    .letter {
-      font-size: 5.063rem;
-      margin-top: 0;
-      line-height: 0.85em;
-      font-family: "helvetica neue", Arial, sans-serif;
-      position: relative;
-    }
-
-    .toggle {
-      font-size: 1.5rem;
-      margin-right: 0;
-      -webkit-transition: all 0.5s ease;
-         -moz-transition: all 0.5s ease;
-           -o-transition: all 0.5s ease;
-              transition: all 0.5s ease;
-    }
-    .toggle:hover {
-      font-style: italic;
-      cursor: pointer;
-    }
   }
 
   .modal {
@@ -96,12 +63,6 @@ export default {
     WordContainer,
   },
   props: ['words'],
-  data() {
-    return {
-      preview: true,
-      displayCount: 24,
-    }
-  },
   mounted() {
     let request = window.indexedDB.open('words', 1);
     const displayWordGraph = this.displayWordGraph.bind(this);
@@ -163,11 +124,6 @@ export default {
       // transaction.onerror = function() {
       //   console.log('Transaction not opened due to error');
       // };
-    },
-    toggleDisplay() {
-      const toggleButton = document.querySelector(".toggle");
-      toggleButton.textContent = this.preview ? "-" : "+";
-      this.preview = !this.preview;
     },
     displayWordGraph() {
       let objectStore = db.transaction('words').objectStore('words');
