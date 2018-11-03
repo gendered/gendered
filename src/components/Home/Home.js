@@ -38,6 +38,7 @@ export default {
             let option = activeFilters[i];
             switch (option.category) {
               case 'gender':
+                entry.state = '';
                 if (entry['gender'] === option.type) {
                   entry.state = 'highlight';
                 }
@@ -76,7 +77,7 @@ export default {
       });
       return ordered;
     },
-    handleFilter(option) {
+    handleFilter(option, toggle) {
       let activeFilters = this.activeFilters;
       let index = -1;
       const category = option.category;
@@ -89,6 +90,12 @@ export default {
       if (activeFilters) {
         index = this.activeFilters.findIndex(i => i.type === option.type);
         if (index === -1) {
+          // If there are only two filters in a category, it should be a toggle
+          if (toggle && activeFilters.length) {
+            // find filter of the same category and remove
+            let i = activeFilters.findIndex(i => i.category === option.category);
+            this.removeFilter(i);
+          }
           this.addFilter(obj);
           option.active = true;
         }
@@ -115,7 +122,7 @@ export default {
       let data = this.words;
       let randomEntry = this.$_randomProperty(this.$_randomProperty(data));
       let randomWord = randomEntry['word'];
-      this.$router.push(`words/${randomWord}`);
+      this.$router.push({ name: 'word', params: { word: randomWord }});
     },
   }
 }

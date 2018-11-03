@@ -29,7 +29,9 @@ export default {
 	},
 	methods: {
 		handleFilter(option) {
-			this.$emit('filter', option);
+			let len = this[option.category].length;
+			// If there are only two filters, it should be a toggle
+			this.$emit('filter', option, len == 2);
 		}
 	}
 }

@@ -20,7 +20,7 @@ export default {
   	closeModal: function(e) {
   		const params = this.$route.params;
   		const target = e.target;
-  		if (params.word && !target.classList.contains('word')) router.push({ name: 'home' })
+  		if (params.word && !target.classList.contains('can-open-modal')) router.push({ name: 'home' })
   	}
   }
 };
