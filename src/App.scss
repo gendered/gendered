@@ -1,7 +1,20 @@
+@font-face {
+  font-family: "Acumin";
+  src:	url('assets/fonts/AcuminPro-Regular.eot'),
+				url("assets/fonts/AcuminPro-Regular.otf") format("ttf"),
+				url("assets/fonts/AcuminPro-Regular.woff") format("woff"),
+				url("assets/fonts/AcuminPro-Regular.woff2") format("woff2"),
+				url('assets/fonts/AcuminPro-Regular.ttf') format('truetype'),
+				url('assets/fonts/AcuminPro-Regular.svg#AcuminPro-Regular') format('svg'),
+				url('assets/fonts/AcuminPro-Regular.eot?#iefix') format('embedded-opentype');
+}
+
+
+
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "helvetica neue", Arial, sans-serif;
+  font-family: "Acumin";
 }
 
 h1, h2, h3 {
@@ -12,6 +25,7 @@ h1, h2, h3 {
 h1 {
   font-size: 5.063rem;
   font-weight: 400;
+	font-family: 'Romana Std Bold';
 }
 
 h2 {

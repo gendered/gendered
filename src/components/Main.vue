@@ -19,7 +19,7 @@
   .letter-list {
     font-size: 1.5rem;
     font-weight: 400;
-    font-family: garamond;
+    font-family: "Acumin";
     padding: 0;
     margin: 0;
     grid-column: span 12;

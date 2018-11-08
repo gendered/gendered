@@ -22,7 +22,7 @@
     font-size: 5.063rem;
     margin-top: 0;
     line-height: 0.85em;
-    font-family: "helvetica neue", Arial, sans-serif;
+    font-family: "Romana Std Bold", Arial, sans-serif;
     position: relative;
   }
 
