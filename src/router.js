@@ -4,6 +4,7 @@ import Home from '@/components/Home/Home.vue'
 import About from '@/components/About';
 import Contribute from '@/components/Contribute';
 import WordContainer from '@/components/WordContainer';
+import NotFound from '@/components/NotFound';
 
 Vue.use(Router);
 
@@ -49,6 +50,14 @@ export default new Router({
       path: '/contribute',
       name: 'contribute',
       component: Contribute,
-    }
+    },
+		{
+			path: '/404',
+			component: NotFound,
+		},
+  	{
+			path: '*',
+			redirect: '/404',
+		},
   ],
 });
