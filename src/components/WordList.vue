@@ -23,7 +23,9 @@
     margin-top: 0;
     line-height: 0.85em;
     font-family: "Romana Std Bold", Arial, sans-serif;
-    position: relative;
+		position: -webkit-sticky;
+	  position: sticky;
+	  top: -1px;
   }
 
   .toggle {
@@ -33,10 +35,14 @@
        -moz-transition: all 0.5s ease;
          -o-transition: all 0.5s ease;
             transition: all 0.5s ease;
-  }
-  .toggle:hover {
-    font-style: italic;
-    cursor: pointer;
+		position: -webkit-sticky;
+	  position: sticky;
+	  top: -1px;
+
+		&:hover {
+	    font-style: italic;
+	    cursor: pointer;
+		}
   }
 
   .words {
