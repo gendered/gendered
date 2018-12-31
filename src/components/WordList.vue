@@ -12,10 +12,20 @@
   </li>
 </template>
 <style lang="scss" scoped>
+	@import '../mixins.scss';
+
   .word-list {
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(10, 1fr);
+
+		@include break(small) {
+			grid-template-columns: repeat(5, 1fr);
+		}
+
+		@include break(medium) {
+			grid-template-columns: repeat(7, 1fr);
+		}
   }
 
   .letter {
@@ -53,6 +63,14 @@
     margin-bottom: 2.56rem;
     grid-template-columns: repeat(8, 1fr);
     column-gap: 1rem;
+
+		@include break(small) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		@include break(medium) {
+			grid-template-columns: repeat(6, 1fr);
+		}
 
     li {
       margin: 0;

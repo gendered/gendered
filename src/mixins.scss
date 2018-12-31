@@ -1,0 +1,12 @@
+@mixin break($point) {
+	@if $point == small {
+		@media screen and (max-width: 48em) {
+			@content;
+    }
+	}
+  @else if $point == medium {
+    @media screen and (min-width: 48em) and (max-width: 64em) {
+      @content;
+    }
+  }
+}

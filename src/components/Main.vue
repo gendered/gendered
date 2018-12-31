@@ -10,12 +10,15 @@
   </div>
 </template>
 <style lang="scss">
+	@import '../mixins.scss';
+
   .container {
     padding: 4.096rem 2.56rem;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-row-gap: 4rem;
   }
+
   .letter-list {
     font-size: 1rem;
     font-weight: 400;

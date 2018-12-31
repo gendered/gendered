@@ -14,6 +14,23 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
+			meta: {
+	      title: 'The Gendered Project - Home',
+	      metaTags: [
+					{
+						name: 'viewport',
+						content: 'width=device-width, initial-scale=1'
+					},
+	        {
+	          name: 'description',
+	          content: 'A library of gendered words.'
+	        },
+	        {
+	          property: 'og:description',
+	          content: 'A library of gendered words.'
+	        }
+	      ]
+	    },
       children: [
         {
           path: '/words/:word',
