@@ -3,6 +3,7 @@
     <div>
       <span class="letter">{{letter}}</span>
       <button class="toggle" v-on:click="toggleDisplay">+</button>
+			<button class="visuallyhidden" v-on:click="skipLetterList">Skip</button>
     </div>
     <ul class="words">
       <li v-for="(word, index) in list" v-show="index < displayCount || !preview">
@@ -102,6 +103,23 @@
       background: red;
     }
   }
+
+	.visuallyhidden:not(:focus):not(:active) {
+	  position: absolute;
+
+	  width: 1px;
+	  height: 1px;
+	  margin: -1px;
+	  border: 0;
+	  padding: 0;
+
+	  white-space: nowrap;
+
+	  clip-path: inset(100%);
+	  clip: rect(0 0 0 0);
+	  overflow: hidden;
+	}
+
 </style>
 <script>
 export default {
@@ -119,6 +137,12 @@ export default {
       toggleButton.textContent = this.preview ? "-" : "+";
       this.preview = !this.preview;
     },
+		skipLetterList(e) {
+			let el = e.target;
+			let list = el.closest(".word-list");
+			let nextToggle = list.nextSibling.querySelector('.toggle')
+			if (nextToggle) nextToggle.focus();
+		},
   }
 };
 </script>

@@ -1,6 +1,7 @@
 <template>
 	<footer>
 		<FilterPanel :options="gender" v-on:filter="handleFilter"></FilterPanel>
+		<button v-on:click="$emit('scrollToTop')">Scroll to top </button>
 	</footer>
 </template>
 <script>
@@ -39,9 +40,10 @@ export default {
 <style lang="scss">
   footer {
     position: fixed;
-	bottom: 0;
-	background: white;
-	width: 100%;
-	border-top: 1px solid black;
+		bottom: 0;
+		background: white;
+		width: 100%;
+		border-top: 1px solid black;
+		display: flex;
   }
 </style>
