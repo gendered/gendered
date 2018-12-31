@@ -10,8 +10,6 @@
   </div>
 </template>
 <style lang="scss">
-	@import '../mixins.scss';
-
   .container {
     padding: 4.096rem 2.56rem;
     display: grid;
