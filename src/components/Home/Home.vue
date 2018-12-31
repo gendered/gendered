@@ -9,7 +9,7 @@
 		<!-- contians 26 WordList components -->
 		<Main v-bind:words="filteredWords"></Main>
 	</keep-alive>
-	<Footer v-on:filter="handleFilter"></Footer>
+	<Footer v-on:scrollToTop="scrollToTop" v-on:filter="handleFilter"></Footer>
   </div>
 </template>
 

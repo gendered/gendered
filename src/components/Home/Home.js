@@ -124,5 +124,8 @@ export default {
       let randomWord = randomEntry['word'];
       this.$router.push({ name: 'word', params: { word: randomWord }});
     },
+		scrollToTop() {
+			window.scrollTo(0, 0);
+		}
   }
 }

@@ -5,11 +5,8 @@ ul {
 aside {
   position: fixed;
   top: 0;
+	right: 0;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 1rem;
-
   padding: 3rem 2rem;
 
   .search {
@@ -53,13 +50,4 @@ input:not([type='text']) {
 
 input.active, input:not([type='text']):hover {
   @include active-filter;
-}
-
-footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  background: none;
-  border: none;
-  padding: 3rem 2rem;
 }

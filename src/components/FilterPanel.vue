@@ -29,15 +29,6 @@ export default {
   .filter-list {
     padding: 0;
     margin: 0;
-    display: grid;
-    grid-gap: 1rem;
-    // grid-template-columns: repeat(12, 1fr);
-    justify-items: end;
-
-    .filter {
-      margin: 0;
-      grid-column-start: 12;
-      grid-column-end: 13;
-    }
+    display: inline-flex;
   }
 </style>
