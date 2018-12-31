@@ -1,15 +1,17 @@
 <template>
-  <li class="word-list">
-    <div>
-      <span class="letter">{{letter}}</span>
-      <button class="toggle" v-on:click="toggleDisplay">+</button>
-    </div>
-    <ul class="words">
-      <li v-for="(word, index) in list" v-show="index < displayCount || !preview">
-        <router-link :to="{name: 'word', params: {word: word.word}}" :class="`word ${word.state} ${word.gender} can-open-modal`">{{word.word}}</router-link>
-      </li>
-    </ul>
-  </li>
+  <div>
+    <li class="word-list">
+      <div>
+        <span class="letter">{{letter}}</span>
+      </div>
+      <ul class="words">
+        <li v-for="(word, index) in list" v-show="index < displayCount || !preview">
+          <router-link :to="{name: 'word', params: {word: word.word}}" :class="`word ${word.state} ${word.gender} can-open-modal`">{{word.word}}</router-link>
+        </li>
+      </ul>
+    </li>
+    <button class="toggle" v-on:click="toggleDisplay">+</button>
+  </div>
 </template>
 <style lang="scss" scoped>
 	@import '../mixins.scss';
@@ -35,7 +37,7 @@
     font-family: "Romana Std Bold", Arial, sans-serif;
 		position: -webkit-sticky;
 	  position: sticky;
-	  top: -1px;
+	  top: 1.6rem;
   }
 
   .toggle {
@@ -47,7 +49,8 @@
             transition: all 0.5s ease;
 		position: -webkit-sticky;
 	  position: sticky;
-	  top: -1px;
+	  bottom: 2.56rem;
+    margin-bottom: 2.56rem;
 
 		&:hover {
 	    font-style: italic;
@@ -60,7 +63,6 @@
     grid-column: span 8;
     padding: 0;
     margin: 0;
-    margin-bottom: 2.56rem;
     grid-template-columns: repeat(8, 1fr);
     column-gap: 1rem;
 
@@ -75,20 +77,19 @@
     li {
       margin: 0;
       line-height: 1.6em;
+
       a {
         padding: 0;
         font-size: 1rem;
         font-weight: 400;
-      }
-      button {
         -webkit-transition: all 0.5s ease;
            -moz-transition: all 0.5s ease;
              -o-transition: all 0.5s ease;
                 transition: all 0.5s ease;
       }
-      button:hover {
+      a:hover {
         cursor: pointer;
-        text-decoration: underline;
+        border-bottom: 1.6px solid black;
       }
     }
   }

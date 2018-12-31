@@ -31,12 +31,13 @@ html, body {
 h1, h2, h3 {
   margin: 0.67em 0;
   letter-spacing: -0.0425em;
+  font-family: 'Romana Std Bold', Georgia, Times, "Times New Roman", serif;
+  line-height: 1em;
 }
 
 h1 {
   font-size: 4.096rem;
   font-weight: 400;
-	font-family: 'Romana Std Bold', Georgia, Times, "Times New Roman", serif;
 }
 
 h2 {
@@ -72,23 +73,22 @@ header {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-gap: 1rem;
-  // border: 1px solid black;
   padding: 3rem 2rem;
 
   .logo {
-    font-family: times;
     font-weight: bold;
     grid-column-start: 2;
-    grid-column-end: 5;
+    grid-column-end: 8;
     padding: 0;
-    font-size: 1.6rem;
-    margin-bottom: 0;
-    line-height: 1rem;
+
+    h1 {
+      margin: 0;
+    }
 
     span {
-      font-family: "helvetica neue", Arial, sans-serif;
       font-weight: 400;
-      font-size: 0.8125rem;
+      // font-size: 0.8125rem;
+      font-size: 1rem;
     }
   }
 

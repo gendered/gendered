@@ -20,7 +20,6 @@
   .letter-list {
     font-size: 1rem;
     font-weight: 400;
-    font-family: "Acumin";
     padding: 0;
     margin: 0;
     grid-column: span 10;

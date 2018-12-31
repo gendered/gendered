@@ -31,7 +31,7 @@ export default {
     margin: 0;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(12, 1fr);
+    // grid-template-columns: repeat(12, 1fr);
     justify-items: end;
 
     .filter {
