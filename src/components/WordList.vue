@@ -1,9 +1,8 @@
 <template>
-  <div>
+  <div class="word-list-container">
     <li class="word-list">
       <div>
         <span class="letter">{{letter}}</span>
-        <button class="visuallyhidden" v-on:click="skipLetterList">Skip</button>
       </div>
       <ul class="words">
         <li v-for="(word, index) in list" v-show="index < displayCount || !preview">
@@ -12,6 +11,7 @@
       </ul>
     </li>
     <button class="toggle" v-on:click="toggleDisplay">+</button>
+		<button class="visuallyhidden" v-on:click="skipLetterList">Skip</button>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -140,8 +140,8 @@ export default {
     },
 		skipLetterList(e) {
 			let el = e.target;
-			let list = el.closest(".word-list");
-			let nextToggle = list.nextSibling.querySelector('.toggle')
+			let container = el.closest(".word-list-container");
+			let nextToggle = container.nextSibling.querySelector('.toggle')
 			if (nextToggle) nextToggle.focus();
 		},
   }
