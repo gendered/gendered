@@ -15,19 +15,19 @@
   .word-list {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(10, 1fr);
   }
 
   .letter {
-    font-size: 5.063rem;
+    font-size: 4.096rem;
     margin-top: 0;
-    line-height: 0.85em;
-    font-family: "helvetica neue", Arial, sans-serif;
+    line-height: 0.625em;
+    font-family: times;
     position: relative;
   }
 
   .toggle {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-right: 0;
     -webkit-transition: all 0.5s ease;
        -moz-transition: all 0.5s ease;
@@ -41,18 +41,19 @@
 
   .words {
     display: grid;
-    grid-column: span 10;
+    grid-column: span 8;
     padding: 0;
     margin: 0;
-    margin-bottom: 2.25rem;
-    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 2.56rem;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 1rem;
 
     li {
       margin: 0;
-      line-height: 1.5em;
-      button {
+      line-height: 1.6em;
+      a {
         padding: 0;
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 400;
       }
       button {

@@ -11,18 +11,17 @@
 </template>
 <style lang="scss">
   .container {
-    padding: 5rem 2rem;
+    padding: 4.096rem 2.56rem;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     grid-row-gap: 4rem;
   }
   .letter-list {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
-    font-family: garamond;
     padding: 0;
     margin: 0;
-    grid-column: span 12;
+    grid-column: span 10;
     grid-gap: 1rem;
   }
 
@@ -38,11 +37,11 @@
     background-color: #fff;
     box-shadow: -2px 2px 3px rgba(0, 0, 0, .33);
     transition: opacity .3s ease;
-    padding: 5rem 2rem;
+    padding: 4.096rem 2.56rem;
 
     button {
       position: fixed;
-      bottom: 1.5rem;
+      bottom: 1.6rem;
       font-size: 1rem;
       background: none;
     }

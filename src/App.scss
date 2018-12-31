@@ -10,21 +10,21 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 5.063rem;
+  font-size: 4.096rem;
   font-weight: 400;
 }
 
 h2 {
-  font-size: 3.375rem;
+  font-size: 2.56rem;
 }
 
 h3 {
-  font-size: 2.25rem;
+  font-size: 1.6rem;
 }
 
 p, li {
-  font-size: 1.25rem;
-  line-height: 1.5em;
+  font-size: 1rem;
+  line-height: 1.6em;
 }
 
 p {
@@ -45,21 +45,25 @@ button {
 
 header {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-gap: 1rem;
   // border: 1px solid black;
   padding: 3rem 2rem;
 
   .logo {
+    font-family: times;
+    font-weight: bold;
     grid-column-start: 2;
     grid-column-end: 5;
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 0;
     line-height: 1rem;
 
     span {
-      font-size: 0.75rem;
+      font-family: "helvetica neue", Arial, sans-serif;
+      font-weight: 400;
+      font-size: 0.8125rem;
     }
   }
 
