@@ -1,7 +1,30 @@
+@font-face {
+  font-family: "Acumin";
+  src:	url('assets/fonts/AcuminPro-Regular.eot'),
+				url("assets/fonts/AcuminPro-Regular.otf") format("ttf"),
+				url("assets/fonts/AcuminPro-Regular.woff") format("woff"),
+				url("assets/fonts/AcuminPro-Regular.woff2") format("woff2"),
+				url('assets/fonts/AcuminPro-Regular.ttf') format('truetype'),
+				url('assets/fonts/AcuminPro-Regular.svg#AcuminPro-Regular') format('svg'),
+				url('assets/fonts/AcuminPro-Regular.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'Romana Std Bold';
+  font-display: auto;
+  src: url('assets/fonts/383E86_1_0.eot');
+  src: url('assets/fonts/383E86_1_0.eot?#iefix')
+    format('embedded-opentype'),
+    url('assets/fonts/383E86_1_0.woff2')
+    format('woff2'),url('assets/fonts/383E86_1_0.woff')
+    format('woff'),url('assets/fonts/383E86_1_0.ttf')
+    format('truetype');
+}
+
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "helvetica neue", Arial, sans-serif;
+  font-family: "Acumin", sans-serif;
 }
 
 h1, h2, h3 {
@@ -12,6 +35,7 @@ h1, h2, h3 {
 h1 {
   font-size: 4.096rem;
   font-weight: 400;
+	font-family: 'Romana Std Bold', Georgia, Times, "Times New Roman", serif;
 }
 
 h2 {

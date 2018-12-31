@@ -2,7 +2,7 @@
   <div id="app" v-on:click='closeModal'>
   	<header>
 	    <section class="logo">
-	   		<router-link to="/">The Gendered Project</router-link>
+	   		<h1><router-link to="/">The Gendered Project</router-link></h1>
 	     	<span>A library of gendered words </span>
 	    </section>
 		<router-link to="/about">About</router-link>
