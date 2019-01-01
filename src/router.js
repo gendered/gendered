@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/components/Home/Home.vue'
-import About from '@/components/About';
-import Contribute from '@/components/Contribute';
-import WordContainer from '@/components/WordContainer';
-import NotFound from '@/components/NotFound';
+
+const Home = () => import('./components/Home/Home.vue');
+const About = () => import('./components/About');
+const Contribute = () => import('./components/Contribute');
+const WordContainer = () => import('./components/WordContainer');
+const NotFound = () => import('./components/NotFound');
 
 Vue.use(Router);
 
