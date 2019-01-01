@@ -1,3 +1,4 @@
+@import 'assets/css/normalize.css';
 
 @font-face {
   font-family: "Acumin";
@@ -48,6 +49,10 @@ h3 {
   font-size: 1.6rem;
 }
 
+ul {
+  list-style: none;
+}
+
 p, li {
   font-size: 1rem;
   line-height: 1.6em;
@@ -66,6 +71,35 @@ a {
 button {
   border: 0;
   width: fit-content;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+button, input {
+	background: transparent;
+}
+
+input {
+  border-radius: 0;
+  font-size: 1rem;
+  border: 1px solid black;
+  box-shadow: 2px 3px 0px black;
+  padding: 0.5rem 1rem;
+}
+
+input:not([type='text']) {
+  transition: all 0.1s;
+}
+
+@mixin active-filter {
+  color: white;
+  background-color: black;
+}
+
+input.active, input:not([type='text']):hover {
+  @include active-filter;
 }
 
 header {

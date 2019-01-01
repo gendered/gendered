@@ -44,10 +44,6 @@
       position: fixed;
       bottom: 1.6rem;
       font-size: 1rem;
-      background: none;
-    }
-    button:hover {
-      cursor: pointer;
     }
   }
 </style>
