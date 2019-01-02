@@ -47,11 +47,6 @@ export default new Router({
       name: 'about',
       component: About,
     },
-    {
-      path: '/contribute',
-      name: 'contribute',
-      component: Contribute,
-    },
 		{
 			path: '/404',
 			component: NotFound,
