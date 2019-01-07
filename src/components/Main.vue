@@ -10,6 +10,8 @@
   </div>
 </template>
 <style lang="scss">
+	@import '../mixins.scss';
+
   .container {
     padding: 4.096rem 2.56rem;
     display: grid;
@@ -33,12 +35,21 @@
     z-index: 9998;
     top: 0;
     right: 0;
-    width: 38.2%;
+    width: 37.5%;
     height: 100%;
     background-color: #fff;
     box-shadow: -2px 2px 3px rgba(0, 0, 0, .33);
     transition: opacity .3s ease;
     padding: 4.096rem 2.56rem;
+		box-sizing: border-box;
+
+		@include break(small) {
+			width: 80%;
+		}
+
+		@include break(medium) {
+			width: 62.5%;
+  	}
 
     button {
       position: fixed;

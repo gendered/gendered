@@ -1,9 +1,9 @@
 <template>
 <div class="modal">
-	<div v-if="invalidWord">
+	<!-- <div v-if="invalidWord">
 	  Word not in dictionary
-	</div>
-  <div v-else class="w-80 w-60-ns center word-set-container">
+	</div> -->
+  <div class="w-80 w-60-ns center word-set-container">
     <Word v-if="entry" :entry="entry"></Word>
     <Word v-if="equivalent" :entry="equivalent"></Word>
   </div>
@@ -31,7 +31,6 @@
       return {
         entry: null,
         equivalent: null,
-				invalidWord: false,
       }
     },
     created() {
@@ -48,7 +47,6 @@
 						}).bind(this));
 					}
 				}
-				else this.invalidWord = true;
       }).bind(this);
       this.getWord(currentWord, setData);
     },
