@@ -6,7 +6,7 @@
 	     	<span>A library of gendered words </span>
 	    </section>
 		<router-link to="/about">About</router-link>
-		<router-link to="/contribute">Contribute</router-link>
+		<!-- <router-link to="/contribute">Contribute</router-link> -->
 	</header>
 	<!-- when we're on home it's home, it's the view of whatever page we're on -->
 	<router-view></router-view>

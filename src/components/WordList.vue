@@ -1,8 +1,9 @@
 <template>
   <div>
     <li class="word-list">
-      <div>
-        <span class="letter">{{letter}}</span>
+      <div class="letter">
+        <span>{{letter}}</span>
+        <button class="toggle" v-on:click="toggleDisplay">+</button>
         <button class="visuallyhidden" v-on:click="skipLetterList">Skip</button>
       </div>
       <ul class="words">
@@ -11,28 +12,21 @@
         </li>
       </ul>
     </li>
-    <button class="toggle" v-on:click="toggleDisplay">+</button>
   </div>
 </template>
 <style lang="scss" scoped>
 	@import '../mixins.scss';
 
   .word-list {
+    margin-bottom: 1.6rem;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(10, 1fr);
-
-		@include break(small) {
-			grid-template-columns: repeat(5, 1fr);
-		}
-
-		@include break(medium) {
-			grid-template-columns: repeat(7, 1fr);
-		}
+    grid-template-columns: repeat(5, 1fr);
   }
 
   .letter {
-    font-size: 4.096rem;
+    font-size: 2.56rem;
+    text-align: right;
     margin-top: 0;
     line-height: 0.85em;
     font-family: "Romana Std Bold", Arial, sans-serif;
@@ -60,37 +54,36 @@
   }
 
   .words {
-    display: grid;
-    grid-column: span 8;
     padding: 0;
     margin: 0;
-    grid-template-columns: repeat(8, 1fr);
-    column-gap: 1rem;
+    grid-column: 2 / 6;
 
 		@include break(small) {
-			grid-template-columns: repeat(4, 1fr);
+			// grid-template-columns: repeat(4, 1fr);
 		}
 
 		@include break(medium) {
-			grid-template-columns: repeat(6, 1fr);
+			// grid-template-columns: repeat(6, 1fr);
 		}
 
     li {
       margin: 0;
+      margin-right: 0.625rem;
       line-height: 1.6em;
+      display: inline-block;
 
       a {
-        padding: 0;
+        padding: 0.625rem;
         font-size: 1rem;
         font-weight: 400;
-        -webkit-transition: all 0.5s ease;
-           -moz-transition: all 0.5s ease;
-             -o-transition: all 0.5s ease;
-                transition: all 0.5s ease;
+        // -webkit-transition: all 0.5s ease;
+        //    -moz-transition: all 0.5s ease;
+        //      -o-transition: all 0.5s ease;
+        //         transition: all 0.5s ease;
       }
       a:hover {
         cursor: pointer;
-        border-bottom: 1.6px solid black;
+        font-weight: bold;
       }
     }
   }

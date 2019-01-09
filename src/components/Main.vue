@@ -10,11 +10,15 @@
   </div>
 </template>
 <style lang="scss">
+  @import '../mixins.scss';
+
   .container {
-    padding: 4.096rem 2.56rem;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-row-gap: 4rem;
+    border: 1px solid black;
+    margin: 0 2.56rem;
+
+    @include break(small) {
+      margin: 0 1.6rem;
+    }
   }
 
   .letter-list {
@@ -22,8 +26,12 @@
     font-weight: 400;
     padding: 0;
     margin: 0;
-    grid-column: span 10;
-    grid-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include break(small) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   .modal {
