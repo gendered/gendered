@@ -4,17 +4,14 @@ ul {
 
 aside {
   position: fixed;
-  top: 0;
-	right: 0;
-  display: grid;
-  padding: 3rem 2rem;
+  bottom: 2.56rem;
+  margin: 0 auto;
 
   .search {
-    text-align: right;
-    grid-column-start: 12;
-    grid-column-end: 13;
+    display: none;
     padding: 0;
-    border: none;
+    margin: 0 auto;
+    border: 1px solid black;
     box-shadow: none;
     line-height: 1.5rem;
   }

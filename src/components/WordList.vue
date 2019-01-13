@@ -3,6 +3,7 @@
     <li class="word-list">
       <div class="letter">
         <span>{{letter}}</span>
+        <!-- each letter should get individual id   -->
         <button class="toggle" v-on:click="toggleDisplay">+</button>
         <button class="visuallyhidden" v-on:click="skipLetterList">Skip</button>
       </div>
@@ -76,11 +77,8 @@
         padding: 0.625rem;
         font-size: 1rem;
         font-weight: 400;
-        // -webkit-transition: all 0.5s ease;
-        //    -moz-transition: all 0.5s ease;
-        //      -o-transition: all 0.5s ease;
-        //         transition: all 0.5s ease;
       }
+
       a:hover {
         cursor: pointer;
         font-weight: bold;
@@ -127,6 +125,7 @@ export default {
   },
   methods: {
     toggleDisplay() {
+      // TODO: Reference unique letter id for button in selector
       const toggleButton = document.querySelector(".toggle");
       toggleButton.textContent = this.preview ? "-" : "+";
       this.preview = !this.preview;
