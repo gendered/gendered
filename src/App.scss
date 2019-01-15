@@ -105,8 +105,8 @@ input.active, input:not([type='text']):hover {
 header {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-gap: 1rem;
-  padding: 3rem 2rem;
+  margin: 2.56rem;
+  margin-bottom: 4.096rem;
 
   .logo {
     font-weight: bold;
