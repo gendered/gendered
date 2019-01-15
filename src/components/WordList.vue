@@ -124,10 +124,9 @@ export default {
     }
   },
   methods: {
-    toggleDisplay() {
-      // TODO: Reference unique letter id for button in selector
-      const toggleButton = document.querySelector(".toggle");
-      toggleButton.textContent = this.preview ? "-" : "+";
+    toggleDisplay(e) {
+			let el = e.target;
+      el.textContent = this.preview ? "-" : "+";
       this.preview = !this.preview;
     },
 		skipLetterList(e) {
