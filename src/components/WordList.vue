@@ -8,7 +8,7 @@
         <button class="visuallyhidden" v-on:click="skipLetterList">Skip</button>
       </div>
       <ul class="words">
-        <li v-for="(word, index) in list" v-show="index < displayCount || !preview">
+        <li v-for="(word, index) in list" v-if="index < displayCount || !preview">
           <router-link :to="{name: 'word', params: {word: word.word}}" :class="`word ${word.state} ${word.gender} can-open-modal`">{{word.word}}</router-link>
         </li>
       </ul>
