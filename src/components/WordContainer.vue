@@ -3,11 +3,12 @@
 	<!-- <div v-if="invalidWord">
 	  Word not in dictionary
 	</div> -->
+	<router-link :to="{ name: 'home' }">X</router-link>
   <div class="w-80 w-60-ns center word-set-container">
     <Word v-if="entry" :entry="entry"></Word>
     <Word v-if="equivalent" :entry="equivalent"></Word>
   </div>
-  <router-link :to="{ name: 'home' }">Close</router-link>
+	<router-link :to="{ name: 'about' }">?</router-link>
 </div>
 </template>
 <style lang="scss">

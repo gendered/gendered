@@ -14,12 +14,24 @@
 @font-face {
   font-family: 'Romana Std Bold';
   font-display: auto;
-  src: url('assets/fonts/383E86_1_0.eot');
-  src: url('assets/fonts/383E86_1_0.eot?#iefix')
+  src: url('assets/fonts/RomanaBold.eot');
+  src: url('assets/fonts/RomanaBold.eot?#iefix')
     format('embedded-opentype'),
-    url('assets/fonts/383E86_1_0.woff2')
-    format('woff2'),url('assets/fonts/383E86_1_0.woff')
-    format('woff'),url('assets/fonts/383E86_1_0.ttf')
+    url('assets/fonts/RomanaBold.woff2')
+    format('woff2'),url('assets/fonts/RomanaBold.woff')
+    format('woff'),url('assets/fonts/RomanaBold.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'RomanaBTWXX-Roman';
+  font-display: auto;
+  src: url('assets/fonts/RomanaReg.eot');
+  src: url('assets/fonts/RomanaReg.eot?#iefix')
+    format('embedded-opentype'),
+    url('assets/fonts/RomanaReg.woff2')
+    format('woff2'),url('assets/fonts/RomanaReg.woff')
+    format('woff'),url('assets/fonts/RomanaReg.ttf')
     format('truetype');
 }
 
@@ -32,17 +44,17 @@ html, body {
 h1, h2, h3 {
   margin: 0.67em 0;
   letter-spacing: -0.0425em;
-  font-family: 'Romana Std Bold', Georgia, Times, "Times New Roman", serif;
   line-height: 1em;
 }
 
 h1 {
   font-size: 4.096rem;
-  font-weight: 400;
+	font-family: 'Romana Std Bold', Georgia, Times, "Times New Roman", serif;
 }
 
 h2 {
   font-size: 2.56rem;
+	font-family: 'Romana Std Bold', Georgia, Times, "Times New Roman", serif;
 }
 
 h3 {

@@ -2,7 +2,7 @@
   <div class="container">
     <ul class="letter-list">
         <!-- want to give .letter-list grid layout 12 columns  -->
-        <WordList v-for="(value, key) in words" v-if="value.length > 0" v-bind:list="value" v-bind:letter="key"></WordList>
+        <WordList v-for="value in words" v-if="value.words.length > 0" v-bind:list="value.words" v-bind:letter="value.letter"></WordList>
      </ul>
     <div>
       <router-view :key="$route.fullPath" />

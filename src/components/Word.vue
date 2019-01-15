@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1 class="word">{{ entry.word }}</h1>
+    <h2 class="word">{{ entry.word }}</h2>
     <p>{{ entry.definition }}</p>
     <ul class="word-set">
       <li v-for="syn in entry.syns" v-if="syn != entry.word">

@@ -19,21 +19,29 @@ export default {
     }
   },
   created() {
-    fetch(API)
+		window.addEventListener('scroll', this.handleScroll);
+    fetch(`${API}/letter/AJ`)
     .then(res => res.json())
     .then((res) => {
-      this.words = this.alphabetize(res);
+			console.log('response', res);
+      this.words = res;
     });
   },
+	destroyed () {
+	  window.removeEventListener('scroll', this.handleScroll);
+	},
   computed: {
     filteredWords () {
-      var filtered = Object.assign({}, this.words);
+      var filtered = Object.assign([], this.words);
       const filter = new RegExp(this.searchText, 'i');
       var activeFilters = this.activeFilters;
       const len = activeFilters.length;
-      for (let letter in filtered) {
-        const words = filtered[letter];
-        filtered[letter] = words.filter(entry => {
+			const length = filtered.length;
+			for (let i = 0; i < length; i++) {
+				const item = filtered[i];
+				const letter = item['letter'];
+        const words = item['words'];
+        words.filter(entry => {
 					if (!len) {
 						entry.state = '';
 					}
@@ -56,22 +64,16 @@ export default {
     },
   },
   methods: {
+		handleScroll() {
+			window.removeEventListener('scroll', this.handleScroll);
+			fetch(`${API}/letter/KZ`)
+			.then(res => res.json())
+			.then((res) => {
+				this.words = this.words.concat(res);
+			});
+		},
     updateSearchText(value) {
       this.searchText = value;
-    },
-    alphabetize(data) {
-      let allSources = new Set([]);
-      let obj = {};
-      for (let i = 0; i < data.length; i++) {
-        const item = data[i]
-        const letter = item.word[0].toUpperCase();
-        if(!obj[letter]) {
-          obj[letter] = [item];
-        } else {
-          obj[letter].push(item);
-        }
-      }
-      return this.sort(obj);
     },
     sort(unordered) {
       const ordered = {};
