@@ -34,6 +34,9 @@ export default {
       for (let letter in filtered) {
         const words = filtered[letter];
         filtered[letter] = words.filter(entry => {
+					if (!len) {
+						entry.state = '';
+					}
           for (let i = 0; i < len; i++) {
             let option = activeFilters[i];
             switch (option.category) {
