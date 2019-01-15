@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="word-list-container">
     <li class="word-list">
       <div class="letter">
         <span>{{letter}}</span>
@@ -132,8 +132,8 @@ export default {
     },
 		skipLetterList(e) {
 			let el = e.target;
-			let list = el.closest(".word-list");
-			let nextToggle = list.nextSibling.querySelector('.toggle')
+			let container = el.closest(".word-list-container");
+			let nextToggle = container.nextSibling.querySelector('.toggle')
 			if (nextToggle) nextToggle.focus();
 		},
   }

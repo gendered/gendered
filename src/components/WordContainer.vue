@@ -1,5 +1,8 @@
 <template>
 <div class="modal">
+	<!-- <div v-if="invalidWord">
+	  Word not in dictionary
+	</div> -->
   <div class="w-80 w-60-ns center word-set-container">
     <Word v-if="entry" :entry="entry"></Word>
     <Word v-if="equivalent" :entry="equivalent"></Word>
@@ -33,15 +36,17 @@
     created() {
       const currentWord = this.$route.params.word;
       let setData = (function(res) {
-        this.entry = res;
-        let equivalent = this.entry.equivalent;
-        if (equivalent) {
-          this.getWord(
-            equivalent, 
-            (function(res) {
-              this.equivalent = res;
-          }).bind(this));
-        }
+				if (res.word) {
+					this.entry = res;
+					let equivalent = this.entry.equivalent;
+					if (equivalent) {
+						this.getWord(
+							equivalent,
+							(function(res) {
+								this.equivalent = res;
+						}).bind(this));
+					}
+				}
       }).bind(this);
       this.getWord(currentWord, setData);
     },
