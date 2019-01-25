@@ -12,9 +12,9 @@
 <style lang="scss">
   @import '../mixins.scss';
 
-  .container {
-    border: 1px solid black;
-  }
+  // .container {
+  //   border: 1px solid black;
+  // }
 
   .letter-list {
     font-size: 1rem;
