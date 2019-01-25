@@ -78,11 +78,6 @@
         font-size: 1rem;
         font-weight: 400;
       }
-
-      a:hover {
-        cursor: pointer;
-        font-weight: bold;
-      }
     }
   }
 

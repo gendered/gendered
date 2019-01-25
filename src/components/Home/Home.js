@@ -19,17 +19,13 @@ export default {
     }
   },
   created() {
-		window.addEventListener('scroll', this.handleScroll);
     fetch(`${API}/letter/AJ`)
     .then(res => res.json())
     .then((res) => {
-			console.log('response', res);
       this.words = res;
+			setTimeout(() => { this.loadMore(); }, 3000);
     });
   },
-	destroyed () {
-	  window.removeEventListener('scroll', this.handleScroll);
-	},
   computed: {
     filteredWords () {
       var filtered = Object.assign([], this.words);
@@ -64,8 +60,7 @@ export default {
     },
   },
   methods: {
-		handleScroll() {
-			window.removeEventListener('scroll', this.handleScroll);
+		loadMore() {
 			fetch(`${API}/letter/KZ`)
 			.then(res => res.json())
 			.then((res) => {

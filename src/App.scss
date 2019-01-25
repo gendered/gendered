@@ -1,4 +1,5 @@
 @import 'assets/css/normalize.css';
+@import './mixins.scss';
 
 @font-face {
   font-family: "Acumin";
@@ -78,6 +79,10 @@ a {
   text-decoration: none;
   color: black;
   /*line-height: 0;*/
+	&:hover {
+		cursor: pointer;
+		font-weight: bold;
+	}
 }
 
 button {
@@ -155,4 +160,12 @@ header {
   span {
     font-size: .6em;
   }
+}
+
+.home, .about {
+	margin: 0 2.56rem;
+
+	@include break(small) {
+		margin: 0 1.6rem;
+	}
 }

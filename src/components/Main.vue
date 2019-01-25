@@ -14,11 +14,6 @@
 
   .container {
     border: 1px solid black;
-    margin: 0 2.56rem;
-
-    @include break(small) {
-      margin: 0 1.6rem;
-    }
   }
 
   .letter-list {
