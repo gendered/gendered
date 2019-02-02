@@ -61,7 +61,7 @@ export default {
 			for (let i = 0; i < length; i++) {
 				const item = filtered[i];
 				const words = item['words'];
-				words.filter(entry => {
+				item['words'] = words.filter(entry => {
 					if (!len) {
 						entry.state = '';
 					}
@@ -76,7 +76,9 @@ export default {
 								else break;
 							}
 					}
-					if (entry['word'] !== undefined) { return entry['word'].match(searchFilter) }
+					if (entry['word']) {
+						return entry['word'].match(searchFilter);
+					}
 					else return true;
 				});
 			}
@@ -86,13 +88,6 @@ export default {
 	methods: {
 		updateSearchText(value) {
 			this.searchText = value;
-		},
-		sort(unordered) {
-			const ordered = {};
-			Object.keys(unordered).sort().forEach(function(key) {
-				ordered[key] = unordered[key];
-			});
-			return ordered;
 		},
 		handleFilter(option, toggle, options) {
 			let activeFilters = this.activeFilters;

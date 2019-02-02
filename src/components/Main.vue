@@ -17,6 +17,9 @@
 </template>
 <style lang="scss">
 	@import '../mixins.scss';
+	main {
+		margin-bottom: 2.56rem;
+	}
 
 	.letter-list {
 		font-size: 1rem;
