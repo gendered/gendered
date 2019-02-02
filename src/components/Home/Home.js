@@ -1,89 +1,89 @@
-import Main from '@/components/Main';
-import Footer from '@/components/Footer';
-import SearchFilter from '@/components/SearchFilter';
-const API = 'https://gendered-api.glitch.me/api/words';
+import Main from "@/components/Main";
+import Footer from "@/components/Footer";
+import SearchFilter from "@/components/SearchFilter";
+const API = "https://gendered-api.glitch.me/api/words";
 
 export default {
-	name: 'Home',
+	name: "Home",
 	head: {
 		title: {
-			inner: 'The Gendered Project - Home'
+			inner: "The Gendered Project - Home"
 		},
 		meta: [
-				{
-					name: 'viewport',
-					content: 'width=device-width, initial-scale=1'
-				},
-				{
-					name: 'description',
-					content: 'A library of gendered words.'
-				},
-				{
-					property: 'og:description',
-					content: 'A library of gendered words.'
-				}
+			{
+				name: "viewport",
+				content: "width=device-width, initial-scale=1"
+			},
+			{
+				name: "description",
+				content: "A library of gendered words."
+			},
+			{
+				property: "og:description",
+				content: "A library of gendered words."
+			}
 		],
 		link: [
 			{
-				rel: 'preconnect',
-				href:'https://gendered-api.glitch.me'
+				rel: "preconnect",
+				href: "https://gendered-api.glitch.me"
 			}
 		]
 	},
 	components: {
 		Main,
 		Footer,
-		SearchFilter,
+		SearchFilter
 	},
 	data() {
 		return {
 			activeFilters: [],
 			words: [],
 			count: 0,
-			searchText: ''
-		}
+			searchText: ""
+		};
 	},
 	created() {
 		fetch(`${API}/letter/AZ`)
-		.then(res => res.json())
-		.then((res) => {
-			this.words = res;
-		});
+			.then(res => res.json())
+			.then(res => {
+				this.words = res;
+			});
 	},
 	computed: {
-		filteredWords () {
-			if (!this.words) { return; }
+		filteredWords() {
+			if (!this.words) {
+				return;
+			}
 			var filtered = Object.assign([], this.words);
-			const searchFilter = new RegExp(this.searchText, 'i');
+			const searchFilter = new RegExp(this.searchText, "i");
 			var activeFilters = this.activeFilters;
 			const len = activeFilters.length;
 			const length = filtered.length;
 			for (let i = 0; i < length; i++) {
 				const item = filtered[i];
-				const words = item['words'];
-				item['words'] = words.filter(entry => {
+				const words = item["words"];
+				item["words"] = words.filter(entry => {
 					if (!len) {
-						entry.state = '';
+						entry.state = "";
 					}
 					for (let i = 0; i < len; i++) {
 						let option = activeFilters[i];
 						switch (option.category) {
-							case 'gender':
-								entry.state = '';
-								if (entry['gender'] === option.type) {
-									entry.state = 'highlight';
-								}
-								else break;
-							}
+							case "gender":
+								entry.state = "";
+								if (entry["gender"] === option.type) {
+									entry.state = "highlight";
+								} else break;
+						}
 					}
-					if (entry['word']) {
-						return entry['word'].match(searchFilter);
-					}
-					else return true;
+					if (entry["word"]) {
+						return entry["word"].match(searchFilter);
+					} else return true;
 				});
 			}
 			return filtered;
-		},
+		}
 	},
 	methods: {
 		updateSearchText(value) {
@@ -95,8 +95,8 @@ export default {
 			const category = option.category;
 			const type = option.type;
 			let obj = {
-				'category': category,
-				'type': type
+				category: category,
+				type: type
 			};
 			// if it's not you can add or remove
 			if (activeFilters) {
@@ -105,20 +105,20 @@ export default {
 					// If there are only two filters in a category, it should be a toggle
 					if (toggle && activeFilters.length) {
 						// find filter of the same category and remove
-						let i = activeFilters.findIndex(i => i.category === option.category);
+						let i = activeFilters.findIndex(
+							i => i.category === option.category
+						);
 						options.find(item => item.active === true).active = false;
 
 						this.removeFilter(i);
 					}
 					this.addFilter(obj);
 					option.active = true;
-				}
-				else {
+				} else {
 					this.removeFilter(index);
 					option.active = false;
 				}
-			}
-			else {
+			} else {
 				this.addFilter(obj);
 			}
 		},
@@ -128,18 +128,18 @@ export default {
 		removeFilter(idx) {
 			this.activeFilters.splice(idx, 1);
 		},
-		$_randomProperty: function (obj) {
+		$_randomProperty: function(obj) {
 			var keys = Object.keys(obj);
-			return obj[keys[ keys.length * Math.random() << 0]];
+			return obj[keys[(keys.length * Math.random()) << 0]];
 		},
 		getRandom() {
 			let data = this.words;
 			let randomEntry = this.$_randomProperty(this.$_randomProperty(data));
-			let randomWord = randomEntry['word'];
-			this.$router.push({ name: 'word', params: { word: randomWord }});
+			let randomWord = randomEntry["word"];
+			this.$router.push({ name: "word", params: { word: randomWord } });
 		},
 		scrollToTop() {
 			window.scrollTo(0, 0);
 		}
 	}
-}
+};

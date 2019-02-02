@@ -1,41 +1,43 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import VueHead from 'vue-head';
+import Vue from "vue";
+import Router from "vue-router";
+import VueHead from "vue-head";
 
-const Home = () => import('./components/Home/Home.vue');
-const About = () => import('./components/About');
-const WordContainer = () => import('./components/WordContainer');
-const NotFound = () => import('./components/NotFound');
+const Home = () => import("./components/Home/Home.vue");
+const About = () => import("./components/About");
+const WordContainer = () => import("./components/WordContainer");
+const NotFound = () => import("./components/NotFound");
 
 Vue.use(Router);
-Vue.use(VueHead)
+Vue.use(VueHead);
 
 export default new Router({
-	mode: 'history',
+	mode: "history",
 	routes: [
 		{
-			path: '/',
-			name: 'home',
+			path: "/",
+			name: "home",
 			component: Home,
-			children: [{
-				path: '/words/:word',
-				name: 'word',
-				component: WordContainer,
-				props: true
-			}]
+			children: [
+				{
+					path: "/words/:word",
+					name: "word",
+					component: WordContainer,
+					props: true
+				}
+			]
 		},
 		{
-			path: '/about',
-			name: 'about',
-			component: About,
+			path: "/about",
+			name: "about",
+			component: About
 		},
 		{
-			path: '/404',
-			component: NotFound,
+			path: "/404",
+			component: NotFound
 		},
 		{
-			path: '*',
-			redirect: '/404',
-		},
-	],
+			path: "*",
+			redirect: "/404"
+		}
+	]
 });

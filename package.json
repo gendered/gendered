@@ -5,8 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "dev": "run-p serve"
+		"lint": "eslint --ext .js,.vue src test",
+		"lint-autofix": "eslint --ext .js,.vue src --fix",
+		"eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+		"dev": "run-p serve"
   },
   "dependencies": {
     "lodash": "^4.17.11",
