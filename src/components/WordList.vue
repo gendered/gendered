@@ -30,6 +30,9 @@
 	display: grid;
 	grid-gap: 1rem;
 	grid-template-columns: repeat(5, 1fr);
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	break-inside: avoid;
 }
 
 .letter {
@@ -119,7 +122,7 @@ export default {
 			type: String,
 			required: true
 		},
-		preview: {
+		showPreview: {
 			type: Boolean,
 			required: true
 		},
@@ -132,7 +135,7 @@ export default {
 	},
 	computed: {
 		wordsToDisplay() {
-			if (this.preview) {
+			if (this.showPreview) {
 				return this.list.slice(0, this.displayCount);
 			} else {
 				return this.list;
@@ -148,8 +151,8 @@ export default {
 		toggleDisplay(e) {
 			this.$emit("preview");
 			let el = e.target;
-			el.textContent = this.preview ? "-" : "+";
-			this.preview = !this.preview;
+			el.textContent = this.showPreview ? "-" : "+";
+			this.showPreview = !this.showPreview;
 		},
 		skipLetterList(e) {
 			let el = e.target;

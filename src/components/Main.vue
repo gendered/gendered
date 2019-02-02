@@ -6,7 +6,7 @@
 				v-for="value in words"
 				:list="value.words"
 				:letter="value.letter"
-				:preview="preview"
+				:showPreview="showPreview"
 				@preview="turnOnPreview"
 			/>
 		</ul>
@@ -26,12 +26,6 @@ main {
 	font-weight: 400;
 	padding: 0;
 	margin: 0;
-	column-count: 2;
-	column-gap: 1fr;
-
-	@include break(small) {
-		column-count: 1;
-	}
 }
 
 .modal {
@@ -74,7 +68,7 @@ export default {
 	},
 	data() {
 		return {
-			preview: true
+			showPreview: true
 		};
 	},
 	props: {
@@ -85,7 +79,7 @@ export default {
 	},
 	methods: {
 		turnOnPreview() {
-			this.preview = true;
+			this.showPreview = true;
 		}
 	}
 };

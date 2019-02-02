@@ -75,6 +75,14 @@ p {
 	max-width: 32em;
 }
 
+main {
+	column-count: 2;
+
+	@include break(small) {
+		column-count: 1;
+	}
+}
+
 a {
 	text-decoration: none;
 	color: black;
