@@ -10,6 +10,7 @@
     "tlapse": "tlapse localhost:3000"
   },
   "dependencies": {
+    "lodash": "^4.17.11",
     "vue": "^2.5.17",
     "vue-head": "^2.1.1",
     "vue-router": "^3.0.1"

@@ -54,7 +54,7 @@ export default {
   computed: {
     filteredWords () {
       var filtered = Object.assign([], this.words);
-      const filter = new RegExp(this.searchText, 'i');
+      const searchFilter = new RegExp(this.searchText, 'i');
       var activeFilters = this.activeFilters;
       const len = activeFilters.length;
 			const length = filtered.length;
@@ -76,7 +76,7 @@ export default {
                 else break;
               }
           }
-          if (entry['word'] !== undefined) { return entry['word'].match(filter) }
+          if (entry['word'] !== undefined) { return entry['word'].match(searchFilter) }
           else return true;
         });
       }
