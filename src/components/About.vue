@@ -4,13 +4,12 @@
 			<section>
 				<h3>What?</h3>
 				<p>The Gendered Project is a growing library of gendered words in the English dictionary. </p>
-				<p>Early in 2017, during a discussion with my friends, I used the word fuckboy to describe a man I had dealt with. I wondered out loud why it took so long for a word that so aptly describes a common type of man to be used in popular culture. I thought of the myriad words that exist to derogatorily describe or shame sexually liberated women and/or folks socialized female and the dearth of such equivalent words for men and/or folks socialized male.<sup>1</sup> I decided to try and create something that would allow us to explore what the English language tells us about men, women and those who do not fit in those binaries.</p>
+				<p>Early in 2017, during a discussion with my friends, I used the word fuckboy to describe a man I had dealt with. I wondered out loud why it took so long for a word that so aptly describes a common type of man to be used in popular culture. I thought of the myriad words that exist to derogatorily describe or shame sexually liberated women and/or folks socialized female and the dearth of such equivalent words for men and/or folks socialized male.<sup><a href="#socialized-male">1</a></sup> I decided to try and create something that would allow us to explore what the English language tells us about men, women and those who do not fit in those binaries.</p>
 
 				<blockquote cite="https://archive.org/details/p15957coll6_681_0">
 					<p>The act of naming is defining the boundaries and terms of our own existence and that of others. Naming embodies our judgments as inherent features of the objects to which we attend.</p>
-					</blockquote>
+				</blockquote>
 				<cite>THE PROSTITUTE: Paradigmatic Woman, Julia P. Stanley</cite>
-				</p>
 				<p>The words we have (and don’t) matter. They reflect the biases we embrace and the ideas we value. The word imbalance for negatively describing men’s sexuality versus women’s reflects our culture of gender double standards and slut-shaming. We risk reinforcing and perpetuating these biases and negative values if we don’t interrogate the words we use and why. I think exploring language in terms of how genders are represented and interrogating how and why words are used is important for understanding and challenging sexism and patriarchy.</p>
 			</section>
 			<section>
@@ -39,7 +38,7 @@
 					<li>With help / advice / miscalleanous support from: <a href="https://iheanyi.com/">Iheanyi</a>, <a href="https://netabomani.com/">Neta</a>, and <a href="https://itsthisnow.com/">Syd.</a></li>
 				</ul>
 			</section>
-			</section>
+			<section>
 				<h3>Notes</h3>
 				<p>This project is <strong>not</strong> an invitation to "even" out the language and create or adopt more words that punch down. I do not believe in replacing male domination (exerting power over and at the expense of others) with female domination. As <a href="https://twitter.com/theafrolegalise">Nnennaya Amuchie</a> says, “I don't want to be equal to men. Men are not the standard of humanity. I want to live on my own terms free from violence.” Therefore it’s important to note that while the word “fuckboy” has taken on a new, empowering meaning through its use by femmes, it’s roots still lie in continual rape and abuse of
 				<a href="https://www.theatlantic.com/politics/archive/2015/02/rape-in-the-american-prison/385550/">feminized bodies</a> in the prison system. While words can be reclaimed and acquire positive associations, this reclamation is often done by the groups the word labels. There has been
@@ -62,11 +61,11 @@
 
 				<h4>How can I contribute?</h4>
 
-				<p>Right now, you can sign up and I’ll email when I have a process for contribution.</p>
+				<p>Right now, you can <a href="http://eepurl.com/gbf1Qb">sign up</a> and I’ll email when I have a process for contribution.</p>
 
 				<h4>Future plans</h4>
 			</section>
-			<sup>1. "Socialized male" and "socialized female" in this context refer to people who may not identify with the gender associated with the sex assigned to them at birth, but have gone through the process of socialization for that gender. Devon Price writes in <a href="https://medium.com/@devonprice/gender-socialization-is-real-complex-348f56146925"><i>Gender Socialization is Real (Complex)</i></a>,"Socialization involves which expectations are placed on a person, perhaps, but crucially, it also involves which expectations a person internalizes and applies to themselves." In addition to expectations placed, it also involves allowances and privileges given. For example, those "socialized male" would be afforded the privilege of sexual freedom but also sexual coercion. Those "socialized female" would inherit the societal expectations of chastity and the repercussions that come with not adhering to it.</sup>
+			<sup id="socialized-male">1. "Socialized male" and "socialized female" in this context refer to people who may not identify with the gender associated with the sex assigned to them at birth, but have gone through the process of socialization for that gender. Devon Price writes in <a href="https://medium.com/@devonprice/gender-socialization-is-real-complex-348f56146925"><i>Gender Socialization is Real (Complex)</i></a>,"Socialization involves which expectations are placed on a person, perhaps, but crucially, it also involves which expectations a person internalizes and applies to themselves." In addition to expectations placed, it also involves allowances and privileges given. For example, those "socialized male" would be afforded the privilege of sexual freedom but also sexual coercion. Those "socialized female" would inherit the societal expectations of chastity and the repercussions that come with not adhering to it.</sup>
 		</div>
 </template>
 <style lang="scss">

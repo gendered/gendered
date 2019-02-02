@@ -1,13 +1,14 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import VueHead from 'vue-head';
 
 const Home = () => import('./components/Home/Home.vue');
 const About = () => import('./components/About');
-const Contribute = () => import('./components/Contribute');
 const WordContainer = () => import('./components/WordContainer');
 const NotFound = () => import('./components/NotFound');
 
 Vue.use(Router);
+Vue.use(VueHead)
 
 export default new Router({
   mode: 'history',
@@ -15,24 +16,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
-			meta: {
-	      title: 'The Gendered Project - Home',
-	      metaTags: [
-					{
-						name: 'viewport',
-						content: 'width=device-width, initial-scale=1'
-					},
-	        {
-	          name: 'description',
-	          content: 'A library of gendered words.'
-	        },
-	        {
-	          property: 'og:description',
-	          content: 'A library of gendered words.'
-	        }
-	      ]
-	    },
+			component: Home,
       children: [
         {
           path: '/words/:word',

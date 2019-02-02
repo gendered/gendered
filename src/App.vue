@@ -1,12 +1,12 @@
 <template>
   <div id="app" v-on:click='closeModal'>
-  	<header>
+  	<nav>
 	    <section class="logo">
 	   		<h1><router-link to="/">The Gendered Project</router-link></h1>
 	     	<span>A library of gendered words </span>
 	    </section>
 		<router-link to="/about">About</router-link>
-	</header>
+	</nav>
 	<!-- when we're on home it's home, it's the view of whatever page we're on -->
 	<router-view></router-view>
 </div>

@@ -1,10 +1,35 @@
-import Main from '@/components/Main'
-import Footer from '@/components/Footer'
+import Main from '@/components/Main';
+import Footer from '@/components/Footer';
+import SearchFilter from '@/components/SearchFilter';
 const API = 'https://gendered-api.glitch.me/api/words';
-import SearchFilter from '@/components/SearchFilter'
 
 export default {
   name: 'Home',
+  head: {
+    title: {
+      inner: 'The Gendered Project - Home'
+    },
+    meta: [
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1'
+        },
+        {
+          name: 'description',
+          content: 'A library of gendered words.'
+        },
+        {
+          property: 'og:description',
+          content: 'A library of gendered words.'
+        }
+    ],
+    link: [
+      {
+        rel: 'preconnect',
+        href:'https://gendered-api.glitch.me'
+      }
+    ]
+  },
   components: {
     Main,
     Footer,
@@ -35,7 +60,6 @@ export default {
 			const length = filtered.length;
 			for (let i = 0; i < length; i++) {
 				const item = filtered[i];
-				const letter = item['letter'];
         const words = item['words'];
         words.filter(entry => {
 					if (!len) {

@@ -1,19 +1,17 @@
 <template>
-  <div class="word-list-container">
-    <li class="word-list">
-      <div class="letter">
-        <span>{{letter}}</span>
-        <!-- each letter should get individual id   -->
-        <button class="toggle" v-on:click="toggleDisplay">+</button>
-        <button class="visuallyhidden" v-on:click="skipLetterList">Skip</button>
-      </div>
-      <ul class="words">
-        <li v-for="(word, index) in list" v-if="index < displayCount || !preview">
-          <router-link :to="{name: 'word', params: {word: word.word}}" :class="`word ${word.state} ${word.gender} can-open-modal`">{{word.word}}</router-link>
-        </li>
-      </ul>
-    </li>
-  </div>
+  <li class="word-list" v-if="list.length > 0">
+    <div class="letter">
+      <span>{{letter}}</span>
+      <!-- each letter should get individual id   -->
+      <button class="toggle" v-on:click="toggleDisplay">+</button>
+      <button class="visuallyhidden" v-on:click="skipLetterList">Skip</button>
+    </div>
+    <ul class="words">
+      <li v-for="(word, index) in list" :key="index" v-if="index < displayCount || !preview">
+        <router-link :to="{name: 'word', params: {word: word.word}}" :class="`word ${word.state} ${word.gender} can-open-modal`">{{word.word}}</router-link>
+      </li>
+    </ul>
+  </li>
 </template>
 <style lang="scss" scoped>
 	@import '../mixins.scss';
@@ -126,7 +124,7 @@ export default {
     },
 		skipLetterList(e) {
 			let el = e.target;
-			let container = el.closest(".word-list-container");
+			let container = el.closest(".word-list");
 			let nextToggle = container.nextSibling.querySelector('.toggle')
 			if (nextToggle) nextToggle.focus();
 		},

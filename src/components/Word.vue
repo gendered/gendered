@@ -3,12 +3,12 @@
     <h2 class="word">{{ entry.word }}</h2>
     <p>{{ entry.definition }}</p>
     <ul class="word-set">
-      <li v-for="syn in entry.syns" v-if="syn != entry.word">
+      <li v-for="syn in entry.syns" :key="syn" v-if="syn != entry.word">
         <router-link :to="{name: 'word', params: {word: syn}}">{{syn}}</router-link>
       </li>
     </ul>
     <ul class="tag-list">
-      <li v-for="tag in entry.tags">{{tag}}</li>
+      <li v-for="tag in entry.tags" :key="tag">{{tag}}</li>
     </ul>
   </section>
 </template>

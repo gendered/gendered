@@ -1,6 +1,6 @@
 <template>
   <ul class="filter-list" v-if="options && options.length">
-     <li class="filter" v-for="option in options">
+     <li class="filter" :key="option.type" v-for="option in options">
         <input v-bind:class="{ active: option.active }" type="submit" @click="clicked(option)" :value="option.type" />
      </li>
    </ul>

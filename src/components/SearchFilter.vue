@@ -1,5 +1,5 @@
 <template>
-  <input role="search" aria-label="Search for word" @input="updateSearchFilter()" ref="search" type="text" name="textfield" placeholder="Search for words..">
+  <input aria-label="Search for word" @input="updateSearchFilter()" ref="search" type="text" name="textfield" placeholder="Search for words..">
 </template>
 
 <script>

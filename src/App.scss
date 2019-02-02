@@ -119,7 +119,7 @@ input.active, input:not([type='text']):hover {
   @include active-filter;
 }
 
-header {
+nav {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   margin: 2.56rem;
