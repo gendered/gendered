@@ -11,33 +11,31 @@ Vue.use(Router);
 Vue.use(VueHead)
 
 export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'home',
+	mode: 'history',
+	routes: [
+		{
+			path: '/',
+			name: 'home',
 			component: Home,
-      children: [
-        {
-          path: '/words/:word',
-          name: 'word',
-          component: WordContainer,
-          props: true
-        }
-      ]
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: About,
-    },
+			children: [{
+				path: '/words/:word',
+				name: 'word',
+				component: WordContainer,
+				props: true
+			}]
+		},
+		{
+			path: '/about',
+			name: 'about',
+			component: About,
+		},
 		{
 			path: '/404',
 			component: NotFound,
 		},
-  	{
+		{
 			path: '*',
 			redirect: '/404',
 		},
-  ],
+	],
 });

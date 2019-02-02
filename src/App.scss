@@ -2,9 +2,9 @@
 @import './mixins.scss';
 
 @font-face {
-  font-family: "Acumin";
+	font-family: "Acumin";
 	font-display: auto;
-  src:	url('assets/fonts/AcuminPro-Regular.eot'),
+	src:	url('assets/fonts/AcuminPro-Regular.eot'),
 				url("assets/fonts/AcuminPro-Regular.otf") format("ttf"),
 				url("assets/fonts/AcuminPro-Regular.woff") format("woff"),
 				url("assets/fonts/AcuminPro-Regular.woff2") format("woff2"),
@@ -13,72 +13,72 @@
 }
 
 @font-face {
-  font-family: 'Romana Std Bold';
-  font-display: auto;
-  src: url('assets/fonts/RomanaBold.eot');
-  src: url('assets/fonts/RomanaBold.eot?#iefix')
-    format('embedded-opentype'),
-    url('assets/fonts/RomanaBold.woff2')
-    format('woff2'),url('assets/fonts/RomanaBold.woff')
-    format('woff'),url('assets/fonts/RomanaBold.ttf')
-    format('truetype');
+	font-family: 'Romana Std Bold';
+	font-display: auto;
+	src: url('assets/fonts/RomanaBold.eot');
+	src: url('assets/fonts/RomanaBold.eot?#iefix')
+		format('embedded-opentype'),
+		url('assets/fonts/RomanaBold.woff2')
+		format('woff2'),url('assets/fonts/RomanaBold.woff')
+		format('woff'),url('assets/fonts/RomanaBold.ttf')
+		format('truetype');
 }
 
 @font-face {
-  font-family: 'RomanaBTWXX-Roman';
-  font-display: auto;
-  src: url('assets/fonts/RomanaReg.eot');
-  src: url('assets/fonts/RomanaReg.eot?#iefix')
-    format('embedded-opentype'),
-    url('assets/fonts/RomanaReg.woff2')
-    format('woff2'),url('assets/fonts/RomanaReg.woff')
-    format('woff'),url('assets/fonts/RomanaReg.ttf')
-    format('truetype');
+	font-family: 'RomanaBTWXX-Roman';
+	font-display: auto;
+	src: url('assets/fonts/RomanaReg.eot');
+	src: url('assets/fonts/RomanaReg.eot?#iefix')
+		format('embedded-opentype'),
+		url('assets/fonts/RomanaReg.woff2')
+		format('woff2'),url('assets/fonts/RomanaReg.woff')
+		format('woff'),url('assets/fonts/RomanaReg.ttf')
+		format('truetype');
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  font-family: "Acumin", sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: "Acumin", sans-serif;
 }
 
 h1, h2, h3 {
-  margin: 0.67em 0;
-  letter-spacing: -0.0425em;
-  line-height: 1em;
+	margin: 0.67em 0;
+	letter-spacing: -0.0425em;
+	line-height: 1em;
 }
 
 h1 {
-  font-size: 4.096rem;
+	font-size: 4.096rem;
 	font-family: 'Romana Std Bold', Georgia, Times, "Times New Roman", serif;
 }
 
 h2 {
-  font-size: 2.56rem;
+	font-size: 2.56rem;
 	font-family: 'Romana Std Bold', Georgia, Times, "Times New Roman", serif;
 }
 
 h3 {
-  font-size: 1.6rem;
+	font-size: 1.6rem;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 p, li {
-  font-size: 1rem;
-  line-height: 1.6em;
+	font-size: 1rem;
+	line-height: 1.6em;
 }
 
 p {
-  max-width: 32em;
+	max-width: 32em;
 }
 
 a {
-  text-decoration: none;
-  color: black;
-  /*line-height: 0;*/
+	text-decoration: none;
+	color: black;
+	/*line-height: 0;*/
 	&:hover {
 		cursor: pointer;
 		font-weight: bold;
@@ -86,8 +86,8 @@ a {
 }
 
 button {
-  border: 0;
-  width: fit-content;
+	border: 0;
+	width: fit-content;
 
 	&:hover {
 		cursor: pointer;
@@ -99,67 +99,67 @@ button, input {
 }
 
 input {
-  border-radius: 0;
-  font-size: 1rem;
-  border: 1px solid black;
-  box-shadow: 2px 3px 0px black;
-  padding: 0.5rem 1rem;
+	border-radius: 0;
+	font-size: 1rem;
+	border: 1px solid black;
+	box-shadow: 2px 3px 0px black;
+	padding: 0.5rem 1rem;
 }
 
 input:not([type='text']) {
-  transition: all 0.1s;
+	transition: all 0.1s;
 }
 
 @mixin active-filter {
-  color: white;
-  background-color: black;
+	color: white;
+	background-color: black;
 }
 
 input.active, input:not([type='text']):hover {
-  @include active-filter;
+	@include active-filter;
 }
 
 nav {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  margin: 2.56rem;
-  margin-bottom: 4.096rem;
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	margin: 2.56rem;
+	margin-bottom: 4.096rem;
 
-  .logo {
-    font-weight: bold;
-    grid-column-start: 2;
-    grid-column-end: 8;
-    padding: 0;
+	.logo {
+		font-weight: bold;
+		grid-column-start: 2;
+		grid-column-end: 8;
+		padding: 0;
 
-    h1 {
-      margin: 0;
-    }
+		h1 {
+			margin: 0;
+		}
 
-    span {
-      font-weight: 400;
-      // font-size: 0.8125rem;
-      font-size: 1rem;
-    }
-  }
+		span {
+			font-weight: 400;
+			// font-size: 0.8125rem;
+			font-size: 1rem;
+		}
+	}
 
-  .btn {
-    padding: 0;
-    margin: 0;
-    grid-column-start: 11;
-    grid-column-end: 13;
-  }
+	.btn {
+		padding: 0;
+		margin: 0;
+		grid-column-start: 11;
+		grid-column-end: 13;
+	}
 }
 
 .logo {
-  width: fit-content;
+	width: fit-content;
 
-  a:first-child {
-    display: block;
-  }
+	a:first-child {
+		display: block;
+	}
 
-  span {
-    font-size: .6em;
-  }
+	span {
+		font-size: .6em;
+	}
 }
 
 .home, .about {

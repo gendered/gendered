@@ -1,25 +1,29 @@
-aside {
-  position: fixed;
-  bottom: 2.56rem;
-  margin: 0 auto;
+form {
+	position: fixed;
+	bottom: 2.56rem;
+	margin: 0 auto;
 
-  .search {
-    display: none;
-    padding: 0;
-    margin: 0 auto;
-    border: 1px solid black;
-    box-shadow: none;
-    line-height: 1.5rem;
-  }
-  .search:hover {
-    cursor: pointer;
-  }
-  .search:focus {
-    color: black;
-    outline: none;
-  }
-  .random {
-    grid-column-start: 12;
-    grid-column-end: 13;
-  }
+	.search {
+		// display: none;
+		padding: 0;
+		margin: 0 auto;
+		border: 1px solid black;
+		box-shadow: none;
+		line-height: 1.5rem;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:focus {
+			color: black;
+			outline: none;
+		}
+	}
+
+	.random {
+		grid-column-start: 12;
+		grid-column-end: 13;
+	}
+
 }

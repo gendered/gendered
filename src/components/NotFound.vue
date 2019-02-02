@@ -1,3 +1,3 @@
 <template>
-	<p>That page does not exist.</p>
+  <p>That page does not exist.</p>
 </template>
