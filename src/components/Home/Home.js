@@ -1,10 +1,10 @@
-import Main from "@/components/Main";
-import Footer from "@/components/Footer";
+import WordListContainer from "@/components/WordListContainer";
+import OptionsContainer from "@/components/OptionsContainer";
 import SearchFilter from "@/components/SearchFilter";
 const API = "https://gendered-api.glitch.me/api/words";
 
 export default {
-	name: "Home",
+	name: "HomePage",
 	head: {
 		title: {
 			inner: "The Gendered Project - Home"
@@ -31,8 +31,8 @@ export default {
 		]
 	},
 	components: {
-		Main,
-		Footer,
+		WordListContainer,
+		OptionsContainer,
 		SearchFilter
 	},
 	data() {

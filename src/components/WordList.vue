@@ -11,10 +11,10 @@
 			</button>
 		</div>
 		<ul class="words">
-			<li v-for="(word, index) in wordsToDisplay" :key="index">
+			<li class="word" v-for="(word, index) in wordsToDisplay" :key="index">
 				<router-link
 					:to="{ name: 'word', params: { word: word.word } }"
-					:class="`word ${word.state} ${word.gender} can-open-modal`"
+					:class="`word-link ${word.state} ${word.gender} can-open-modal`"
 				>
 					{{ word.word }}
 				</router-link>
@@ -40,6 +40,7 @@
 	text-align: right;
 	margin-top: 0;
 	line-height: 0.85em;
+	height: fit-content;
 	font-family: "Romana Std Bold", Arial, sans-serif;
 	position: -webkit-sticky;
 	position: sticky;
@@ -69,25 +70,25 @@
 	margin: 0;
 	grid-column: 2 / 6;
 
+	.word {
+		margin: 0;
+		margin-right: 0.625rem;
+		line-height: 1.6em;
+		display: inline-block;
+
+		.word-link {
+			padding: 0.625rem;
+			font-size: 1rem;
+			font-weight: 400;
+		}
+	}
+
 	@include break(small) {
 		// grid-template-columns: repeat(4, 1fr);
 	}
 
 	@include break(medium) {
 		// grid-template-columns: repeat(6, 1fr);
-	}
-
-	li {
-		margin: 0;
-		margin-right: 0.625rem;
-		line-height: 1.6em;
-		display: inline-block;
-
-		a {
-			padding: 0.625rem;
-			font-size: 1rem;
-			font-weight: 400;
-		}
 	}
 }
 
@@ -122,10 +123,6 @@ export default {
 			type: String,
 			required: true
 		},
-		showPreview: {
-			type: Boolean,
-			required: true
-		},
 		list: {
 			required: true,
 			validator(value) {
@@ -144,7 +141,8 @@ export default {
 	},
 	data() {
 		return {
-			displayCount: 24
+			displayCount: 24,
+			showPreview: true
 		};
 	},
 	methods: {

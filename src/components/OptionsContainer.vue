@@ -1,15 +1,15 @@
 <template>
-	<footer>
+	<div class="options">
 		<FilterPanel :options="gender" @filter="handleFilter" />
 		<button @click="$emit('scrollToTop')">
 			Scroll to top
 		</button>
-	</footer>
+	</div>
 </template>
 <script>
 import FilterPanel from "@/components/FilterPanel";
 export default {
-	name: "Footer",
+	name: "OptionsContainer",
 	components: {
 		FilterPanel
 	},
@@ -38,8 +38,8 @@ export default {
 	}
 };
 </script>
-<style lang="scss">
-footer {
+<style lang="scss" scoped>
+.options {
 	position: fixed;
 	bottom: 0;
 	background: white;

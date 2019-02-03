@@ -2,8 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 import VueHead from "vue-head";
 
-const Home = () => import("./components/Home/Home.vue");
-const About = () => import("./components/About");
+const Home = () => import("./components/Home/HomePage.vue");
+const About = () => import("./components/AboutPage");
 const WordContainer = () => import("./components/WordContainer");
 const NotFound = () => import("./components/NotFound");
 

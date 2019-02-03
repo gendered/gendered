@@ -17,7 +17,7 @@ export default {
 	props: {
 		options: {
 			type: Array,
-			default: []
+			default: () => []
 		}
 	},
 	data() {
@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .filter-list {
 	padding: 0;
 	margin: 0;

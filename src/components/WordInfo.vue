@@ -5,7 +5,7 @@
 		</h2>
 		<p>{{ entry.definition }}</p>
 		<ul class="word-set">
-			<li v-for="syn in entry.syns" v-if="syn != entry.word" :key="syn">
+			<li v-for="syn in entry.syns" :key="syn">
 				<router-link :to="{ name: 'word', params: { word: syn } }">
 					{{ syn }}
 				</router-link>
@@ -30,12 +30,18 @@
 </style>
 <script>
 export default {
-	name: "Word",
+	name: "WordInfo",
 	props: {
 		entry: {
 			type: Object,
-			default: {}
+			default: () => {}
 		}
+	},
+	created() {
+		let entry = this.entry;
+		let word = entry["word"];
+		let syns = entry["syns"];
+		this.entry.syns = syns.filter(syn => syn !== word);
 	}
 };
 </script>

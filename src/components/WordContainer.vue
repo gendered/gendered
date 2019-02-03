@@ -7,15 +7,15 @@
 			X
 		</router-link>
 		<div class="w-80 w-60-ns center word-set-container">
-			<Word v-if="entry" :entry="entry" />
-			<Word v-if="equivalent" :entry="equivalent" />
+			<WordInfo v-if="entry" :entry="entry" />
+			<WordInfo v-if="equivalent" :entry="equivalent" />
 		</div>
 		<router-link :to="{ name: 'about' }">
 			?
 		</router-link>
 	</div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .word-set-container {
 	grid-gap: 2rem;
 	width: 100%;
@@ -24,12 +24,12 @@
 
 <script>
 const API = "https://gendered-api.glitch.me/api/words";
-import Word from "@/components/Word";
+import WordInfo from "@/components/WordInfo";
 
 export default {
 	name: "WordContainer",
 	components: {
-		Word
+		WordInfo
 	},
 	props: {
 		word: {

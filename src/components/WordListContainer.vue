@@ -6,8 +6,7 @@
 				v-for="value in words"
 				:list="value.words"
 				:letter="value.letter"
-				:showPreview="showPreview"
-				@preview="turnOnPreview"
+				:key="value.letter"
 			/>
 		</ul>
 		<div>
@@ -62,24 +61,14 @@ main {
 import WordList from "@/components/WordList";
 
 export default {
-	name: "Main",
+	name: "WordListContainer",
 	components: {
 		WordList
-	},
-	data() {
-		return {
-			showPreview: true
-		};
 	},
 	props: {
 		words: {
 			type: Array,
-			default: []
-		}
-	},
-	methods: {
-		turnOnPreview() {
-			this.showPreview = true;
+			default: () => []
 		}
 	}
 };

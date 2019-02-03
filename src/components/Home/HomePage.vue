@@ -7,9 +7,9 @@
 		<!-- list of words for each letter -->
 		<!-- contains 26 WordList components -->
 		<keep-alive :include="['WordList']">
-			<Main :words="filteredWords" />
+			<WordListContainer :words="filteredWords" />
 		</keep-alive>
-		<Footer @scrollToTop="scrollToTop" @filter="handleFilter" />
+		<OptionsContainer @scrollToTop="scrollToTop" @filter="handleFilter" />
 	</div>
 </template>
 
