@@ -1,15 +1,22 @@
 <template>
 	<div class="home">
-		<form role="search">
-			<SearchFilter class="search" @input="updateSearchText" />
-			<!-- <input class="random can-open-modal" type="button" v-on:click="getRandom" value="Get Random Word" /> -->
-		</form>
 		<!-- list of words for each letter -->
 		<!-- contains 26 WordList components -->
 		<keep-alive :include="['WordList']">
 			<WordListContainer :words="filteredWords" />
 		</keep-alive>
-		<OptionsContainer @scrollToTop="scrollToTop" @filter="handleFilter" />
+		<section class="controls">
+			<form role="search">
+				<SearchFilter class="search" @input="updateSearchText" />
+			</form>
+			<OptionsContainer
+				@scrollToTop="scrollToTop"
+				@filter="handleFilter"
+				@random="getRandomWord"
+				:isActive="optionsIsActive"
+			/>
+			<button @click="showOptions">*</button>
+		</section>
 	</div>
 </template>
 

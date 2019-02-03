@@ -95,17 +95,15 @@ a {
 button {
 	border: 0;
 	width: fit-content;
+}
 
+button, input {
 	&:hover {
 		cursor: pointer;
 	}
 }
 
-button, input {
-	background: transparent;
-}
-
-input {
+.controls > button, input {
 	border-radius: 0;
 	font-size: 1rem;
 	border: 1px solid black;
@@ -147,13 +145,6 @@ nav {
 			// font-size: 0.8125rem;
 			font-size: 1rem;
 		}
-	}
-
-	.btn {
-		padding: 0;
-		margin: 0;
-		grid-column-start: 11;
-		grid-column-end: 13;
 	}
 }
 

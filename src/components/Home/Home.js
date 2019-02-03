@@ -40,7 +40,8 @@ export default {
 			activeFilters: [],
 			words: [],
 			count: 0,
-			searchText: ""
+			searchText: "",
+			optionsIsActive: false
 		};
 	},
 	created() {
@@ -86,6 +87,9 @@ export default {
 		}
 	},
 	methods: {
+		showOptions() {
+			this.optionsIsActive = !this.optionsIsActive;
+		},
 		updateSearchText(value) {
 			this.searchText = value;
 		},
@@ -128,14 +132,14 @@ export default {
 		removeFilter(idx) {
 			this.activeFilters.splice(idx, 1);
 		},
-		$_randomProperty: function(obj) {
-			var keys = Object.keys(obj);
-			return obj[keys[(keys.length * Math.random()) << 0]];
+		$_getRandom: function(count) {
+			return Math.floor(Math.random() * count);
 		},
-		getRandom() {
+		getRandomWord() {
 			let data = this.words;
-			let randomEntry = this.$_randomProperty(this.$_randomProperty(data));
-			let randomWord = randomEntry["word"];
+			let randomLetterList = data[this.$_getRandom(data.length)].words;
+			let randomWord =
+				randomLetterList[this.$_getRandom(randomLetterList.length)].word;
 			this.$router.push({ name: "word", params: { word: randomWord } });
 		},
 		scrollToTop() {

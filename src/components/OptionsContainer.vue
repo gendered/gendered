@@ -1,9 +1,15 @@
 <template>
-	<div class="options">
+	<div v-if="isActive" class="options">
 		<FilterPanel :options="gender" @filter="handleFilter" />
 		<button @click="$emit('scrollToTop')">
 			Scroll to top
 		</button>
+		<input
+			class="random can-open-modal"
+			type="button"
+			@click="getRandom"
+			value="Get Random Word"
+		/>
 	</div>
 </template>
 <script>
@@ -12,6 +18,12 @@ export default {
 	name: "OptionsContainer",
 	components: {
 		FilterPanel
+	},
+	props: {
+		isActive: {
+			type: Boolean,
+			required: true
+		}
 	},
 	data() {
 		return {
@@ -34,6 +46,9 @@ export default {
 			let len = this[option.category].length;
 			// If there are only two filters, it should be a toggle
 			this.$emit("filter", option, len == 2, options);
+		},
+		getRandom() {
+			this.$emit("random");
 		}
 	}
 };
@@ -41,10 +56,11 @@ export default {
 <style lang="scss" scoped>
 .options {
 	position: fixed;
-	bottom: 0;
+	bottom: 6rem;
+	right: 0;
 	background: white;
-	width: 100%;
-	border-top: 1px solid black;
+	border: 1px solid black;
 	display: flex;
+	padding: 4.096rem 2.56rem;
 }
 </style>
