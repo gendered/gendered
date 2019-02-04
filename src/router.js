@@ -1,59 +1,43 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import Vue from "vue";
+import Router from "vue-router";
+import VueHead from "vue-head";
 
-const Home = () => import('./components/Home/Home.vue');
-const About = () => import('./components/About');
-const Contribute = () => import('./components/Contribute');
-const WordContainer = () => import('./components/WordContainer');
-const NotFound = () => import('./components/NotFound');
+const Home = () => import("./components/Home/HomePage.vue");
+const About = () => import("./components/AboutPage");
+const WordContainer = () => import("./components/WordContainer");
+const NotFound = () => import("./components/NotFound");
 
 Vue.use(Router);
+Vue.use(VueHead);
 
 export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home,
-			meta: {
-	      title: 'The Gendered Project - Home',
-	      metaTags: [
-					{
-						name: 'viewport',
-						content: 'width=device-width, initial-scale=1'
-					},
-	        {
-	          name: 'description',
-	          content: 'A library of gendered words.'
-	        },
-	        {
-	          property: 'og:description',
-	          content: 'A library of gendered words.'
-	        }
-	      ]
-	    },
-      children: [
-        {
-          path: '/words/:word',
-          name: 'word',
-          component: WordContainer,
-          props: true
-        }
-      ]
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: About,
-    },
+	mode: "history",
+	routes: [
 		{
-			path: '/404',
-			component: NotFound,
+			path: "/",
+			name: "home",
+			component: Home,
+			children: [
+				{
+					path: "/words/:word",
+					name: "word",
+					component: WordContainer,
+					props: true
+				}
+			]
 		},
-  	{
-			path: '*',
-			redirect: '/404',
+		{
+			path: "/about",
+			name: "about",
+			component: About
 		},
-  ],
+		{
+			path: "/404",
+			component: NotFound
+		},
+		{
+			path: "*",
+			redirect: "/404"
+		}
+	]
 });

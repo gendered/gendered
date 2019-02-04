@@ -1,34 +1,44 @@
 <template>
-  <ul class="filter-list" v-if="options && options.length">
-     <li class="filter" v-for="option in options">
-        <input v-bind:class="{ active: option.active }" type="submit" @click="clicked(option)" :value="option.type" />
-     </li>
-   </ul>
+	<ul v-if="options && options.length" class="filter-list">
+		<li v-for="option in options" :key="option.type" class="filter">
+			<input
+				:class="{ active: option.active }"
+				type="submit"
+				:value="option.type"
+				@click="clicked(option)"
+			/>
+		</li>
+	</ul>
 </template>
 
 <script>
 export default {
-  name: 'FilterPanel',
-  props: ['options'],
-  data() {
-    return {
-      filterOn: true,
-    }
-  },
-  methods: {
-    clicked(option) {
-      if (this.filterOn) {
-        this.$emit('filter', option);
-      }
-    }
-  },
+	name: "FilterPanel",
+	props: {
+		options: {
+			type: Array,
+			default: () => []
+		}
+	},
+	data() {
+		return {
+			filterOn: true
+		};
+	},
+	methods: {
+		clicked(option) {
+			if (this.filterOn) {
+				this.$emit("filter", option, this.options);
+			}
+		}
+	}
 };
 </script>
 
-<style lang="scss">
-  .filter-list {
-    padding: 0;
-    margin: 0;
-    display: inline-flex;
-  }
+<style lang="scss" scoped>
+.filter-list {
+	padding: 0;
+	margin: 0;
+	display: inline-flex;
+}
 </style>

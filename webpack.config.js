@@ -1,31 +1,33 @@
-{
-    "mode": "development",
-    "entry": "src/main.js",
-    "output": {
-        "path": __dirname+'/public',
-        "filename": "[name].[chunkhash:8].js"
-    },
-    "module": {
-        "rules": [
-            {
-                "enforce": "pre",
-                "test": /\.(js|jsx)$/,
-                "exclude": /node_modules/,
-                "use": "eslint-loader"
-            },
-            {
-                "test": /\.vue$/,
-                "exclude": /node_modules/,
-                "use": "vue-loader"
-            },
-            {
-                "test": /\.scss$/,
-                "use": [
-                    "style-loader",
-                    "css-loader",
-                    "sass-loader"
-                ]
-            }
-        ]
-    }
-}
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
+
+module.exports = {
+	mode: "development",
+	entry: "src/main.js",
+	output: {
+		path: __dirname + "/public",
+		filename: "[name].[chunkhash:8].js"
+	},
+	module: {
+		rules: [
+			{
+				enforce: "pre",
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				loader: "babel-loader"
+			},
+			{
+				test: /\.vue$/,
+				exclude: /node_modules/,
+				use: "vue-loader"
+			},
+			{
+				test: /\.scss$/,
+				use: ["style-loader", "css-loader", "sass-loader"]
+			}
+		]
+	},
+	plugins: [
+		// make sure to include the plugin!
+		new VueLoaderPlugin()
+	]
+};

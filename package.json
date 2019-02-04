@@ -5,12 +5,15 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "dev": "run-p serve tlapse",
-    "tlapse": "tlapse localhost:3000"
+		"lint": "eslint --ext .js,.vue src test",
+		"lint-autofix": "eslint --ext .js,.vue src --fix",
+		"eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+		"dev": "run-p serve"
   },
   "dependencies": {
-    "vue": "^2.5.17",
+    "lodash": "^4.17.11",
+    "vue": "^2.5.22",
+    "vue-head": "^2.1.1",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
@@ -18,31 +21,31 @@
     "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
     "@vue/cli-service": "^3.0.0-beta.15",
     "babel-eslint": "^10.0.1",
-    "eslint": "^3.19.0",
+    "eslint": "^5.0.0",
     "eslint-config-loopback": "^8.0.0",
-    "eslint-plugin-vue": "^4.7.1",
+    "eslint-plugin-vue": "^5.1.0",
     "node-sass": "^4.9.4",
     "nodemon": "^1.17.5",
     "sass-loader": "^7.0.1",
-		"vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "webpack": "^4.29.0"
   },
-	"peerDependencies": {
-		"vue-template-compiler": "^2.5.21"
-	},
+  "peerDependencies": {
+    "vue-template-compiler": "^2.5.22"
+  },
   "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/recommended",
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
+		"root": true,
+		"env": {
+		 "node": true
+		},
+		"extends": [
+		 "plugin:vue/essential",
+		 "plugin:prettier/recommended",
+		 "eslint:recommended"
+		],
+		"parserOptions": {
+		 "parser": "babel-eslint"
+		}
   },
   "postcss": {
     "plugins": {

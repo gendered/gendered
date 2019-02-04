@@ -1,25 +1,21 @@
-aside {
-  position: fixed;
-  bottom: 2.56rem;
-  margin: 0 auto;
+.controls {
+	position: fixed;
+	bottom: 2.56rem;
+	right: 0;
+	width: 100%;
+	display: flex;
+}
 
-  .search {
-    display: none;
-    padding: 0;
-    margin: 0 auto;
-    border: 1px solid black;
-    box-shadow: none;
-    line-height: 1.5rem;
-  }
-  .search:hover {
-    cursor: pointer;
-  }
-  .search:focus {
-    color: black;
-    outline: none;
-  }
-  .random {
-    grid-column-start: 12;
-    grid-column-end: 13;
-  }
+form {
+	margin: 0 auto;
+
+	.search {
+		box-shadow: none;
+		line-height: 1.5rem;
+
+		&:focus {
+			color: black;
+			outline: none;
+		}
+	}
 }
