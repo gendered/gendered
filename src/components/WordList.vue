@@ -1,5 +1,11 @@
 <template>
-	<li v-if="list.length > 0" class="word-list">
+	<li
+		v-if="list.length > 0"
+		class="word-list"
+		tabindex="0"
+		ref="list"
+		@keydown="moveWithin"
+	>
 		<div class="letter">
 			<span>{{ letter }}</span>
 			<!-- each letter should get individual id   -->
@@ -7,11 +13,9 @@
 				class="toggle"
 				@click="toggleDisplay"
 				:aria-expanded="this.showPreview"
+				tabindex="-1"
 			>
 				+
-			</button>
-			<button class="visuallyhidden" @click="skipLetterList">
-				Skip
 			</button>
 		</div>
 		<ul class="words" ref="words">
@@ -27,6 +31,7 @@
 						params: { word: word.word, wordRef: $refs['word-' + index] }
 					}"
 					:class="`word-link ${word.state} ${word.gender} can-open-modal`"
+					tabindex="-1"
 				>
 					{{ word.word }}
 				</router-link>
@@ -113,21 +118,15 @@
 		background: red;
 	}
 }
-
-.visuallyhidden:not(:focus):not(:active) {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	white-space: nowrap;
-	clip-path: inset(100%);
-	clip: rect(0 0 0 0);
-	overflow: hidden;
-}
 </style>
 <script>
+const arrowKeys = {
+	ArrowUp: -1,
+	ArrowDown: 1,
+	ArrowLeft: -1,
+	ArrowRight: 1
+};
+
 export default {
 	name: "WordList",
 	props: {
@@ -164,11 +163,32 @@ export default {
 			el.textContent = this.showPreview ? "-" : "+";
 			this.showPreview = !this.showPreview;
 		},
-		skipLetterList(e) {
-			let el = e.target;
-			let container = el.closest(".word-list");
-			let nextToggle = container.nextSibling.querySelector(".toggle");
-			if (nextToggle) nextToggle.focus();
+		_getFocusableElements(el) {
+			const selectorArray = [
+				"a:not([disabled])",
+				"button:not([disabled])",
+				"input:not([disabled])",
+				"select:not([disabled])",
+				"[tabindex]:not([disabled])"
+			].join();
+			return el.querySelectorAll(selectorArray);
+		},
+		moveWithin(e) {
+			const key = e.key;
+			const keys = Object.keys(arrowKeys);
+			let content = [].slice.call(this._getFocusableElements(this.$refs.list));
+			if (keys.indexOf(key) > -1) {
+				// Only listen to arrow arrowKeys
+				e.preventDefault();
+				const { activeElement } = document;
+				let direction = arrowKeys[key];
+				let indexOfActive = content.indexOf(activeElement);
+				indexOfActive =
+					indexOfActive === -1 && direction === -1 ? 0 : indexOfActive;
+				let curIndex =
+					(indexOfActive + direction + content.length) % content.length;
+				content[curIndex].focus();
+			}
 		}
 	}
 };

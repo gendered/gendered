@@ -1,6 +1,6 @@
 <template>
 	<main class="container">
-		<ul class="letter-list">
+		<ul class="letter-list" aria-describedby="instructions">
 			<!-- want to give .letter-list grid layout 12 columns  -->
 			<WordList
 				v-for="value in words"
@@ -48,12 +48,6 @@ main {
 
 	@include break(medium) {
 		width: 62.5%;
-	}
-
-	button {
-		position: fixed;
-		bottom: 1.6rem;
-		font-size: 1rem;
 	}
 }
 </style>

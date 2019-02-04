@@ -15,6 +15,7 @@ Vue.directive("currentPage", {
 	// When the bound element is inserted into the DOM...
 	update: function(nav) {
 		setTimeout(() => {
+			if (!nav) return;
 			let current = nav.querySelector("[aria-label='current page']");
 			if (current) {
 				current.removeAttribute("aria-label");
