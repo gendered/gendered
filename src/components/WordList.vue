@@ -3,7 +3,11 @@
 		<div class="letter">
 			<span>{{ letter }}</span>
 			<!-- each letter should get individual id   -->
-			<button class="toggle" @click="toggleDisplay">
+			<button
+				class="toggle"
+				@click="toggleDisplay"
+				:aria-expanded="this.showPreview"
+			>
 				+
 			</button>
 			<button class="visuallyhidden" @click="skipLetterList">

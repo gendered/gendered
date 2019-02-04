@@ -44,6 +44,7 @@ export default {
 			optionsIsActive: false
 		};
 	},
+	mounted() {},
 	created() {
 		fetch(`${API}/letter/AZ`)
 			.then(res => res.json())

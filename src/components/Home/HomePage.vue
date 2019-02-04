@@ -15,7 +15,7 @@
 				@random="getRandomWord"
 				:isActive="optionsIsActive"
 			/>
-			<button @click="showOptions">*</button>
+			<button @click="showOptions" :aria-expanded="optionsIsActive">*</button>
 		</section>
 	</div>
 </template>

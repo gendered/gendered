@@ -1,6 +1,6 @@
 <template>
 	<div id="app" @click="closeModal">
-		<nav>
+		<nav v-current-page>
 			<section class="logo">
 				<h1>
 					<router-link to="/">
