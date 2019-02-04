@@ -1,5 +1,12 @@
 <template>
-	<div class="modal">
+	<div
+		class="modal"
+		ref="modal"
+		v-focus
+		tabindex="-1"
+		@focusout="closeModal"
+		@keydown.esc="closeModal"
+	>
 		<!-- <div v-if="invalidWord">
 		Word not in dictionary
 	</div> -->
@@ -35,16 +42,53 @@ export default {
 		word: {
 			type: String,
 			required: true
+		},
+		wordRef: {
+			type: String,
+			default: ""
+		},
+		index: {
+			type: Number,
+			default: -1
+		}
+	},
+	computed: {
+		// Compute element to re-focus when modal loses focus
+		elementToFocus() {
+			let wordRef = this.wordRef;
+			if (wordRef && wordRef[0]) {
+				return wordRef[0].querySelector(".word-link");
+			} else {
+				const letter = this.entry.word.charAt(0).toUpperCase();
+				let xpath = this._getXPath("span", letter);
+				const letterEl = document.evaluate(
+					xpath,
+					document,
+					null,
+					XPathResult.FIRST_ORDERED_NODE_TYPE,
+					null
+				).singleNodeValue;
+				const wordList = letterEl.parentElement.nextElementSibling;
+				xpath = this._getXPath("a", this.entry.word.toLowerCase());
+				return document.evaluate(
+					xpath,
+					wordList,
+					null,
+					XPathResult.FIRST_ORDERED_NODE_TYPE,
+					null
+				).singleNodeValue;
+			}
 		}
 	},
 	data() {
 		return {
-			entry: null,
-			equivalent: null
+			entry: {},
+			equivalent: {}
 		};
 	},
 	created() {
 		const currentWord = this.$route.params.word;
+		this.entry.word = currentWord;
 		let setData = function(res) {
 			if (res.word) {
 				this.entry = res;
@@ -62,6 +106,9 @@ export default {
 		this.getWord(currentWord, setData);
 	},
 	methods: {
+		_getXPath(el, txt) {
+			return `//${el}[normalize-space()="${txt}"]`;
+		},
 		getWord(word, callback) {
 			let url = `${API}/${word}`;
 			fetch(url)
@@ -71,6 +118,19 @@ export default {
 						callback(res);
 					} else return res;
 				});
+		},
+		closeModal(e) {
+			let refs = this.$refs;
+			let parent = refs.modal;
+			let relatedTarget = e.relatedTarget;
+			if (
+				relatedTarget &&
+				(parent === relatedTarget || parent.contains(relatedTarget))
+			) {
+				return;
+			}
+			if (this.elementToFocus) this.elementToFocus.focus();
+			this.$router.push({ name: "home" });
 		}
 	}
 };

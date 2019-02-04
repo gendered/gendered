@@ -41,6 +41,7 @@ export default {
 		let entry = this.entry;
 		let word = entry["word"];
 		let syns = entry["syns"];
+		if (!syns) return;
 		this.entry.syns = syns.filter(syn => syn !== word);
 	}
 };

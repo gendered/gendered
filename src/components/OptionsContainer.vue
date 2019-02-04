@@ -1,5 +1,5 @@
 <template>
-	<div v-if="isActive" class="options">
+	<div v-if="isActive" class="options" v-focus tabindex="-1">
 		<FilterPanel :options="gender" @filter="handleFilter" />
 		<button @click="$emit('scrollToTop')">
 			Scroll to top

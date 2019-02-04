@@ -10,10 +10,18 @@
 				Skip
 			</button>
 		</div>
-		<ul class="words">
-			<li class="word" v-for="(word, index) in wordsToDisplay" :key="index">
+		<ul class="words" ref="words">
+			<li
+				class="word"
+				:ref="'word-' + index"
+				v-for="(word, index) in wordsToDisplay"
+				:key="index"
+			>
 				<router-link
-					:to="{ name: 'word', params: { word: word.word } }"
+					:to="{
+						name: 'word',
+						params: { word: word.word, wordRef: $refs['word-' + index] }
+					}"
 					:class="`word-link ${word.state} ${word.gender} can-open-modal`"
 				>
 					{{ word.word }}
