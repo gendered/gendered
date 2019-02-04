@@ -1,4 +1,5 @@
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 module.exports = {
 	mode: "development",
@@ -28,6 +29,7 @@ module.exports = {
 	},
 	plugins: [
 		// make sure to include the plugin!
-		new VueLoaderPlugin()
+		new VueLoaderPlugin(),
+		new PreloadWebpackPlugin()
 	]
 };
