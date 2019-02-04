@@ -13,12 +13,19 @@
 				<SearchFilter class="search" @input="updateSearchText" />
 			</form>
 			<OptionsContainer
-				@scrollToTop="scrollToTop"
+				@close="closeOptions"
 				@filter="handleFilter"
 				@random="getRandomWord"
+				@scrollToTop="scrollToTop"
 				:isActive="optionsIsActive"
 			/>
-			<button @click="showOptions" :aria-expanded="optionsIsActive">*</button>
+			<button
+				@click="toggleOptions"
+				@keyup.esc="closeOptions"
+				:aria-expanded="optionsIsActive"
+			>
+				*
+			</button>
 		</section>
 	</div>
 </template>

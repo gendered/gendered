@@ -1,5 +1,6 @@
 <template>
 	<div id="app" @click="closeModal">
+		<button @click="skipNav" class="visuallyhidden">Skip navigation</button>
 		<nav v-current-page>
 			<section class="logo">
 				<h1>
@@ -28,6 +29,12 @@ export default {
 			if (params.word && !target.classList.contains("can-open-modal")) {
 				router.push({ name: "home" });
 			}
+		},
+		skipNav() {
+			const list = document.querySelector(".word-list");
+			setTimeout(() => {
+				list.focus();
+			}, 200);
 		}
 	}
 };

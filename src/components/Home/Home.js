@@ -88,8 +88,11 @@ export default {
 		}
 	},
 	methods: {
-		showOptions() {
+		toggleOptions() {
 			this.optionsIsActive = !this.optionsIsActive;
+		},
+		closeOptions() {
+			if (this.optionsIsActive) this.toggleOptions();
 		},
 		updateSearchText(value) {
 			this.searchText = value;

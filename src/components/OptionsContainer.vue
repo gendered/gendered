@@ -1,5 +1,11 @@
 <template>
-	<div v-if="isActive" class="options" v-focus tabindex="-1">
+	<div
+		@keyup.esc="closeOptions"
+		v-if="isActive"
+		class="options"
+		v-focus
+		tabindex="-1"
+	>
 		<FilterPanel :options="gender" @filter="handleFilter" />
 		<button @click="$emit('scrollToTop')">
 			Scroll to top
@@ -49,6 +55,9 @@ export default {
 		},
 		getRandom() {
 			this.$emit("random");
+		},
+		closeOptions() {
+			this.$emit("close");
 		}
 	}
 };
