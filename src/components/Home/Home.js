@@ -1,6 +1,7 @@
 import WordListContainer from "@/components/WordListContainer";
 import OptionsContainer from "@/components/OptionsContainer";
 import SearchFilter from "@/components/SearchFilter";
+
 const API = "https://gendered-api.glitch.me/api/words";
 
 export default {
@@ -28,7 +29,14 @@ export default {
 				rel: "preconnect",
 				href: "https://gendered-api.glitch.me"
 			}
-		]
+		],
+		script: [
+			{
+				type: "text/javascript",
+				src: "https://unpkg.com/focus-visible@4.1.5/dist/focus-visible.js",
+				async: true
+			}
+	 	],
 	},
 	components: {
 		WordListContainer,

@@ -15,14 +15,15 @@ Vue.directive("currentPage", {
 	// When the bound element is inserted into the DOM...
 	update: function(nav) {
 		setTimeout(() => {
-			if (!nav) return;
-			let current = nav.querySelector("[aria-label='current page']");
-			if (current) {
-				current.removeAttribute("aria-label");
+			if (nav) {
+				let current = nav.querySelector("[aria-label='current page']");
+				if (current) {
+					current.removeAttribute("aria-label");
+				}
+				nav
+					.querySelector(".router-link-exact-active")
+					.setAttribute("aria-label", "current page");
 			}
-			nav
-				.querySelector(".router-link-exact-active")
-				.setAttribute("aria-label", "current page");
 		}, 200);
 	}
 });
