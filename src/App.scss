@@ -81,7 +81,7 @@ p, sup {
 	max-width: 32em;
 }
 
-.home {
+.home > .container {
 	margin: 0 2.56rem;
 	column-count: 2;
 
@@ -153,14 +153,6 @@ nav {
 	@include break(small) {
 		margin: 1.6rem;
 		grid-template-columns: repeat(3, 1fr);
-	}
-
-	.home, .about {
-		margin: 0 2.56rem;
-
-		@include break(small) {
-			margin: 0 1.6rem;
-		}
 	}
 
 	.about {
