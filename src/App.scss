@@ -179,6 +179,7 @@ nav {
 	}
 
 	.about {
+<<<<<<< HEAD
 		grid-column-start: 10;
 		margin-top: 1.46rem;
 		font-size: 2.197rem;
@@ -193,6 +194,10 @@ nav {
 			font-size: 1.6rem;
 			margin-top: 1.6rem;
 		}
+=======
+		font-family: "RomanaBTWXX-Roman";
+		grid-column-start: 10;
+>>>>>>> Fixing aria-label on current page
 
 		a {
 			text-decoration: none;
