@@ -50,6 +50,13 @@
 	-webkit-column-break-inside: avoid;
 	page-break-inside: avoid;
 	break-inside: avoid;
+
+
+	@include break(small) {
+	  display: flex;
+		flex-direction: column;
+    align-items: flex-start;
+	}
 }
 
 .letter {
@@ -62,6 +69,7 @@
 	position: -webkit-sticky;
 	position: sticky;
 	top: 1.6rem;
+	background: white;
 }
 
 .toggle {
@@ -101,14 +109,6 @@
 			font-weight: 400;
 		}
 	}
-
-	@include break(small) {
-		// grid-template-columns: repeat(4, 1fr);
-	}
-
-	@include break(medium) {
-		// grid-template-columns: repeat(6, 1fr);
-	}
 }
 
 .highlight {
@@ -139,7 +139,7 @@ export default {
 		list: {
 			required: true,
 			validator(value) {
-				return value === null || (Array.isArray(value) && value.length > 0);
+				return value === null || (Array.isArray(value));
 			}
 		}
 	},

@@ -15,7 +15,7 @@
 					to be used in popular culture. I thought of the myriad words that
 					exist to derogatorily describe or shame sexually liberated women
 					and/or folks socialized female and the dearth of such equivalent words
-					for men and/or folks socialized male.<sup>
+					for men and/or folks socialized male. <sup>
 						<a class="about-link" href="#socialized-male">
 							1
 						</a>
@@ -31,7 +31,7 @@
 						existence and that of others. Naming embodies our judgments as
 						inherent features of the objects to which we attend.
 					</p>
-					<cite>–THE PROSTITUTE: Paradigmatic Woman, Julia P. Stanley</cite>
+					<cite> – THE PROSTITUTE: Paradigmatic Woman, Julia P. Stanley</cite>
 				</blockquote>
 				<p>
 					The words we have (and don’t) matter. They reflect the biases we
@@ -55,7 +55,7 @@
 						>
 							patriarchy
 						</a>
-						and how it permeates every facet of our daily lives, all the way
+and how it permeates every facet of our daily lives, all the way
 						down to the words we use.
 					</li>
 					<li>
@@ -107,8 +107,8 @@
 					<li>Web Development: Omayeli Arenyeka and Sean Catangui.</li>
 					<li>
 						With help / advice / miscalleanous support from:
-						<a href="https://iheanyi.com/" class="about-link"> Iheanyi </a>,
-						<a href="https://netabomani.com/" class="about-link"> Neta </a>, and
+						<a href="https://iheanyi.com/" class="about-link"> Iheanyi</a>,
+						<a href="https://netabomani.com/" class="about-link"> Neta</a>, and
 						<a href="https://itsthisnow.com/" class="about-link">
 							Syd.
 						</a>
