@@ -39,12 +39,13 @@
 html, body {
 	margin: 0;
 	padding: 0;
+	padding-bottom: 4.096rem;
 	font-family: "Acumin", sans-serif;
 }
 
 h1, h2, h3 {
 	margin: 0.67em 0;
-	letter-spacing: -0.0425em;
+	letter-spacing: -0.02125em;
 	line-height: 1em;
 }
 
@@ -62,6 +63,11 @@ h3 {
 	font-size: 1.6rem;
 }
 
+.light {
+	font-family: "RomanaBTWXX-Roman";
+	line-height: 1.0625em;
+}
+
 ul {
 	list-style: none;
 }
@@ -71,11 +77,12 @@ p, li {
 	line-height: 1.6em;
 }
 
-p {
+p, sup {
 	max-width: 32em;
 }
 
-main {
+.home {
+	margin: 0 2.56rem;
 	column-count: 2;
 
 	@include break(small) {
@@ -90,7 +97,6 @@ main, nav, section {
 
 a {
 	color: black;
-	/*line-height: 0;*/
 	&:hover {
 		cursor: pointer;
 		font-weight: bold;
@@ -135,43 +141,84 @@ nav {
 	margin: 2.56rem;
 	margin-bottom: 4.096rem;
 
+	@include break(small) {
+		margin: 1.6rem;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.home, .about {
+		margin: 0 2.56rem;
+
+		@include break(small) {
+			margin: 0 1.6rem;
+		}
+	}
+
+	.about {
+		font-family: "RomanaBTWXX-Roman";
+		grid-column-start: 10;
+
+		a {
+			text-decoration: none;
+			display: inline-block;
+			font-size: 2.197rem;
+			margin-top: 1.8rem;
+
+			@include break(medium) {
+				font-size: 1.6rem;
+				margin-top: 0.625rem;
+			}
+
+			@include break(small) {
+				font-size: 1rem;
+			}
+
+		}
+	}
+
 	.logo {
-		font-weight: bold;
 		grid-column-start: 2;
-		grid-column-end: 8;
+		grid-column-end: 9;
 		padding: 0;
+		width: fit-content;
+
+		@include break(small) {
+			grid-column-start: 1;
+			grid-column-end: 2;
+		}
 
 		h1 {
 			margin: 0;
+			font-family: "Romana Std Bold";
+
+			@include break(small) {
+				font-size: 1.6rem;
+			}
+
+			@include break(medium) {
+				font-size: 2.56rem;
+			}
+		}
+
+		a:first-child {
+			display: block;
 		}
 
 		span {
 			font-weight: 400;
-			// font-size: 0.8125rem;
 			font-size: 1rem;
+			margin-left: 0.7em;
+
+			@include break(small) {
+				font-size: 0.625rem;
+				margin-left: 0;
+				white-space: nowrap;
+			}
 		}
 	}
 }
 
-.logo {
-	width: fit-content;
 
-	a:first-child {
-		display: block;
-	}
-
-	span {
-		font-size: .6em;
-	}
-}
-
-.home, .about {
-	margin: 0 2.56rem;
-
-	@include break(small) {
-		margin: 0 1.6rem;
-	}
-}
 
 .home, h1 > {
 	a {

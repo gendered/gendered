@@ -1,9 +1,9 @@
 <template>
 	<div class="about">
-		<h2>About</h2>
+		<!-- <h2 class="light">About this Project</h2> -->
 		<main>
-			<section class="about-section">
-				<h3>What?</h3>
+			<section id="what" class="about-section">
+				<h2 class="light">What is this?</h2>
 				<p>
 					The Gendered Project is a growing library of gendered words in the
 					English dictionary.
@@ -31,8 +31,8 @@
 						existence and that of others. Naming embodies our judgments as
 						inherent features of the objects to which we attend.
 					</p>
+					<cite>–THE PROSTITUTE: Paradigmatic Woman, Julia P. Stanley</cite>
 				</blockquote>
-				<cite>THE PROSTITUTE: Paradigmatic Woman, Julia P. Stanley</cite>
 				<p>
 					The words we have (and don’t) matter. They reflect the biases we
 					embrace and the ideas we value. The word imbalance for negatively
@@ -44,8 +44,8 @@
 					is important for understanding and challenging sexism and patriarchy.
 				</p>
 			</section>
-			<section class="about-section">
-				<h3>Why?</h3>
+			<section id="why" class="about-section">
+				<h2 class="light">Why did we make this?</h2>
 				<ul>
 					<li>
 						To provide data to use in our ongoing dialogue about the
@@ -89,8 +89,8 @@
 					</li>
 				</ul>
 			</section>
-			<section class="about-section">
-				<h3>Who?</h3>
+			<section id="who" class="about-section">
+				<h2 class="light">Who are we?</h2>
 				<ul>
 					<li>
 						Idea, data collection and analysis:
@@ -115,8 +115,8 @@
 					</li>
 				</ul>
 			</section>
-			<section class="about-section">
-				<h3>Notes</h3>
+			<section id="notes" class="about-section">
+				<h2 class="light">Notes</h2>
 				<p>
 					This project is <strong>not</strong> an invitation to "even" out the
 					language and create or adopt more words that punch down. I do not
@@ -180,8 +180,8 @@
 					of tweets, articles and other content that inspired and/or taught me.
 				</p>
 			</section>
-			<section class="about-section">
-				<h3>FAQ</h3>
+			<section id="faq" class="about-section">
+				<h2 class="light">FAQ</h2>
 
 				<h4>Where is the data from?</h4>
 
@@ -223,7 +223,17 @@
 				<h4>Future plans</h4>
 			</section>
 		</main>
-		<sup id="socialized-male">
+		<aside class="toc">
+			<h3 class="light">Table of Contents</h3>
+			<ul>
+				<li><a href="#what">What</a></li>
+				<li><a href="#why">Why</a></li>
+				<li><a href="#who">Who</a></li>
+				<li><a href="#notes">Notes</a></li>
+				<li><a href="#faq">FAQ</a></li>
+			</ul>
+		</aside>
+		<p class="footnote" id="socialized-male">
 			1. "Socialized male" and "socialized female" in this context refer to
 			people who may not identify with the gender associated with the sex
 			assigned to them at birth, but have gone through the process of
@@ -241,20 +251,99 @@
 			but also sexual coercion. Those "socialized female" would inherit the
 			societal expectations of chastity and the repercussions that come with not
 			adhering to it.
-		</sup>
+		</p>
 	</div>
 </template>
 <style lang="scss" scoped>
+@import '../mixins.scss';
+
 .about {
-	.about-section {
-		-webkit-column-break-inside: avoid;
-		page-break-inside: avoid;
-		break-inside: avoid;
+	margin: 0 6.554rem;
+	padding-left: 4.096rem;
+	padding-right: 4.096rem;
+
+	@include break(medium) {
+		margin-left: 2.56rem;
+		margin-right: 2.56rem;
+		padding-left: 2.56rem;
+		padding-right: 2.56rem;
 	}
 
-	.about-link {
-		text-decoration: underline;
+	@include break(small) {
+		margin-left: 1.6rem;
+		margin-right: 1.6rem;
+		padding: 0;
 	}
+
+	main {
+		width: 62.5%;
+		max-width: 750px;
+
+		@include break(small) {
+			width: 100%;
+		}
+
+		.about-section {
+			-webkit-column-break-inside: avoid;
+			page-break-inside: avoid;
+			break-inside: avoid;
+
+			h2.light {
+				margin-top: 4.096rem;
+			}
+
+			ul {
+				padding-left: 1.6rem;
+				list-style-type: square;
+			}
+
+			blockquote {
+				padding: 1rem;
+
+				@include break(small) {
+					// padding: 0.625rem;
+					margin: 0;
+				}
+
+				p {
+					font-size: 1.3rem;
+					margin-top: 0;
+					margin-bottom: 1.3rem;
+					line-height: 1.3em;
+				}
+				cite {
+					font-size: 1rem;
+				}
+
+			}
+		}
+
+		.about-link {
+			text-decoration: underline;
+		}
+	}
+
+	.toc {
+		position: fixed;
+		width: 37.5%;
+		top: 11.777rem;
+		left: 65%;
+
+		@include break(small) {
+			display: none;
+		}
+
+		ul {
+			padding-left: 0;
+		}
+	}
+
+	p.footnote {
+		margin-top: 4.096rem;
+		font-size: 0.769rem;
+		width: 100%;
+	}
+
 }
 </style>
 <script>

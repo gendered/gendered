@@ -10,9 +10,11 @@
 				</h1>
 				<span>A library of gendered words </span>
 			</section>
-			<router-link to="/about">
-				About
-			</router-link>
+			<h3 class= "about">
+				<router-link  to="/about">
+					About
+				</router-link>
+			</h3>
 		</nav>
 		<!-- when we're on home it's home, it's the view of whatever page we're on -->
 		<router-view />

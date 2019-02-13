@@ -67,17 +67,19 @@
 .toggle {
 	font-size: 1.6rem;
 	margin-right: 0;
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	transition: all 0.1s ease;
 	position: -webkit-sticky;
 	position: sticky;
 	bottom: 2.56rem;
 	margin-bottom: 2.56rem;
+	background: none;
 
 	&:hover {
-		font-style: italic;
+		// font-style: italic;
+		transform: skew(-15deg);
 		cursor: pointer;
 	}
 }

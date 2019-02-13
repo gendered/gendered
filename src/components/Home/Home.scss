@@ -1,9 +1,10 @@
 .controls {
 	position: fixed;
 	bottom: 2.56rem;
-	right: 0;
+	// right: 0;
 	width: 100%;
-	display: flex;
+	margin: 0 2.56rem;
+	// display: flex;
 }
 
 form {
@@ -11,7 +12,11 @@ form {
 
 	.search {
 		box-shadow: none;
-		line-height: 1.5rem;
+		line-height: 1.6rem;
+
+		&:hover {
+			cursor: text;
+		}
 
 		&:focus {
 			color: black;
