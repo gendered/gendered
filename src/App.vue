@@ -24,6 +24,10 @@
 <script>
 import router from "./router";
 import VFooter from "@/components/VFooter";
+const navRoutes = {
+	'home': 1,
+	'about': 1
+};
 
 export default {
 	name: "App",
@@ -31,20 +35,19 @@ export default {
 		VFooter
 	},
 	watch: {
-		$route: function(to) {
-			// $nextTick = DOM updated
-			this.$nextTick(() => {
-				// Focus management on route change
-				setTimeout(() => {
-					// setAriaCurrent in navigation only after focus management
-					this.setAriaCurrent();
-				}, 0);
-			});
+		$route: function(to, from) {
+			if (navRoutes[to.name] && navRoutes[from.name] && !to.hash) {
+				// $nextTick = DOM updated
+				this.$nextTick(() => {
+					// Focus management on route change
+					setTimeout(() => {
+						// setAriaCurrent in navigation only after focus management
+						this.setAriaCurrent();
+					}, 0);
+				});
+			}
 		}
   },
-  mounted() {
-    this.setAriaCurrent();
-	},
 	methods: {
 		setAriaCurrent() {
       this.$nextTick(() => {
@@ -53,9 +56,8 @@ export default {
         if (current) {
           current.removeAttribute("aria-label");
         }
-        nav
-          .querySelector(".router-link-exact-active")
-          .setAttribute("aria-label", "current page");
+        let activeLink = nav.querySelector(".router-link-exact-active");
+      	if (activeLink) activeLink.setAttribute("aria-label", "current page");
       });
     },
 		closeModal: function(e) {
