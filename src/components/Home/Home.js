@@ -87,9 +87,11 @@ export default {
 								} else break;
 						}
 					}
-					if (entry["word"]) {
-						return entry["word"].match(searchFilter);
-					} else return true;
+					if (entry["word"] && !!this.searchText) {
+						return (entry["word"].match(searchFilter));
+					} else {
+						return true;
+					}
 				});
 			}
 			return filtered;
