@@ -187,21 +187,13 @@ nav {
 	margin-bottom: 4.096rem;
 
 	@include break(small) {
-<<<<<<< HEAD
-		margin: 1.6rem;
-		-ms-grid-columns: (1fr)[3];
-=======
 		// margin: 1.6rem;
->>>>>>> standardized margins, made media queries more specific
+		-ms-grid-columns: (1fr)[3];
 		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.about {
-<<<<<<< HEAD
-		font-family: "RomanaBTWXX-Roman";
 		-ms-grid-column: 10;
-		grid-column-start: 10;
-=======
 		grid-column-start: 10;
 		margin-top: 1.46rem;
 		font-size: 2.197rem;
@@ -212,11 +204,11 @@ nav {
 		}
 
 		@include break(small) {
+			-ms-grid-column: 6;
 			grid-column-start: 6;
 			font-size: 1.6rem;
 			margin-top: 1.6rem;
 		}
->>>>>>> standardized margins, made media queries more specific
 
 		a {
 			text-decoration: none;
