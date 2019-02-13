@@ -94,7 +94,6 @@ main, nav, section {
 	display: block;
 }
 
-
 a {
 	color: black;
 	&:hover {
@@ -113,6 +112,16 @@ button, input {
 		cursor: pointer;
 	}
 }
+
+/*
+  This will hide the focus indicator if the element receives focus via the mouse,
+  but it will still show up on keyboard focus.
+*/
+/* Remove outline for non-keyboard :focus */
+*:focus:not(.focus-visible) {
+  outline: none;
+}
+
 
 .controls > button, input {
 	border-radius: 0;
@@ -225,7 +234,6 @@ nav {
 		text-decoration: none;
 	}
 }
-
 
 .visuallyhidden:not(:focus):not(:active) {
 	position: absolute;
