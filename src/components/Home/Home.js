@@ -36,7 +36,7 @@ export default {
 				src: "https://unpkg.com/focus-visible@4.1.5/dist/focus-visible.js",
 				async: true
 			}
-	 	],
+		 ],
 	},
 	components: {
 		WordListContainer,
@@ -65,9 +65,9 @@ export default {
 			if (!this.words) {
 				return;
 			}
-			var filtered = Object.assign([], this.words);
+			let filtered = this.words.map(entry => ({...entry}));
 			const searchFilter = new RegExp(this.searchText, "i");
-			var activeFilters = this.activeFilters;
+			const activeFilters = this.activeFilters;
 			const len = activeFilters.length;
 			const length = filtered.length;
 			for (let i = 0; i < length; i++) {
@@ -88,7 +88,7 @@ export default {
 						}
 					}
 					if (entry["word"] && !!this.searchText) {
-						return (entry["word"].match(searchFilter));
+						return entry["word"].match(searchFilter);
 					} else {
 						return true;
 					}
