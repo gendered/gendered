@@ -1,7 +1,7 @@
 <template>
 	<div id="app" @click="closeModal">
 		<button @click="skipNav" class="visuallyhidden">Skip navigation</button>
-		<nav v-current-page class="container">
+		<nav ref="nav" class="container">
 			<section class="logo">
 				<h1>
 					<router-link to="/">
@@ -18,13 +18,46 @@
 		</nav>
 		<!-- when we're on home it's home, it's the view of whatever page we're on -->
 		<router-view />
+		<!-- <VFooter/> -->
 	</div>
 </template>
 <script>
 import router from "./router";
+import VFooter from "@/components/VFooter";
+
 export default {
 	name: "App",
+	components: {
+		VFooter
+	},
+	watch: {
+		$route: function(to) {
+			// $nextTick = DOM updated
+			this.$nextTick(() => {
+				// Focus management on route change
+				setTimeout(() => {
+					// setAriaCurrent in navigation only after focus management
+					this.setAriaCurrent();
+				}, 0);
+			});
+		}
+  },
+  mounted() {
+    this.setAriaCurrent();
+	},
 	methods: {
+		setAriaCurrent() {
+      this.$nextTick(() => {
+        let nav = this.$refs.nav,
+          current = nav.querySelector("[aria-label]");
+        if (current) {
+          current.removeAttribute("aria-label");
+        }
+        nav
+          .querySelector(".router-link-exact-active")
+          .setAttribute("aria-label", "current page");
+      });
+    },
 		closeModal: function(e) {
 			const params = this.$route.params;
 			const target = e.target;
