@@ -1,6 +1,5 @@
 <template>
 	<div id="app">
-		<button @click="skipNav" class="visuallyhidden">Skip navigation</button>
 		<nav ref="nav">
 			<section class="logo">
 				<h1>
