@@ -6,7 +6,7 @@
 		<p>{{ entry.definition }}</p>
 		<ul class="word-set">
 			<li v-for="syn in entry.syns" :key="syn">
-				<router-link :to="{ name: 'word', params: { word: syn } }">
+				<router-link :to="{ name: 'word', params: { word: syn } }" class="can-open-modal">
 					{{ syn }}
 				</router-link>
 			</li>

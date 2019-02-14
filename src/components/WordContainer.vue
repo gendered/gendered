@@ -4,7 +4,7 @@
 		ref="modal"
 		v-focus
 		tabindex="-1"
-		@focusout="closeModal"
+		@blur="closeModal"
 		@keydown.esc="closeModal"
 	>
 		<!-- <div v-if="invalidWord">
@@ -23,6 +23,10 @@
 	</div>
 </template>
 <style lang="scss" scoped>
+.modal {
+	overflow-y: scroll;
+}
+
 .word-set-container {
 	grid-gap: 2rem;
 	width: 100%;
@@ -122,15 +126,18 @@ export default {
 		closeModal(e) {
 			let refs = this.$refs;
 			let parent = refs.modal;
-			let relatedTarget = e.relatedTarget;
+			let relatedTarget = e.relatedTarget || e.target;
 			if (
 				relatedTarget &&
-				(parent === relatedTarget || parent.contains(relatedTarget))
+				(relatedTarget.classList.contains("can-open-modal") ||
+				parent === relatedTarget || parent.contains(relatedTarget))
 			) {
 				return;
 			}
-			if (this.elementToFocus) this.elementToFocus.focus();
-			this.$router.push({ name: "home" });
+			else {
+				if (this.elementToFocus) this.elementToFocus.focus();
+				this.$router.push({ name: "home" });
+			}
 		}
 	}
 };
