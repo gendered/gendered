@@ -1,5 +1,5 @@
 <template>
-	<div id="app" @click="closeModal">
+	<div id="app">
 		<button @click="skipNav" class="visuallyhidden">Skip navigation</button>
 		<nav ref="nav">
 			<section class="logo">
@@ -60,13 +60,6 @@ export default {
       	if (activeLink) activeLink.setAttribute("aria-label", "current page");
       });
     },
-		closeModal: function(e) {
-			const params = this.$route.params;
-			const target = e.target;
-			if (params.word && !target.classList.contains("can-open-modal")) {
-				router.push({ name: "home" });
-			}
-		},
 		skipNav() {
 			const list = document.querySelector(".word-list");
 			setTimeout(() => {
