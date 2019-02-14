@@ -53,15 +53,8 @@
 	}
 }
 
-input:not([type='text']) {
-	transition: all 0.1s;
-}
-
-@mixin active-filter {
-	color: white;
-	background-color: black;
-}
-
-input.active, input:not([type='text']):hover {
-	@include active-filter;
+#instructions {
+	padding: 0.5rem 1rem;
+	margin: 2.56rem auto;
+	border: 1px solid black;
 }
