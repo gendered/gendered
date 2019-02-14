@@ -94,6 +94,10 @@ export default {
 					}
 				});
 			}
+			this.count = filtered.reduce((count, obj) => {
+				return count += obj.words.length;
+			}, 0);
+			this.updateAriaLive();
 			return filtered;
 		}
 	},
@@ -158,6 +162,12 @@ export default {
 		},
 		scrollToTop() {
 			window.scrollTo(0, 0);
+		},
+		updateAriaLive() {
+			const searchUpdates = document.getElementById('search-updates')
+			if (searchUpdates) {
+				searchUpdates.textContent = `${this.count} results found matching your search input`;
+			}
 		}
 	}
 };
