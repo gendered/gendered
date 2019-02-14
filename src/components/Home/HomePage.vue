@@ -8,6 +8,9 @@
 		<keep-alive :include="['WordList']">
 			<WordListContainer :words="filteredWords" />
 		</keep-alive>
+		<div id="search-updates" class="visuallyhidden" aria-live="polite">
+				<!-- content will be updated with Javascript -->
+		</div>
 		<section class="controls">
 			<form role="search">
 				<SearchFilter class="search" @input="updateSearchText" />
