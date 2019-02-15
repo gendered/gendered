@@ -1,6 +1,6 @@
 <template>
-<button class="to-top" @click="scrollToTop">
-			Scroll to top
+<button class="to-top" @click="handleScrollAction">
+	Scroll to top
 </button>
 </template>
 
@@ -8,6 +8,10 @@
 export default {
 	name: "ScrollToTopButton",
 	methods: {
+		handleScrollAction(e) {
+			this.scrollToTop();
+			this.$emit("scroll");
+		},
 		scrollToTop() {
 			window.scrollTo(0, 0);
 		},
