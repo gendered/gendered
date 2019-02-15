@@ -54,16 +54,16 @@
 	break-inside: avoid;
 
 	@include break(small) {
-	  display: -webkit-box;
-	  display: -ms-flexbox;
-	  display: flex;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: start;
+		-ms-flex-align: start;
+		align-items: flex-start;
 	}
 }
 
@@ -149,7 +149,7 @@ export default {
 		list: {
 			required: true,
 			validator(value) {
-				return value === null || (Array.isArray(value));
+				return value === null || Array.isArray(value);
 			}
 		}
 	},

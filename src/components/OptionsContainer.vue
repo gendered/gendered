@@ -67,8 +67,7 @@ export default {
 				(parent === relatedTarget || parent.contains(relatedTarget))
 			) {
 				return;
-			}
-			else {
+			} else {
 				this.$emit("close");
 			}
 		}

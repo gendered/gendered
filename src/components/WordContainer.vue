@@ -130,11 +130,11 @@ export default {
 			if (
 				relatedTarget &&
 				(relatedTarget.classList.contains("can-open-modal") ||
-				parent === relatedTarget || parent.contains(relatedTarget))
+					parent === relatedTarget ||
+					parent.contains(relatedTarget))
 			) {
 				return;
-			}
-			else {
+			} else {
 				if (this.elementToFocus) this.elementToFocus.focus();
 				this.$router.push({ name: "home" });
 			}

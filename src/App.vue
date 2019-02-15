@@ -10,7 +10,7 @@
 				<span>A library of gendered words </span>
 			</section>
 			<h3 class= "about light">
-				<router-link  to="/about">
+				<router-link to="/about">
 					About
 				</router-link>
 			</h3>
@@ -21,11 +21,10 @@
 	</div>
 </template>
 <script>
-import router from "./router";
 import VFooter from "@/components/VFooter";
 const navRoutes = {
-	'home': 1,
-	'about': 1
+	home: 1,
+	about: 1
 };
 
 export default {
@@ -46,19 +45,19 @@ export default {
 				});
 			}
 		}
-  },
+	},
 	methods: {
 		setAriaCurrent() {
-      this.$nextTick(() => {
-        let nav = this.$refs.nav,
-          current = nav.querySelector("[aria-label]");
-        if (current) {
-          current.removeAttribute("aria-label");
-        }
-        let activeLink = nav.querySelector(".router-link-exact-active");
-      	if (activeLink) activeLink.setAttribute("aria-label", "current page");
-      });
-    },
+			this.$nextTick(() => {
+				let nav = this.$refs.nav,
+					current = nav.querySelector("[aria-label]");
+				if (current) {
+					current.removeAttribute("aria-label");
+				}
+				let activeLink = nav.querySelector(".router-link-exact-active");
+				if (activeLink) activeLink.setAttribute("aria-label", "current page");
+			});
+		},
 		skipNav() {
 			const list = document.querySelector(".word-list");
 			setTimeout(() => {
