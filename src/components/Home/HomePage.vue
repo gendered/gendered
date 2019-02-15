@@ -19,6 +19,7 @@
 				@close="closeOptions"
 				@filter="handleFilter"
 				@random="getRandomWord"
+				@scroll="closeOptions"
 				:isActive="optionsIsActive"
 			/>
 			<button

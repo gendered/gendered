@@ -9,7 +9,7 @@
 		ref="controls"
 	>
 		<FilterPanel :options="gender" @filter="handleFilter" />
-		<ScrollToTopButton />
+		<ScrollToTopButton @scroll="handleFilter"/>
 		<input
 			class="random can-open-modal"
 			type="button"
@@ -58,6 +58,9 @@ export default {
 		},
 		getRandom() {
 			this.$emit("random");
+		},
+		handleFilter() {
+			this.$emit("scroll");
 		},
 		closeOptions(e) {
 			let refs = this.$refs;
