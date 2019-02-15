@@ -26,6 +26,7 @@
 				@click="toggleOptions"
 				@keyup.esc="closeOptions"
 				:aria-expanded="optionsIsActive"
+				id="show-controls"
 			>
 				*
 			</button>

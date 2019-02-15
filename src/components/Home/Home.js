@@ -108,6 +108,8 @@ export default {
 		},
 		closeOptions() {
 			if (this.optionsIsActive) this.toggleOptions();
+			const controlButton = document.getElementById('show-controls');
+			controlButton.focus();
 		},
 		updateSearchText(value) {
 			this.searchText = value;
@@ -155,6 +157,7 @@ export default {
 			return Math.floor(Math.random() * count);
 		},
 		getRandomWord() {
+			this.closeOptions();
 			let data = this.words;
 			let randomLetterList = data[this.$_getRandom(data.length)].words;
 			let randomWord =
@@ -165,7 +168,7 @@ export default {
 			window.scrollTo(0, 0);
 		},
 		updateAriaLive() {
-			const searchUpdates = document.getElementById('search-updates')
+			const searchUpdates = document.getElementById('search-updates');
 			if (searchUpdates) {
 				searchUpdates.textContent = `${this.count} results found matching your search input`;
 			}
