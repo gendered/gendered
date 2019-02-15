@@ -27,6 +27,11 @@ module.exports = {
 			}
 		]
 	},
+	vue: {
+		postcss: [
+			require('autoprefixer')(),
+		]
+	},
 	plugins: [
 		// make sure to include the plugin!
 		new VueLoaderPlugin(),
