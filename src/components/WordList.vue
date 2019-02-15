@@ -52,6 +52,7 @@
 	-webkit-column-break-inside: avoid;
 	page-break-inside: avoid;
 	break-inside: avoid;
+	padding-top: 4px;
 
 	@include break(small) {
 		display: -webkit-box;
@@ -81,6 +82,7 @@
 	top: 1.6rem;
 	height: 100px;
 	background: white;
+	overflow: visible;
 }
 
 .toggle {
