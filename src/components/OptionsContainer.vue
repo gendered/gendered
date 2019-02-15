@@ -1,10 +1,12 @@
 <template>
 	<div
 		@keyup.esc="closeOptions"
+		@blur="closeOptions"
 		v-if="isActive"
 		class="options"
 		v-focus
 		tabindex="-1"
+		ref="controls"
 	>
 		<FilterPanel :options="gender" @filter="handleFilter" />
 		<button @click="$emit('scrollToTop')">
@@ -56,8 +58,19 @@ export default {
 		getRandom() {
 			this.$emit("random");
 		},
-		closeOptions() {
-			this.$emit("close");
+		closeOptions(e) {
+			let refs = this.$refs;
+			let parent = refs.controls;
+			let relatedTarget = e.relatedTarget || e.target;
+			if (
+				relatedTarget &&
+				(parent === relatedTarget || parent.contains(relatedTarget))
+			) {
+				return;
+			}
+			else {
+				this.$emit("close");
+			}
 		}
 	}
 };

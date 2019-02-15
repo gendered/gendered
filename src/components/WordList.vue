@@ -44,8 +44,10 @@
 
 .word-list {
 	margin-bottom: 1.6rem;
+	display: -ms-grid;
 	display: grid;
 	grid-gap: 1rem;
+	-ms-grid-columns: 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr;
 	grid-template-columns: repeat(5, 1fr);
 	-webkit-column-break-inside: avoid;
 	page-break-inside: avoid;
@@ -53,9 +55,16 @@
 
 
 	@include break(small) {
+	  display: -webkit-box;
+	  display: -ms-flexbox;
 	  display: flex;
-		flex-direction: column;
-    align-items: flex-start;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
 	}
 }
 
@@ -64,6 +73,8 @@
 	text-align: right;
 	margin-top: 0;
 	line-height: 0.85em;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 	font-family: "Romana Std Bold", Arial, sans-serif;
 	position: -webkit-sticky;
