@@ -1,6 +1,7 @@
 import WordListContainer from "@/components/WordListContainer";
 import OptionsContainer from "@/components/OptionsContainer";
 import SearchFilter from "@/components/SearchFilter";
+import "isomorphic-fetch";
 
 const API = "https://gendered-api.glitch.me/api/words";
 
