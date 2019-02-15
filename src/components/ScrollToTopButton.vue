@@ -1,24 +1,22 @@
 <template>
-<button class="to-top" @click="handleScrollAction">
-	Scroll to top
-</button>
+	<button class="to-top" @click="handleScrollAction">
+		Scroll to top
+	</button>
 </template>
 
 <script>
 export default {
 	name: "ScrollToTopButton",
 	methods: {
-		handleScrollAction(e) {
+		handleScrollAction() {
 			this.scrollToTop();
 			this.$emit("scroll");
 		},
 		scrollToTop() {
 			window.scrollTo(0, 0);
-		},
+		}
 	}
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

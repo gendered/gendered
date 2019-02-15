@@ -79,7 +79,7 @@ export default {
 			{
 				name: "twitter:image:alt",
 				content: ""
-			},
+			}
 		],
 		link: [
 			{
