@@ -37,8 +37,7 @@ export default {
 
 <style lang="scss" scoped>
 .filter-list {
-	padding: 0;
-	margin: 0;
 	display: inline-flex;
+	padding: 0 0.6rem;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
 	<button class="to-top" @click="handleScrollAction">
-		Scroll to top
+		↑
 	</button>
 </template>
 

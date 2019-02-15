@@ -80,6 +80,6 @@ export default {
 	background: white;
 	border: 1px solid black;
 	display: flex;
-	padding: 4.096rem 2.56rem;
+	flex-wrap: wrap;
 }
 </style>

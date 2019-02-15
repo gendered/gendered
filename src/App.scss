@@ -130,10 +130,12 @@ a {
 button {
 	border: 0;
 	width: fit-content;
-	background: white;
 }
 
 button, input {
+	font-size: 1rem;
+	background: white;
+
 	&:hover {
 		cursor: pointer;
 	}
@@ -148,28 +150,10 @@ button, input {
   outline: none;
 }
 
-
-.options, .controls {
-	button, input {
-		border-radius: 0;
-		font-size: 1rem;
-		border: 1px solid black;
-		box-shadow: 2px 3px 0px black;
-		padding: 0.5rem 1rem;
-	}
-}
-
-input:not([type='text']) {
-	transition: all 0.1s;
-}
-
-@mixin active-filter {
-	color: white;
-	background-color: black;
-}
-
-input.active, input:not([type='text']):hover {
-	@include active-filter;
+#instructions {
+	padding: 0.5rem 1rem;
+	margin: 2.56rem auto;
+	border: 1px solid black;
 }
 
 nav {

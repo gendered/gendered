@@ -7,6 +7,18 @@
 	margin: 0 2.56rem;
 	// display: flex;
 	z-index: 999;
+
+	.search, #show-controls {
+		box-shadow: 2px 3px 0px black;
+	}
+}
+
+.controls, .options {
+	button, input {
+		border-radius: 0;
+		border: 1px solid black;
+		padding: 0.5rem 1rem;
+	}
 }
 
 form {
@@ -27,8 +39,15 @@ form {
 	}
 }
 
-#instructions {
-	padding: 0.5rem 1rem;
-	margin: 2.56rem auto;
-	border: 1px solid black;
+input:not([type='text']) {
+	transition: all 0.1s;
+}
+
+@mixin active-filter {
+	color: white;
+	background-color: black;
+}
+
+input.active, input:not([type='text']):hover {
+	@include active-filter;
 }
