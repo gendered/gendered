@@ -52,7 +52,7 @@
 	-webkit-column-break-inside: avoid;
 	page-break-inside: avoid;
 	break-inside: avoid;
-
+  overflow: hidden;
 
 	@include break(small) {
 	  display: -webkit-box;
