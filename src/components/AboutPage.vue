@@ -16,12 +16,11 @@
 					exist to derogatorily describe or shame sexually liberated women
 					and/or folks socialized female and the dearth of such equivalent words
 					for men and/or folks socialized male.
-					<sup>
-						<a class="about-link" href="#socialized-male">
-							1
-						</a>
+					<sup aria-describedby="footnote-label">
+						<a class="about-link" id="socialized-male-ref" href="#socialized-male">
+							[ 1 ]</a>
 					</sup>
-					I decided to try and create something that would allow us to explore
+					&nbsp;I decided to try and create something that would allow us to explore
 					what the English language tells us about men, women and those who do
 					not fit in those binaries.
 				</p>
@@ -32,7 +31,7 @@
 						existence and that of others. Naming embodies our judgments as
 						inherent features of the objects to which we attend.
 					</p>
-					<cite> – THE PROSTITUTE: Paradigmatic Woman, Julia P. Stanley</cite>
+					<cite>– <a href="https://archive.org/details/p15957coll6_681_0">THE PROSTITUTE: Paradigmatic Woman</a>, Julia P. Stanley</cite>
 				</blockquote>
 				<p>
 					The words we have (and don’t) matter. They reflect the biases we
@@ -211,8 +210,11 @@
 					contribute in any way.
 				</p>
 
+				<h4>Can I access the data?</h4>
+				<p>
+					Yes. I'm still working out how to streamline this process but for now send a <a href="https://twitter.com/GenderedProject">DM</a> with information about how you intend to use the data to request. If you appreciate my work and can afford it, please consider <a href="https://paypal.me/Omayeli/10usd"> donating</a>. Keep in mind that the data will continously be changing. Right now you can only get access to a zipped json file. A public API is coming.
+				</p>
 				<h4>How can I contribute?</h4>
-
 				<p>
 					Right now, you can
 					<a href="http://eepurl.com/gbf1Qb">
@@ -220,11 +222,14 @@
 					</a>
 					and I’ll email when I have a process for contribution.
 				</p>
-
 				<h4>Future plans</h4>
+				<p> Check out the <a href="https://github.com/oa495/gendered/issues">Github</a></p>
 			</section>
 
-			<p class="footnote" id="socialized-male">
+		<h2 class="visuallyhidden" id="footnote-label">Footnotes</h2>
+		<ul class="footnotes">
+			<li id="socialized-male">
+				<p class="footnote">
 				1. "Socialized male" and "socialized female" in this context refer to
 				people who may not identify with the gender associated with the sex
 				assigned to them at birth, but have gone through the process of
@@ -241,8 +246,10 @@
 				those "socialized male" would be afforded the privilege of sexual freedom
 				but also sexual coercion. Those "socialized female" would inherit the
 				societal expectations of chastity and the repercussions that come with not
-				adhering to it.
-			</p>
+				adhering to it. <a href="#socialized-male-ref" aria-label="Back to content">↵</a>
+				</p>
+			</li>
+		</ul>
 		</main>
 		<aside class="toc">
 			<h3 class="light">Contents</h3>
@@ -254,7 +261,6 @@
 				<li><a href="#faq">FAQ</a></li>
 			</ul>
 		</aside>
-
 	</div>
 </template>
 <style lang="scss" scoped>
@@ -342,6 +348,10 @@
 		ul {
 			padding-left: 0;
 		}
+	}
+
+	.footnotes {
+		padding: 0;
 	}
 
 	p.footnote {
