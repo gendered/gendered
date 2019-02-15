@@ -11,6 +11,8 @@
     "dev": "run-p serve"
   },
   "dependencies": {
+    "es6-promise": "^4.2.5",
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.11",
     "vue": "^2.5.22",
     "vue-head": "^2.1.1",
