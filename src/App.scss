@@ -146,18 +146,22 @@ input.active, input:not([type='text']):hover {
 }
 
 nav {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: (1fr)[10];
 	grid-template-columns: repeat(10, 1fr);
 	margin: 2.56rem;
 	margin-bottom: 4.096rem;
 
 	@include break(small) {
 		margin: 1.6rem;
+		-ms-grid-columns: (1fr)[3];
 		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.about {
 		font-family: "RomanaBTWXX-Roman";
+		-ms-grid-column: 10;
 		grid-column-start: 10;
 
 		a {
@@ -179,13 +183,17 @@ nav {
 	}
 
 	.logo {
+		-ms-grid-column: 2;
 		grid-column-start: 2;
+		-ms-grid-column-span: 7;
 		grid-column-end: 9;
 		padding: 0;
 		width: fit-content;
 
 		@include break(small) {
-			grid-column-start: 1;
+			-ms-grid-column: 1;
+	    grid-column-start: 1;
+			-ms-grid-column-span: 1;
 			grid-column-end: 2;
 		}
 
