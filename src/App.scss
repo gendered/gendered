@@ -168,7 +168,9 @@ input.active, input:not([type='text']):hover {
 }
 
 nav {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: (1fr)[10];
 	grid-template-columns: repeat(10, 1fr);
 	grid-gap: 1rem;
 	// margin: 2.56rem;
@@ -176,11 +178,12 @@ nav {
 
 	@include break(small) {
 		// margin: 1.6rem;
+		-ms-grid-columns: (1fr)[3];
 		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.about {
-<<<<<<< HEAD
+		-ms-grid-column: 10;
 		grid-column-start: 10;
 		margin-top: 1.46rem;
 		font-size: 2.197rem;
@@ -195,10 +198,6 @@ nav {
 			font-size: 1.6rem;
 			margin-top: 1.6rem;
 		}
-=======
-		font-family: "RomanaBTWXX-Roman";
-		grid-column-start: 10;
->>>>>>> Fixing aria-label on current page
 
 		a {
 			text-decoration: none;
@@ -207,13 +206,17 @@ nav {
 	}
 
 	.logo {
+		-ms-grid-column: 2;
 		grid-column-start: 2;
+		-ms-grid-column-span: 7;
 		grid-column-end: 9;
 		padding: 0;
 		width: fit-content;
 
 		@include break(small) {
-			grid-column-start: 1;
+			-ms-grid-column: 1;
+	    grid-column-start: 1;
+			-ms-grid-column-span: 1;
 			grid-column-end: 2;
 		}
 
