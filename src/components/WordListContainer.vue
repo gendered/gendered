@@ -18,6 +18,7 @@
 @import "../mixins.scss";
 main {
 	margin-bottom: 2.56rem;
+	overflow: auto;
 }
 
 .letter-list {
