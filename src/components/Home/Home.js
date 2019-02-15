@@ -54,7 +54,15 @@ export default {
 			},
 			{
 				name: "twitter:card",
-				conten: "summary_large_image"
+				content: "summary_large_image"
+			},
+			{
+				name: "twitter:creator",
+				content: "Yellzheard"
+			},
+			{
+				name: "twitter:site",
+				content: "GenderedProject"
 			},
 			{
 				name: "twitter:title",
@@ -66,6 +74,10 @@ export default {
 			},
 			{
 				name: "twitter:image",
+				content: ""
+			},
+			{
+				name: "twitter:image:alt",
 				content: ""
 			},
 		],
