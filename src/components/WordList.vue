@@ -80,6 +80,7 @@
 	position: -webkit-sticky;
 	position: sticky;
 	top: 1.6rem;
+	height: 100px;
 	background: white;
 }
 
@@ -90,8 +91,6 @@
 	-moz-transition: all 0.1s ease;
 	-o-transition: all 0.1s ease;
 	transition: all 0.1s ease;
-	position: -webkit-sticky;
-	position: sticky;
 	bottom: 2.56rem;
 	margin-bottom: 2.56rem;
 	background: none;
