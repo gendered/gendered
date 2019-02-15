@@ -261,6 +261,7 @@
 				<li><a href="#faq">FAQ</a></li>
 			</ul>
 		</aside>
+		<ScrollToTopButton />
 	</div>
 </template>
 <style lang="scss" scoped>
@@ -359,11 +360,20 @@
 		font-size: 0.769rem;
 		width: 100%;
 	}
+
+	.to-top {
+		position: absolute;
+    right: 2.096rem;
+	}
 }
 </style>
 <script>
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 export default {
 	name: "AboutPage",
+	components: {
+		ScrollToTopButton,
+	},
 	head: {
 		title: {
 			inner: "The Gendered Project - About"

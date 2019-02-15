@@ -149,12 +149,14 @@ button, input {
 }
 
 
-.controls > button, input {
-	border-radius: 0;
-	font-size: 1rem;
-	border: 1px solid black;
-	box-shadow: 2px 3px 0px black;
-	padding: 0.5rem 1rem;
+.options, .controls {
+	button, input {
+		border-radius: 0;
+		font-size: 1rem;
+		border: 1px solid black;
+		box-shadow: 2px 3px 0px black;
+		padding: 0.5rem 1rem;
+	}
 }
 
 input:not([type='text']) {
