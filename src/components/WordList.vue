@@ -8,7 +8,6 @@
 	>
 		<div class="letter">
 			<span>{{ letter }}</span>
-			<!-- each letter should get individual id   -->
 			<button
 				class="toggle"
 				@click="toggleDisplay"
@@ -123,12 +122,25 @@
 }
 
 .highlight {
+	&.female,
+	&.male {
+		&::after {
+			display: inline-block;
+			font-size: 0.769rem;
+			transform: translateY(-50%);
+		}
+	}
+
 	&.female {
-		background: blue;
+		&::after {
+			content: "+";
+		}
 	}
 
 	&.male {
-		background: red;
+		&::after {
+			content: "↓";
+		}
 	}
 }
 </style>
