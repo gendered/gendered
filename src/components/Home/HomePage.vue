@@ -19,7 +19,6 @@
 				@close="closeOptions"
 				@filter="handleFilter"
 				@random="getRandomWord"
-				@scrollToTop="scrollToTop"
 				:isActive="optionsIsActive"
 			/>
 			<button

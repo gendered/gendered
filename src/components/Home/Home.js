@@ -220,9 +220,6 @@ export default {
 				randomLetterList[this.$_getRandom(randomLetterList.length)].word;
 			this.$router.push({ name: "word", params: { word: randomWord } });
 		},
-		scrollToTop() {
-			window.scrollTo(0, 0);
-		},
 		updateAriaLive() {
 			const searchUpdates = document.getElementById("search-updates");
 			if (searchUpdates) {
