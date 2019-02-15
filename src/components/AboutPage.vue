@@ -15,7 +15,8 @@
 					to be used in popular culture. I thought of the myriad words that
 					exist to derogatorily describe or shame sexually liberated women
 					and/or folks socialized female and the dearth of such equivalent words
-					for men and/or folks socialized male. <sup>
+					for men and/or folks socialized male.
+					<sup>
 						<a class="about-link" href="#socialized-male">
 							1
 						</a>
@@ -55,7 +56,7 @@
 						>
 							patriarchy
 						</a>
-and how it permeates every facet of our daily lives, all the way
+						and how it permeates every facet of our daily lives, all the way
 						down to the words we use.
 					</li>
 					<li>
@@ -255,7 +256,7 @@ and how it permeates every facet of our daily lives, all the way
 	</div>
 </template>
 <style lang="scss" scoped>
-@import '../mixins.scss';
+@import "../mixins.scss";
 
 .about {
 	margin: 0 6.554rem;
@@ -314,7 +315,6 @@ and how it permeates every facet of our daily lives, all the way
 				cite {
 					font-size: 1rem;
 				}
-
 			}
 		}
 
@@ -343,7 +343,6 @@ and how it permeates every facet of our daily lives, all the way
 		font-size: 0.769rem;
 		width: 100%;
 	}
-
 }
 </style>
 <script>

@@ -21,9 +21,53 @@ export default {
 				content: "A library of gendered words."
 			},
 			{
+				itemprop: "name",
+				content: "The Gendered Project."
+			},
+			{
+				itemprop: "description",
+				content: "A library of gendered words."
+			},
+			{
+				itemprop: "image",
+				content: ""
+			},
+			{
+				property: "og:url",
+				content: ""
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				property: "og:title",
+				content: "The Gendered Project."
+			},
+			{
 				property: "og:description",
 				content: "A library of gendered words."
-			}
+			},
+			{
+				property: "og:image",
+				content: ""
+			},
+			{
+				name: "twitter:card",
+				conten: "summary_large_image"
+			},
+			{
+				name: "twitter:title",
+				content: "The Gendered Project."
+			},
+			{
+				name: "twitter:description",
+				content: "A library of gendered words."
+			},
+			{
+				name: "twitter:image",
+				content: ""
+			},
 		],
 		link: [
 			{
@@ -37,7 +81,7 @@ export default {
 				src: "https://unpkg.com/focus-visible@4.1.5/dist/focus-visible.js",
 				async: true
 			}
-		 ],
+		]
 	},
 	components: {
 		WordListContainer,
@@ -66,7 +110,7 @@ export default {
 			if (!this.words) {
 				return;
 			}
-			let filtered = this.words.map(entry => ({...entry}));
+			let filtered = this.words.map(entry => ({ ...entry }));
 			const searchFilter = new RegExp(this.searchText, "i");
 			const activeFilters = this.activeFilters;
 			const len = activeFilters.length;
@@ -96,7 +140,7 @@ export default {
 				});
 			}
 			this.count = filtered.reduce((count, obj) => {
-				return count += obj.words.length;
+				return (count += obj.words.length);
 			}, 0);
 			this.updateAriaLive();
 			return filtered;
@@ -108,7 +152,7 @@ export default {
 		},
 		closeOptions() {
 			if (this.optionsIsActive) this.toggleOptions();
-			const controlButton = document.getElementById('show-controls');
+			const controlButton = document.getElementById("show-controls");
 			controlButton.focus();
 		},
 		updateSearchText(value) {
@@ -168,9 +212,11 @@ export default {
 			window.scrollTo(0, 0);
 		},
 		updateAriaLive() {
-			const searchUpdates = document.getElementById('search-updates');
+			const searchUpdates = document.getElementById("search-updates");
 			if (searchUpdates) {
-				searchUpdates.textContent = `${this.count} results found matching your search input`;
+				searchUpdates.textContent = `${
+					this.count
+				} results found matching your search input`;
 			}
 		}
 	}
