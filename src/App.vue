@@ -10,7 +10,7 @@
 				<span>A library of gendered words </span>
 			</section>
 			<h3 class= "about light">
-				<router-link  to="/about">
+				<router-link to="/about">
 					About
 				</router-link>
 			</h3>
