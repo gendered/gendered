@@ -256,6 +256,7 @@
 					<a href="https://github.com/oa495/gendered/issues">Github!</a>
 				</p>
 			</section>
+			<h2 class="visuallyhidden" id="footnote-label">Footnotes</h2>
 			<ul class="footnotes">
 				<li id="socialized-male">
 					<p class="footnote">
