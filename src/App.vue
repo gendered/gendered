@@ -17,7 +17,7 @@
 		</nav>
 		<!-- when we're on home it's home, it's the view of whatever page we're on -->
 		<router-view />
-		<VFooter/>
+		<VFooter />
 	</div>
 </template>
 <script>

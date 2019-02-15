@@ -9,11 +9,11 @@
 		ref="controls"
 	>
 		<FilterPanel :options="gender" @filter="handleFilter" />
-		<ScrollToTopButton @scroll="handleFilter"/>
+		<ScrollToTopButton />
 		<input
 			class="random can-open-modal"
 			type="button"
-			@click="getRandom"
+			@click="$emit('random')"
 			value="Get Random Word"
 		/>
 	</div>
@@ -55,12 +55,6 @@ export default {
 			let len = this[option.category].length;
 			// If there are only two filters, it should be a toggle
 			this.$emit("filter", option, len == 2, options);
-		},
-		getRandom() {
-			this.$emit("random");
-		},
-		handleFilter() {
-			this.$emit("scroll");
 		},
 		closeOptions(e) {
 			let refs = this.$refs;

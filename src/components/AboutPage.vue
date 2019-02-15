@@ -17,12 +17,17 @@
 					and/or folks socialized female and the dearth of such equivalent words
 					for men and/or folks socialized male.
 					<sup aria-describedby="footnote-label">
-						<a class="about-link" id="socialized-male-ref" href="#socialized-male">
-							[ 1 ]</a>
+						<a
+							class="about-link"
+							id="socialized-male-ref"
+							href="#socialized-male"
+						>
+							[ 1 ]</a
+						>
 					</sup>
-					&nbsp;I decided to try and create something that would allow us to explore
-					what the English language tells us about men, women and those who do
-					not fit in those binaries.
+					&nbsp;I decided to try and create something that would allow us to
+					explore what the English language tells us about men, women and those
+					who do not fit in those binaries.
 				</p>
 
 				<blockquote cite="https://archive.org/details/p15957coll6_681_0">
@@ -31,7 +36,12 @@
 						existence and that of others. Naming embodies our judgments as
 						inherent features of the objects to which we attend.
 					</p>
-					<cite>– <a href="https://archive.org/details/p15957coll6_681_0">THE PROSTITUTE: Paradigmatic Woman</a>, Julia P. Stanley</cite>
+					<cite
+						>–
+						<a href="https://archive.org/details/p15957coll6_681_0"
+							>THE PROSTITUTE: Paradigmatic Woman</a
+						>, Julia P. Stanley</cite
+					>
 				</blockquote>
 				<p>
 					The words we have (and don’t) matter. They reflect the biases we
@@ -212,7 +222,13 @@
 
 				<h4>Can I access the data?</h4>
 				<p>
-					Yes. I'm still working out how to streamline this process but for now send a <a href="https://twitter.com/GenderedProject">DM</a> with information about how you intend to use the data to request. If you appreciate my work and can afford it, please consider <a href="https://paypal.me/Omayeli/10usd"> donating</a>. Keep in mind that the data will continously be changing. Right now you can only get access to a zipped json file. A public API is coming.
+					Yes. I'm still working out how to streamline this process but for now
+					send a <a href="https://twitter.com/GenderedProject">DM</a> with
+					information about how you intend to use the data to request. If you
+					appreciate my work and can afford it, please consider
+					<a href="https://paypal.me/Omayeli/10usd"> donating</a>. Keep in mind
+					that the data will continously be changing. Right now you can only get
+					access to a zipped json file. A public API is coming.
 				</p>
 				<h4>How can I contribute?</h4>
 				<p>
@@ -223,30 +239,34 @@
 					and I’ll email when I have a process for contribution.
 				</p>
 				<h4>Future plans</h4>
-				<p> Check out the <a href="https://github.com/oa495/gendered/issues">Github</a></p>
+				<p>
+					Check out the
+					<a href="https://github.com/oa495/gendered/issues">Github!</a>
+				</p>
 			</section>
 
 		<h2 class="visuallyhidden" id="footnote-label">Footnotes</h2>
 		<ul class="footnotes">
 			<li id="socialized-male">
 				<p class="footnote">
-				1. "Socialized male" and "socialized female" in this context refer to
-				people who may not identify with the gender associated with the sex
-				assigned to them at birth, but have gone through the process of
-				socialization for that gender. Devon Price writes in
-				<a
-					href="https://medium.com/@devonprice/gender-socialization-is-real-complex-348f56146925"
-					class="about-link"
-				>
-					<i>Gender Socialization is Real (Complex)</i> </a
-				>,"Socialization involves which expectations are placed on a person,
-				perhaps, but crucially, it also involves which expectations a person
-				internalizes and applies to themselves." In addition to expectations
-				placed, it also involves allowances and privileges given. For example,
-				those "socialized male" would be afforded the privilege of sexual freedom
-				but also sexual coercion. Those "socialized female" would inherit the
-				societal expectations of chastity and the repercussions that come with not
-				adhering to it. <a href="#socialized-male-ref" aria-label="Back to content">↵</a>
+					1. "Socialized male" and "socialized female" in this context refer to
+					people who may not identify with the gender associated with the sex
+					assigned to them at birth, but have gone through the process of
+					socialization for that gender. Devon Price writes in
+					<a
+						href="https://medium.com/@devonprice/gender-socialization-is-real-complex-348f56146925"
+						class="about-link"
+					>
+						<i>Gender Socialization is Real (Complex)</i> </a
+					>, "Socialization involves which expectations are placed on a person,
+					perhaps, but crucially, it also involves which expectations a person
+					internalizes and applies to themselves." In addition to expectations
+					placed, it also involves allowances and privileges given. For example,
+					those "socialized male" would be afforded the privilege of sexual
+					freedom but also sexual coercion. Those "socialized female" would
+					inherit the societal expectations of chastity and the repercussions
+					that come with not adhering to it.
+					<a href="#socialized-male-ref" aria-label="Back to content">↵</a>
 				</p>
 			</li>
 		</ul>
@@ -363,7 +383,7 @@
 
 	.to-top {
 		position: absolute;
-    right: 2.096rem;
+		right: 2.096rem;
 	}
 }
 </style>
@@ -372,7 +392,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 export default {
 	name: "AboutPage",
 	components: {
-		ScrollToTopButton,
+		ScrollToTopButton
 	},
 	head: {
 		title: {
