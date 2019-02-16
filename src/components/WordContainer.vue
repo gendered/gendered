@@ -9,6 +9,7 @@
 			class="modal-link"
 		>
 			✕
+			<img src="../assets/imgs/close.svg" alt="Close modal"/>
 		</router-link>
 		<div class="w-80 w-60-ns center word-set-container">
 			<WordInfo v-if="entry" :entry="entry" />
