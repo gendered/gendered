@@ -28,7 +28,7 @@
 				:aria-expanded="optionsIsActive"
 				id="show-controls"
 			>
-				<img src="../../assets/imgs/filter.svg" alt="Controls"/>
+				<img src="../../assets/imgs/filter.svg" alt="Controls" />
 			</button>
 		</section>
 	</div>

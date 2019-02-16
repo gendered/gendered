@@ -1,6 +1,10 @@
 <template>
 	<footer class="footer">
-		<a href="https://twitter.com/@GenderedProject"><img src="../assets/imgs/twitter.svg" alt="Twitter for The Gendered Project"/></a>&nbsp;
+		<a href="https://twitter.com/@GenderedProject"
+			><img
+				src="../assets/imgs/twitter.svg"
+				alt="Twitter for The Gendered Project"/></a
+		>&nbsp;
 		<span
 			>// &nbsp; Content is licensed under
 			<a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">
@@ -21,8 +25,8 @@
 	-ms-flex-pack: end;
 	justify-content: flex-end;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-					align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 
 	&a {
 		padding: 0.6rem;
