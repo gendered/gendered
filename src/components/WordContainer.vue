@@ -1,12 +1,5 @@
 <template>
-	<div
-		class="modal"
-		ref="modal"
-		v-focus
-		tabindex="-1"
-		@blur="closeModal"
-		@keydown.esc="closeModal"
-	>
+	<div class="modal" v-focus tabindex="-1" @keydown.esc="closeModal">
 		<!-- <div v-if="invalidWord">
 		Word not in dictionary
 	</div> -->
@@ -25,6 +18,7 @@
 <style lang="scss" scoped>
 .modal {
 	overflow-y: scroll;
+	z-index: 1010;
 }
 
 .modal-link {
@@ -67,24 +61,7 @@ export default {
 			if (wordRef && wordRef[0]) {
 				return wordRef[0].querySelector(".word-link");
 			} else {
-				const letter = this.entry.word.charAt(0).toUpperCase();
-				let xpath = this._getXPath("span", letter);
-				const letterEl = document.evaluate(
-					xpath,
-					document,
-					null,
-					XPathResult.FIRST_ORDERED_NODE_TYPE,
-					null
-				).singleNodeValue;
-				const wordList = letterEl.parentElement.nextElementSibling;
-				xpath = this._getXPath("a", this.entry.word.toLowerCase());
-				return document.evaluate(
-					xpath,
-					wordList,
-					null,
-					XPathResult.FIRST_ORDERED_NODE_TYPE,
-					null
-				).singleNodeValue;
+				return null;
 			}
 		}
 	},
@@ -112,6 +89,7 @@ export default {
 			}
 		}.bind(this);
 		this.getWord(currentWord, setData);
+		document.querySelector("body").classList.add("modal-open");
 	},
 	methods: {
 		_getXPath(el, txt) {
@@ -127,22 +105,10 @@ export default {
 					} else return res;
 				});
 		},
-		closeModal(e) {
-			let refs = this.$refs;
-			let parent = refs.modal;
-			let relatedTarget = e.relatedTarget || e.target;
-			if (
-				e.key !== "Escape" &&
-				relatedTarget &&
-				(relatedTarget.classList.contains("can-open-modal") ||
-					parent === relatedTarget ||
-					parent.contains(relatedTarget))
-			) {
-				return;
-			} else {
-				if (this.elementToFocus) this.elementToFocus.focus();
-				this.$router.push({ name: "home" });
-			}
+		closeModal() {
+			document.querySelector("body").classList.remove("modal-open");
+			if (this.elementToFocus) this.elementToFocus.focus();
+			this.$router.push({ name: "home" });
 		}
 	}
 };
