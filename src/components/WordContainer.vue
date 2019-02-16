@@ -132,7 +132,7 @@ export default {
 			let parent = refs.modal;
 			let relatedTarget = e.relatedTarget || e.target;
 			if (
-				e.key !== 'Escape' &&
+				e.key !== "Escape" &&
 				relatedTarget &&
 				(relatedTarget.classList.contains("can-open-modal") ||
 					parent === relatedTarget ||

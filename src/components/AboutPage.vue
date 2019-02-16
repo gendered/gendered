@@ -116,6 +116,18 @@
 					</li>
 					<li>Web Development: Omayeli Arenyeka and Sean Catangui.</li>
 					<li>
+						Twitter icon made by
+						<a
+							href="https://www.flaticon.com/authors/pixel-perfect"
+							title="Pixel perfect"
+							>Pixel perfect</a
+						>
+						from
+						<a href="https://www.flaticon.com/" title="Flaticon"
+							>www.flaticon.com.</a
+						>
+					</li>
+					<li>
 						With help / advice / miscalleanous support from:
 						<a href="https://iheanyi.com/" class="about-link"> Iheanyi</a>,
 						<a href="https://netabomani.com/" class="about-link"> Neta</a>, and
