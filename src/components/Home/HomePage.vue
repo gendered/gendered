@@ -15,8 +15,8 @@
 			<!-- content will be updated with Javascript -->
 		</div>
 		<section class="controls">
-			<form role="search">
-				<img src="../../assets/imgs/search.svg" alt="Search in word list"/>
+			<form class="search-container" role="search">
+				<img src="../../assets/imgs/search.svg" alt="Search in word list" />
 				<SearchFilter class="search" @input="updateSearchText" />
 			</form>
 			<OptionsContainer
