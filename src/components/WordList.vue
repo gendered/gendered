@@ -1,6 +1,6 @@
 <template>
 	<li
-		v-show="list.length > 0"
+		v-if="list.length > 0"
 		class="word-list"
 		tabindex="0"
 		ref="list"
@@ -13,7 +13,7 @@
 				@click="toggleDisplay"
 				:aria-expanded="!this.toggleListOpen"
 				tabindex="-1"
-				v-show="!(list.length <= this.displayCount)"
+				v-if="!(list.length <= this.displayCount)"
 			>
 				+
 			</button>
