@@ -2,7 +2,7 @@
 	<div
 		@keyup.esc="closeOptions"
 		@blur="closeOptions"
-		v-if="isActive"
+		v-show="isActive"
 		class="options"
 		v-focus
 		tabindex="-1"

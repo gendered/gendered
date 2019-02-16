@@ -6,7 +6,10 @@
 		<!-- list of words for each letter -->
 		<!-- contains 26 WordList components -->
 		<keep-alive :include="['WordList']">
-			<WordListContainer :words="filteredWords" />
+			<WordListContainer
+				:words="filteredWords"
+				:toggleAllLists="toggleAllLists"
+			/>
 		</keep-alive>
 		<div id="search-updates" class="visuallyhidden" aria-live="polite">
 			<!-- content will be updated with Javascript -->

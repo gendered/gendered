@@ -1,6 +1,6 @@
 <template>
 	<li
-		v-if="list.length > 0"
+		v-show="list.length > 0"
 		class="word-list"
 		tabindex="0"
 		ref="list"
@@ -11,8 +11,9 @@
 			<button
 				class="toggle"
 				@click="toggleDisplay"
-				:aria-expanded="this.showPreview"
+				:aria-expanded="!this.toggleListOpen"
 				tabindex="-1"
+				v-show="!(list.length <= this.displayCount)"
 			>
 				+
 			</button>
@@ -159,6 +160,9 @@ export default {
 			type: String,
 			required: true
 		},
+		toggleAllLists: {
+			type: Boolean
+		},
 		list: {
 			required: true,
 			validator(value) {
@@ -167,8 +171,11 @@ export default {
 		}
 	},
 	computed: {
+		toggleListOpen() {
+			return this.toggleAllLists || this.toggleOpen;
+		},
 		wordsToDisplay() {
-			if (this.showPreview) {
+			if (!this.toggleListOpen) {
 				return this.list.slice(0, this.displayCount);
 			} else {
 				return this.list;
@@ -178,15 +185,14 @@ export default {
 	data() {
 		return {
 			displayCount: 24,
-			showPreview: true
+			toggleOpen: false
 		};
 	},
 	methods: {
 		toggleDisplay(e) {
-			this.$emit("preview");
 			let el = e.target;
-			el.textContent = this.showPreview ? "-" : "+";
-			this.showPreview = !this.showPreview;
+			this.toggleOpen = !this.toggleOpen;
+			el.textContent = this.toggleOpen ? "-" : "+";
 		},
 		_getFocusableElements(el) {
 			const selectorArray = [
