@@ -1,10 +1,14 @@
 <template>
 	<footer class="footer">
+<<<<<<< HEAD
 		<a href="https://twitter.com/@GenderedProject"
 			><img
 				src="../assets/imgs/twitter.svg"
 				alt="Twitter for The Gendered Project"/></a
 		>&nbsp;
+=======
+		<a href="https://twitter.com/@GenderedProject"><img src="../assets/imgs/twitter.svg" alt="Twitter for The Gendered Project"/></a>&nbsp;
+>>>>>>> Adding twitter icon
 		<span
 			>// &nbsp; Content is licensed under
 			<a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">
