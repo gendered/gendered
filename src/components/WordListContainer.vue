@@ -7,6 +7,7 @@
 				:list="value.words"
 				:letter="value.letter"
 				:key="value.letter"
+				:toggleAllLists="toggleAllLists"
 			/>
 		</ul>
 		<div>
@@ -67,6 +68,9 @@ export default {
 		words: {
 			type: Array,
 			default: () => []
+		},
+		toggleAllLists: {
+			type: Boolean
 		}
 	}
 };

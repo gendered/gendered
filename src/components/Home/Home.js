@@ -106,6 +106,7 @@ export default {
 			words: [],
 			count: 0,
 			searchText: "",
+			toggleAllLists: false,
 			optionsIsActive: false
 		};
 	},
@@ -169,6 +170,7 @@ export default {
 		},
 		updateSearchText(value) {
 			this.searchText = value;
+			this.toggleAllLists = !!this.searchText;
 		},
 		handleFilter(option, toggle, options) {
 			let activeFilters = this.activeFilters;
