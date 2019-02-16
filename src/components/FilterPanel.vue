@@ -1,5 +1,5 @@
 <template>
-	<ul v-show="options && options.length" class="filter-list">
+	<ul v-if="options && options.length" class="filter-list">
 		<li v-for="option in options" :key="option.type" class="filter">
 			<input
 				:class="{ active: option.active }"
