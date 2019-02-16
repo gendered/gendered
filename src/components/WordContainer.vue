@@ -10,21 +10,25 @@
 		<!-- <div v-if="invalidWord">
 		Word not in dictionary
 	</div> -->
-		<router-link :to="{ name: 'home' }">
-			X
+		<router-link :to="{ name: 'home' }" class="modal-link">
+			✕
 		</router-link>
 		<div class="w-80 w-60-ns center word-set-container">
 			<WordInfo v-if="entry" :entry="entry" />
 			<WordInfo v-if="equivalent" :entry="equivalent" />
 		</div>
-		<router-link :to="{ name: 'about' }">
-			?
+		<router-link :to="{ name: 'about' }" class="modal-link">
+			？
 		</router-link>
 	</div>
 </template>
 <style lang="scss" scoped>
 .modal {
 	overflow-y: scroll;
+}
+
+.modal-link {
+	font-size: 2rem;
 }
 
 .word-set-container {
@@ -128,6 +132,7 @@ export default {
 			let parent = refs.modal;
 			let relatedTarget = e.relatedTarget || e.target;
 			if (
+				e.key !== 'Escape' &&
 				relatedTarget &&
 				(relatedTarget.classList.contains("can-open-modal") ||
 					parent === relatedTarget ||
