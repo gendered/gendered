@@ -3,7 +3,11 @@
 		<!-- <div v-if="invalidWord">
 		Word not in dictionary
 	</div> -->
-		<router-link :to="{ name: 'home' }" class="modal-link">
+		<router-link
+			@click.native="closeModal"
+			:to="{ name: 'home' }"
+			class="modal-link"
+		>
 			✕
 		</router-link>
 		<div class="w-80 w-60-ns center word-set-container">
