@@ -9,7 +9,7 @@
 		ref="controls"
 	>
 		<FilterPanel :options="gender" @filter="handleFilter" />
-		<ScrollToTopButton />
+		<ScrollToTopButton @scrollToTop="$emit('scrollToTop')" />
 		<input
 			class="random can-open-modal"
 			type="button"

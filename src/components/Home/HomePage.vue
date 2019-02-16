@@ -22,7 +22,7 @@
 				@close="closeOptions"
 				@filter="handleFilter"
 				@random="getRandomWord"
-				@scroll="closeOptions"
+				@scrollToTop="closeOptions"
 				:isActive="optionsIsActive"
 			/>
 			<button

@@ -10,7 +10,7 @@ export default {
 	methods: {
 		handleScrollAction() {
 			this.scrollToTop();
-			this.$emit("scroll");
+			this.$emit("scrollToTop");
 		},
 		scrollToTop() {
 			window.scrollTo(0, 0);
