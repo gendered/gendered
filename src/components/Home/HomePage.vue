@@ -16,6 +16,7 @@
 		</div>
 		<section class="controls">
 			<form role="search">
+				<img src="../../assets/imgs/search.svg" alt="Search in word list"/>
 				<SearchFilter class="search" @input="updateSearchText" />
 			</form>
 			<OptionsContainer
