@@ -10,9 +10,7 @@
 				:toggleAllLists="toggleAllLists"
 			/>
 		</ul>
-		<div>
-			<router-view :key="$route.fullPath" />
-		</div>
+		<router-view :key="$route.fullPath" />
 	</main>
 </template>
 <style lang="scss">

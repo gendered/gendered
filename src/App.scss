@@ -46,6 +46,23 @@ html, body {
 	font-family: "Acumin", sans-serif;
 }
 
+body.modal-open {
+	position: fixed;
+	overflow: hidden;
+
+	*:not(modal *) {
+		pointer-events: none;
+		color: transparent;
+		text-shadow: 0 0 5px rgba(0,0,0,0.5);
+	}
+
+	.modal * {
+		text-shadow: none;
+		color: black;
+		pointer-events: auto;
+	}
+}
+
 h1, h2, h3 {
 	margin: 0.67em 0;
 	letter-spacing: -0.02125em;
