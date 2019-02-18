@@ -1,7 +1,7 @@
 <template>
-	<div class="about">
+	<div class="about container">
 		<!-- <h2 class="light">About this Project</h2> -->
-		<main>
+		<main class="">
 			<section id="what" class="about-section">
 				<h2 class="light">What is this?</h2>
 				<p>
@@ -256,9 +256,29 @@
 					<a href="https://github.com/oa495/gendered/issues">Github!</a>
 				</p>
 			</section>
+
+			<p class="footnote" id="socialized-male">
+				1. "Socialized male" and "socialized female" in this context refer to
+				people who may not identify with the gender associated with the sex
+				assigned to them at birth, but have gone through the process of
+				socialization for that gender. Devon Price writes in
+				<a
+					href="https://medium.com/@devonprice/gender-socialization-is-real-complex-348f56146925"
+					class="about-link"
+				>
+					<i>Gender Socialization is Real (Complex)</i> </a
+				>,"Socialization involves which expectations are placed on a person,
+				perhaps, but crucially, it also involves which expectations a person
+				internalizes and applies to themselves." In addition to expectations
+				placed, it also involves allowances and privileges given. For example,
+				those "socialized male" would be afforded the privilege of sexual freedom
+				but also sexual coercion. Those "socialized female" would inherit the
+				societal expectations of chastity and the repercussions that come with not
+				adhering to it.
+			</p>
 		</main>
 		<aside class="toc">
-			<h3 class="light">Table of Contents</h3>
+			<h3 class="light">Contents</h3>
 			<ul>
 				<li><a href="#what">What</a></li>
 				<li><a href="#why">Why</a></li>
@@ -267,6 +287,7 @@
 				<li><a href="#faq">FAQ</a></li>
 			</ul>
 		</aside>
+<<<<<<< HEAD
 		<h2 class="visuallyhidden" id="footnote-label">Footnotes</h2>
 		<ul class="footnotes">
 			<li id="socialized-male">
@@ -293,45 +314,42 @@
 			</li>
 		</ul>
 		<ScrollToTopButton />
+=======
+
+>>>>>>> standardized margins, made media queries more specific
 	</div>
 </template>
 <style lang="scss" scoped>
 @import "../mixins.scss";
 
 .about {
-	margin: 0 6.554rem;
-	padding-left: 4.096rem;
-	padding-right: 4.096rem;
-
-	@include break(medium) {
-		margin-left: 2.56rem;
-		margin-right: 2.56rem;
-		padding-left: 2.56rem;
-		padding-right: 2.56rem;
-	}
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	grid-gap: 1rem;
 
 	@include break(small) {
-		margin-left: 1.6rem;
-		margin-right: 1.6rem;
-		padding: 0;
+		grid-template-columns: 1fr;
 	}
 
 	main {
-		width: 62.5%;
-		max-width: 750px;
+		margin-top: 0;
+		grid-column-start: 2;
+		grid-column-end: 7;
+
+		@include break(medium) {
+			grid-column-start: 2;
+			grid-column-end: 9;
+		}
 
 		@include break(small) {
-			width: 100%;
+			grid-column: auto;
 		}
+
 
 		.about-section {
 			-webkit-column-break-inside: avoid;
 			page-break-inside: avoid;
 			break-inside: avoid;
-
-			h2.light {
-				margin-top: 4.096rem;
-			}
 
 			ul {
 				padding-left: 1.6rem;
@@ -369,9 +387,19 @@
 		top: 11.777rem;
 		left: 65%;
 
+		@include break(medium) {
+			left: 80%;
+
+			h3 {
+				font-size: 1rem;
+			}
+		}
+
 		@include break(small) {
 			display: none;
 		}
+
+
 
 		ul {
 			padding-left: 0;

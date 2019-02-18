@@ -41,9 +41,14 @@ html {
 }
 
 html, body {
-	margin: 0;
 	padding: 0;
 	font-family: "Acumin", sans-serif;
+	color: #121212;
+}
+
+body {
+	max-width: 1300px;
+	margin: 0 auto;
 }
 
 body.modal-open {
@@ -101,16 +106,29 @@ p, sup {
 	max-width: 32em;
 }
 
-img {
-	width: 30px;
+.ba {
+	border: 1px solid black;
 }
 
-.home > .container {
-	margin: 0 2.56rem;
+.by {
+	border: 1px solid gold;
+}
+
+.container {
+	margin: 2.56rem;
+
+	@include break(small) {
+		margin: 1.6rem;
+	}
+}
+
+.home {
+	// margin: 0 2.56rem;
 	column-count: 2;
 
 	@include break(small) {
 		column-count: 1;
+		// margin: 1.6rem;
 	}
 }
 
@@ -123,7 +141,7 @@ img {
 }
 
 a {
-	color: black;
+	color: #121212;
 	&:hover {
 		cursor: pointer;
 		font-weight: bold;
@@ -164,35 +182,45 @@ nav {
 	display: grid;
 	-ms-grid-columns: (1fr)[10];
 	grid-template-columns: repeat(10, 1fr);
-	margin: 2.56rem;
+	grid-gap: 1rem;
+	// margin: 2.56rem;
 	margin-bottom: 4.096rem;
 
 	@include break(small) {
+<<<<<<< HEAD
 		margin: 1.6rem;
 		-ms-grid-columns: (1fr)[3];
+=======
+		// margin: 1.6rem;
+>>>>>>> standardized margins, made media queries more specific
 		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.about {
+<<<<<<< HEAD
 		font-family: "RomanaBTWXX-Roman";
 		-ms-grid-column: 10;
 		grid-column-start: 10;
+=======
+		grid-column-start: 10;
+		margin-top: 1.46rem;
+		font-size: 2.197rem;
+
+		@include break(medium) {
+			font-size: 1.6rem;
+			margin-top: 0.96rem;
+		}
+
+		@include break(small) {
+			grid-column-start: 6;
+			font-size: 1.6rem;
+			margin-top: 1.6rem;
+		}
+>>>>>>> standardized margins, made media queries more specific
 
 		a {
 			text-decoration: none;
 			display: inline-block;
-			font-size: 2.197rem;
-			margin-top: 1.8rem;
-
-			@include break(medium) {
-				font-size: 1.6rem;
-				margin-top: 0.625rem;
-			}
-
-			@include break(small) {
-				font-size: 1rem;
-			}
-
 		}
 	}
 
@@ -211,17 +239,22 @@ nav {
 			grid-column-end: 2;
 		}
 
+
 		h1 {
 			margin: 0;
-			font-family: "Romana Std Bold";
+			margin-left: -0.75rem;
 
 			@include break(small) {
 				font-size: 1.6rem;
+				margin-left: 0;
 			}
 
 			@include break(medium) {
 				font-size: 2.56rem;
+				margin-left: -0.5rem;
 			}
+
+
 		}
 
 		a:first-child {
@@ -231,7 +264,7 @@ nav {
 		span {
 			font-weight: 400;
 			font-size: 1rem;
-			margin-left: 0.7em;
+			// margin-left: 0.7em;
 
 			@include break(small) {
 				font-size: 0.625rem;

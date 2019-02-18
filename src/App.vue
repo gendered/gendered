@@ -1,6 +1,12 @@
 <template>
+<<<<<<< HEAD
 	<div id="app">
 		<nav ref="nav">
+=======
+	<div id="app" @click="closeModal">
+		<button @click="skipNav" class="visuallyhidden">Skip navigation</button>
+		<nav v-current-page class="container">
+>>>>>>> standardized margins, made media queries more specific
 			<section class="logo">
 				<h1>
 					<router-link to="/">
@@ -9,8 +15,13 @@
 				</h1>
 				<span>A library of gendered words </span>
 			</section>
+<<<<<<< HEAD
 			<h3 class="about">
 				<router-link to="/about">
+=======
+			<h3 class= "about light">
+				<router-link  to="/about">
+>>>>>>> standardized margins, made media queries more specific
 					About
 				</router-link>
 			</h3>
