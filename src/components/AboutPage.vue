@@ -1,6 +1,5 @@
 <template>
 	<div class="about container">
-		<!-- <h2 class="light">About this Project</h2> -->
 		<main class="">
 			<section id="what" class="about-section">
 				<h2 class="light">What is this?</h2>
@@ -253,7 +252,7 @@
 				<h4>Future plans</h4>
 				<p>
 					Check out the
-					<a href="https://github.com/oa495/gendered/issues">Github!</a>
+					<a href="https://github.com/oa495/gendered/issues">GitHub!</a>
 				</p>
 			</section>
 		</main>

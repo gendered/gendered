@@ -1,8 +1,5 @@
 <template>
 	<div class="modal" v-focus tabindex="-1" @keydown.esc="closeModal">
-		<!-- <div v-if="invalidWord">
-		Word not in dictionary
-	</div> -->
 		<router-link
 			@click.native="closeModal"
 			:to="{ name: 'home' }"
@@ -14,7 +11,7 @@
 			<WordInfo v-if="entry" :entry="entry" />
 			<WordInfo v-if="equivalent" :entry="equivalent" />
 		</div>
-		<router-link :to="{ name: 'about' }" class="modal-link">
+		<router-link @click.native="closeModal" :to="{ name: 'about' }" class="modal-link">
 			<img
 				src="../assets/imgs/info.svg"
 				alt="More information about project."
