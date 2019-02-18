@@ -285,7 +285,6 @@
 				<li><a href="#faq">FAQ</a></li>
 			</ul>
 		</aside>
-		<h2 class="visuallyhidden" id="footnote-label">Footnotes</h2>
 		<ScrollToTopButton />
 	</div>
 </template>
@@ -387,8 +386,9 @@
 	}
 
 	.to-top {
-		position: absolute;
+		position: fixed;
 		right: 2.096rem;
+		bottom: 2.096rem;
 	}
 }
 </style>

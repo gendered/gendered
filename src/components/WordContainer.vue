@@ -1,35 +1,63 @@
 <template>
-	<div class="modal" v-focus tabindex="-1" @keydown.esc="navigateHome">
-		<!-- <div v-if="invalidWord">
-		Word not in dictionary
-	</div> -->
-		<router-link
-			@click.native="closeModal"
-			:to="{ name: 'home' }"
-			class="modal-link"
-		>
-			✕
-		</router-link>
-		<div class="w-80 w-60-ns center word-set-container">
-			<WordInfo v-if="entry" :entry="entry" />
-			<WordInfo v-if="equivalent" :entry="equivalent" />
+  <transition name="fade">
+		<div class="modal" v-focus tabindex="-1" @keydown.esc="navigateHome">
+			<router-link
+				@click.native="closeModal"
+				:to="{ name: 'home' }"
+				class="modal-link"
+			>
+				✕
+			</router-link>
+			<div class="w-80 w-60-ns center word-set-container">
+				<WordInfo v-if="entry" :entry="entry" />
+				<WordInfo v-if="equivalent" :entry="equivalent" />
+			</div>
+			<router-link
+				@click.native="closeModal"
+				:to="{ name: 'about' }"
+				class="modal-link"
+			>
+				<img
+					src="../assets/imgs/info.svg"
+					alt="More information about project."
+				/>
+			</router-link>
 		</div>
-		<router-link
-			@click.native="closeModal"
-			:to="{ name: 'about' }"
-			class="modal-link"
-		>
-			<img
-				src="../assets/imgs/info.svg"
-				alt="More information about project."
-			/>
-		</router-link>
-	</div>
+  </transition>
 </template>
 <style lang="scss" scoped>
+@import "../mixins.scss";
+
 .modal {
 	overflow-y: scroll;
-	z-index: 1010;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	z-index: 9998;
+	top: 0;
+	right: 0;
+	width: 37.5%;
+	height: 100%;
+	background-color: #fff;
+	box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.33);
+	padding: 4.096rem 2.56rem;
+	box-sizing: border-box;
+
+	@include break(small) {
+		width: 80%;
+	}
+
+	@include break(medium) {
+		width: 62.5%;
+	}
+}
+
+.fade-enter-active, .fade-leave-active {
+	transition: opacity 0.3s ease;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 
 .modal-link {
