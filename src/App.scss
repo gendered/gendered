@@ -123,7 +123,7 @@ img {
 }
 
 a {
-	color: black;
+	color: #121212;
 	&:hover {
 		cursor: pointer;
 		font-weight: bold;
@@ -211,17 +211,22 @@ nav {
 			grid-column-end: 2;
 		}
 
+
 		h1 {
 			margin: 0;
-			font-family: "Romana Std Bold";
+			margin-left: -0.75rem;
 
 			@include break(small) {
 				font-size: 1.6rem;
+				margin-left: 0;
 			}
 
 			@include break(medium) {
 				font-size: 2.56rem;
+				margin-left: -0.5rem;
 			}
+
+
 		}
 
 		a:first-child {
@@ -231,7 +236,7 @@ nav {
 		span {
 			font-weight: 400;
 			font-size: 1rem;
-			margin-left: 0.7em;
+			// margin-left: 0.7em;
 
 			@include break(small) {
 				font-size: 0.625rem;

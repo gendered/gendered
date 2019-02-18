@@ -1,7 +1,7 @@
 <template>
-	<div class="about">
+	<div class="about container">
 		<!-- <h2 class="light">About this Project</h2> -->
-		<main>
+		<main class="">
 			<section id="what" class="about-section">
 				<h2 class="light">What is this?</h2>
 				<p>
@@ -369,9 +369,19 @@
 		top: 11.777rem;
 		left: 65%;
 
+		@include break(medium) {
+			left: 80%;
+
+			h3 {
+				font-size: 1rem;
+			}
+		}
+
 		@include break(small) {
 			display: none;
 		}
+
+
 
 		ul {
 			padding-left: 0;
