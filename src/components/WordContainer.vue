@@ -120,7 +120,7 @@ export default {
 			this.closeModal();
 			this.$router.push({ name: "home" });
 		},
-		closeModal(e) {
+		closeModal() {
 			document.querySelector("body").classList.remove("modal-open");
 			if (this.elementToFocus) this.elementToFocus.focus();
 		}
