@@ -3,23 +3,19 @@
 .controls {
 	position: fixed;
 	bottom: 2.56rem;
-	// right: 0;
 	margin: 0 2.56rem;
-	// display: flex;
 	z-index: 999;
-
-	.search, #show-controls {
-		box-shadow: 2px 3px 0px black;
-	}
 
 	#show-controls {
 		padding: 0.5rem 0.5rem 0;
 		margin-top: 1rem;
+		box-shadow: 2px 3px 0px black;
 	}
 }
 
 .controls, .options {
 	button, input {
+		font-size: 1rem;
 		border-radius: 0;
 		border: 1px solid black;
 		padding: 0.5rem 1rem;

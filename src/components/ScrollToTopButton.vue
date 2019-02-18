@@ -1,8 +1,6 @@
 <template>
 	<button class="to-top" @click="handleScrollAction">
 		↑
-		<img src="../assets/imgs/arrow.svg" alt="Scroll to top"/>
-
 	</button>
 </template>
 

@@ -9,11 +9,7 @@
 				</h1>
 				<span>A library of gendered words </span>
 			</section>
-<<<<<<< HEAD
-			<h3 class= "about light">
-=======
 			<h3 class="about light">
->>>>>>> standardized margins, made media queries more specific
 				<router-link to="/about">
 					About
 				</router-link>

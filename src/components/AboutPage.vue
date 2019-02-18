@@ -169,7 +169,6 @@
 					</a>
 					in the prison system.
 				</p>
-
 				<p>
 					While I hope this project can provide a space for deconstructing and
 					examining gendered language, it does remain within and thus a part of
@@ -181,7 +180,6 @@
 					unwelcome departure from “normal,” is a part of the system of labeling
 					that I want to make data available to explore.
 				</p>
-
 				<p>
 					Lastly this idea is not new. In the 1970s Julia Stanley scoured the
 					Oxford English dictionary and found 220 terms referring to “women as
@@ -204,9 +202,7 @@
 			</section>
 			<section id="faq" class="about-section">
 				<h2 class="light">FAQ</h2>
-
 				<h4>Where is the data from?</h4>
-
 				<p>
 					The words are gotten from many different sources. Downloadable sources
 					are in this
@@ -218,9 +214,7 @@
 					filtering on dictionary APIs such as
 					<a href="https://www.wordnik.com">Wordnik</a>.
 				</p>
-
 				<h4>Will you be updating?</h4>
-
 				<p>
 					Yes. The library is not fixed: it can be updated, parts of it added or
 					removed, or augmented with more sources at any time. Language is
@@ -231,7 +225,6 @@
 					easily manipulating the dataset. Please sign up if you want to
 					contribute in any way.
 				</p>
-
 				<h4>Can I access the data?</h4>
 				<p>
 					Yes. I'm still working out how to streamline this process but for now
@@ -253,69 +246,22 @@
 				<h4>Future plans</h4>
 				<p>
 					Check out the
-					<a href="https://github.com/oa495/gendered/issues">Github!</a>
+					<a href="https://github.com/oa495/gendered/issues">GitHub!</a>
 				</p>
 			</section>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-		<h2 class="visuallyhidden" id="footnote-label">Footnotes</h2>
-		<ul class="footnotes">
-			<li id="socialized-male">
-				<p class="footnote">
-					1. "Socialized male" and "socialized female" in this context refer to
-					people who may not identify with the gender associated with the sex
-					assigned to them at birth, but have gone through the process of
-					socialization for that gender. Devon Price writes in
-					<a
-						href="https://medium.com/@devonprice/gender-socialization-is-real-complex-348f56146925"
-						class="about-link"
-					>
-						<i>Gender Socialization is Real (Complex)</i> </a
-					>, "Socialization involves which expectations are placed on a person,
-					perhaps, but crucially, it also involves which expectations a person
-					internalizes and applies to themselves." In addition to expectations
-					placed, it also involves allowances and privileges given. For example,
-					those "socialized male" would be afforded the privilege of sexual
-					freedom but also sexual coercion. Those "socialized female" would
-					inherit the societal expectations of chastity and the repercussions
-					that come with not adhering to it.
-					<a href="#socialized-male-ref" aria-label="Back to content">↵</a>
-				</p>
-			</li>
-		</ul>
-=======
->>>>>>> standardized margins, made media queries more specific
 			<h2 class="visuallyhidden" id="footnote-label">Footnotes</h2>
 			<ul class="footnotes">
 				<li id="socialized-male">
 					<p class="footnote">
-<<<<<<< HEAD
-						1. "Socialized male" and "socialized female" in this context refer to
-						people who may not identify with the gender associated with the sex
-						assigned to them at birth, but have gone through the process of
-=======
 						1. "Socialized male" and "socialized female" in this context refer
 						to people who may not identify with the gender associated with the
 						sex assigned to them at birth, but have gone through the process of
->>>>>>> standardized margins, made media queries more specific
 						socialization for that gender. Devon Price writes in
 						<a
 							href="https://medium.com/@devonprice/gender-socialization-is-real-complex-348f56146925"
 							class="about-link"
 						>
 							<i>Gender Socialization is Real (Complex)</i> </a
-<<<<<<< HEAD
-						>, "Socialization involves which expectations are placed on a person,
-						perhaps, but crucially, it also involves which expectations a person
-						internalizes and applies to themselves." In addition to expectations
-						placed, it also involves allowances and privileges given. For example,
-						those "socialized male" would be afforded the privilege of sexual
-						freedom but also sexual coercion. Those "socialized female" would
-						inherit the societal expectations of chastity and the repercussions
-						that come with not adhering to it.
-=======
 						>, "Socialization involves which expectations are placed on a
 						person, perhaps, but crucially, it also involves which expectations
 						a person internalizes and applies to themselves." In addition to
@@ -324,15 +270,10 @@
 						privilege of sexual freedom but also sexual coercion. Those
 						"socialized female" would inherit the societal expectations of
 						chastity and the repercussions that come with not adhering to it.
->>>>>>> standardized margins, made media queries more specific
 						<a href="#socialized-male-ref" aria-label="Back to content">↵</a>
 					</p>
 				</li>
 			</ul>
-<<<<<<< HEAD
-=======
->>>>>>> standardized margins, made media queries more specific
->>>>>>> standardized margins, made media queries more specific
 		</main>
 		<aside class="toc">
 			<h3 class="light">Contents</h3>
@@ -352,21 +293,29 @@
 @import "../mixins.scss";
 
 .about {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr
+		1rem 1fr 1rem 1fr 1rem 1fr;
 	grid-template-columns: repeat(10, 1fr);
 	grid-gap: 1rem;
 
 	@include break(small) {
+		-ms-grid-columns: 1fr;
 		grid-template-columns: 1fr;
 	}
 
 	main {
 		margin-top: 0;
+		-ms-grid-column: 2;
 		grid-column-start: 2;
+		-ms-grid-column-span: 5;
 		grid-column-end: 7;
 
 		@include break(medium) {
+			-ms-grid-column: 2;
 			grid-column-start: 2;
+			-ms-grid-column-span: 7;
 			grid-column-end: 9;
 		}
 
@@ -374,12 +323,7 @@
 			grid-column: auto;
 		}
 
-
 		.about-section {
-			-webkit-column-break-inside: avoid;
-			page-break-inside: avoid;
-			break-inside: avoid;
-
 			ul {
 				padding-left: 1.6rem;
 				list-style-type: square;
@@ -389,7 +333,6 @@
 				padding: 1rem;
 
 				@include break(small) {
-					// padding: 0.625rem;
 					margin: 0;
 				}
 
@@ -427,8 +370,6 @@
 		@include break(small) {
 			display: none;
 		}
-
-
 
 		ul {
 			padding-left: 0;
