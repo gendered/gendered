@@ -1,7 +1,7 @@
 <template>
 	<div id="app" @click="closeModal">
 		<button @click="skipNav" class="visuallyhidden">Skip navigation</button>
-		<nav v-current-page>
+		<nav v-current-page class="container">
 			<section class="logo">
 				<h1>
 					<router-link to="/">
@@ -10,7 +10,7 @@
 				</h1>
 				<span>A library of gendered words </span>
 			</section>
-			<h3 class= "about">
+			<h3 class= "about light">
 				<router-link  to="/about">
 					About
 				</router-link>

@@ -1,5 +1,5 @@
 <template>
-	<main class="container">
+	<main>
 		<ul class="letter-list" aria-describedby="instructions">
 			<!-- want to give .letter-list grid layout 12 columns  -->
 			<WordList
@@ -18,6 +18,10 @@
 @import "../mixins.scss";
 main {
 	margin-bottom: 2.56rem;
+
+	@include break(small) {
+		margin: 2.56rem auto;
+	}
 }
 
 .letter-list {

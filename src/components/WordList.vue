@@ -96,7 +96,8 @@
 		display: inline-block;
 
 		.word-link {
-			padding: 0.625rem;
+			margin-right: 0.625rem;
+			margin-bottom: 0.625rem;
 			font-size: 1rem;
 			font-weight: 400;
 		}

@@ -37,10 +37,15 @@
 }
 
 html, body {
-	margin: 0;
 	padding: 0;
 	padding-bottom: 4.096rem;
 	font-family: "Acumin", sans-serif;
+	color: #121212;
+}
+
+body {
+	max-width: 1300px;
+	margin: 0 auto;
 }
 
 h1, h2, h3 {
@@ -81,12 +86,29 @@ p, sup {
 	max-width: 32em;
 }
 
+.ba {
+	border: 1px solid black;
+}
+
+.by {
+	border: 1px solid gold;
+}
+
+.container {
+	margin: 2.56rem;
+
+	@include break(small) {
+		margin: 1.6rem;
+	}
+}
+
 .home {
-	margin: 0 2.56rem;
+	// margin: 0 2.56rem;
 	column-count: 2;
 
 	@include break(small) {
 		column-count: 1;
+		// margin: 1.6rem;
 	}
 }
 
@@ -95,7 +117,7 @@ main, nav, section {
 }
 
 a {
-	color: black;
+	color: #121212;
 	&:hover {
 		cursor: pointer;
 		font-weight: bold;
@@ -147,41 +169,34 @@ input.active, input:not([type='text']):hover {
 nav {
 	display: grid;
 	grid-template-columns: repeat(10, 1fr);
-	margin: 2.56rem;
+	grid-gap: 1rem;
+	// margin: 2.56rem;
 	margin-bottom: 4.096rem;
 
 	@include break(small) {
-		margin: 1.6rem;
+		// margin: 1.6rem;
 		grid-template-columns: repeat(3, 1fr);
 	}
 
-	.home, .about {
-		margin: 0 2.56rem;
+	.about {
+		grid-column-start: 10;
+		margin-top: 1.46rem;
+		font-size: 2.197rem;
+
+		@include break(medium) {
+			font-size: 1.6rem;
+			margin-top: 0.96rem;
+		}
 
 		@include break(small) {
-			margin: 0 1.6rem;
+			grid-column-start: 6;
+			font-size: 1.6rem;
+			margin-top: 1.6rem;
 		}
-	}
-
-	.about {
-		font-family: "RomanaBTWXX-Roman";
-		grid-column-start: 10;
 
 		a {
 			text-decoration: none;
 			display: inline-block;
-			font-size: 2.197rem;
-			margin-top: 1.8rem;
-
-			@include break(medium) {
-				font-size: 1.6rem;
-				margin-top: 0.625rem;
-			}
-
-			@include break(small) {
-				font-size: 1rem;
-			}
-
 		}
 	}
 
@@ -196,17 +211,22 @@ nav {
 			grid-column-end: 2;
 		}
 
+
 		h1 {
 			margin: 0;
-			font-family: "Romana Std Bold";
+			margin-left: -0.75rem;
 
 			@include break(small) {
 				font-size: 1.6rem;
+				margin-left: 0;
 			}
 
 			@include break(medium) {
 				font-size: 2.56rem;
+				margin-left: -0.5rem;
 			}
+
+
 		}
 
 		a:first-child {
@@ -216,7 +236,7 @@ nav {
 		span {
 			font-weight: 400;
 			font-size: 1rem;
-			margin-left: 0.7em;
+			// margin-left: 0.7em;
 
 			@include break(small) {
 				font-size: 0.625rem;

@@ -1,5 +1,5 @@
 <template>
-	<div class="home">
+	<div class="home container">
 		<p tabindex="0" id="instructions" class="visuallyhidden">
 			Use arrow keys to navigate inside words for a letter
 		</p>
