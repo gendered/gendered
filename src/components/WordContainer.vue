@@ -1,5 +1,5 @@
 <template>
-	<div class="modal" v-focus tabindex="-1" @keydown.esc="closeModal">
+	<div class="modal" v-focus tabindex="-1" @keydown.esc="navigateHome">
 		<!-- <div v-if="invalidWord">
 		Word not in dictionary
 	</div> -->
@@ -116,10 +116,13 @@ export default {
 					} else return res;
 				});
 		},
-		closeModal() {
+		navigateHome() {
+			this.closeModal();
+			this.$router.push({ name: "home" });
+		},
+		closeModal(e) {
 			document.querySelector("body").classList.remove("modal-open");
 			if (this.elementToFocus) this.elementToFocus.focus();
-			this.$router.push({ name: "home" });
 		}
 	}
 };
