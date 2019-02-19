@@ -47,7 +47,7 @@ html, body {
 }
 
 body {
-	max-width: 1300px;
+	max-width: 1500px;
 	margin: 0 auto;
 }
 
@@ -124,9 +124,11 @@ p, sup {
 
 .home {
 	// margin: 0 2.56rem;
+	-webkit-column-count: 2;
 	column-count: 2;
 
 	@include break(small) {
+		-webkit-column-count: 1;
 		column-count: 1;
 		// margin: 1.6rem;
 	}
@@ -253,8 +255,6 @@ nav {
 				font-size: 2.56rem;
 				margin-left: -0.5rem;
 			}
-
-
 		}
 
 		a:first-child {

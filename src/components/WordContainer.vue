@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+	<transition name="fade">
 		<div class="modal" v-focus tabindex="-1" @keydown.esc="navigateHome">
 			<router-link
 				@click.native="closeModal"
@@ -23,7 +23,7 @@
 				/>
 			</router-link>
 		</div>
-  </transition>
+	</transition>
 </template>
 <style lang="scss" scoped>
 @import "../mixins.scss";
@@ -52,12 +52,13 @@
 	}
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
 	transition: opacity 0.3s ease;
 }
 
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+	opacity: 0;
 }
 
 .modal-link {

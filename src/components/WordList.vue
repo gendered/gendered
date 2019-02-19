@@ -13,7 +13,7 @@
 				@click="toggleDisplay"
 				:aria-expanded="!this.toggleListOpen"
 				tabindex="-1"
-				v-if="!(list.length <= this.displayCount)"
+				v-bind:class="{ invisible: shouldShowToggleButton }"
 			>
 				+
 			</button>
@@ -88,10 +88,6 @@
 .toggle {
 	font-size: 1.6rem;
 	margin-right: 0;
-	-webkit-transition: all 0.1s ease;
-	-moz-transition: all 0.1s ease;
-	-o-transition: all 0.1s ease;
-	transition: all 0.1s ease;
 	bottom: 2.56rem;
 	margin-bottom: 2.56rem;
 	background: none;
@@ -145,6 +141,10 @@
 		}
 	}
 }
+
+.invisible {
+	visibility: hidden;
+}
 </style>
 <script>
 const arrowKeys = {
@@ -181,6 +181,9 @@ export default {
 			} else {
 				return this.list;
 			}
+		},
+		shouldShowToggleButton() {
+			return this.list.length <= this.displayCount;
 		}
 	},
 	data() {

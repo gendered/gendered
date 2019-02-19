@@ -29,7 +29,6 @@ main {
 	padding: 0;
 	margin: 0;
 }
-
 </style>
 <script>
 import WordList from "@/components/WordList";
