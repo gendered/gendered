@@ -13,10 +13,6 @@ export default {
 		},
 		meta: [
 			{
-				name: "viewport",
-				content: "width=device-width, initial-scale=1"
-			},
-			{
 				name: "description",
 				content: "A library of gendered words."
 			},
