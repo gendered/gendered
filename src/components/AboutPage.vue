@@ -13,21 +13,11 @@
 					fuckboy to describe a man I had dealt with. I wondered out loud why it
 					took so long for a word that so aptly describes a common type of man
 					to be used in popular culture. I thought of the myriad words that
-					exist to derogatorily describe or shame sexually liberated women
-					and/or folks socialized female and the dearth of such equivalent words
-					for men and/or folks socialized male.
-					<sup aria-describedby="footnote-label">
-						<a
-							class="about-link"
-							id="socialized-male-ref"
-							href="#socialized-male"
-						>
-							[ 1 ]</a
-						>
-					</sup>
-					&nbsp;I decided to try and create something that would allow us to
-					explore what the English language tells us about men, women and those
-					who do not fit in those binaries.
+					exist to derogatorily describe or shame sexually liberated women (as a
+					social category) and the dearth of such equivalent words for men (as a
+					social category). &nbsp;I decided to try and create something that
+					would allow us to explore what the English language tells us about
+					men, women and those who do not fit in those binaries.
 				</p>
 
 				<blockquote cite="https://archive.org/details/p15957coll6_681_0">
@@ -249,31 +239,6 @@
 					<a href="https://github.com/oa495/gendered/issues">GitHub!</a>
 				</p>
 			</section>
-			<h2 class="visuallyhidden" id="footnote-label">Footnotes</h2>
-			<ul class="footnotes">
-				<li id="socialized-male">
-					<p class="footnote">
-						1. "Socialized male" and "socialized female" in this context refer
-						to people who may not identify with the gender associated with the
-						sex assigned to them at birth, but have gone through the process of
-						socialization for that gender. Devon Price writes in
-						<a
-							href="https://medium.com/@devonprice/gender-socialization-is-real-complex-348f56146925"
-							class="about-link"
-						>
-							<i>Gender Socialization is Real (Complex)</i> </a
-						>, "Socialization involves which expectations are placed on a
-						person, perhaps, but crucially, it also involves which expectations
-						a person internalizes and applies to themselves." In addition to
-						expectations placed, it also involves allowances and privileges
-						given. For example, those "socialized male" would be afforded the
-						privilege of sexual freedom but also sexual coercion. Those
-						"socialized female" would inherit the societal expectations of
-						chastity and the repercussions that come with not adhering to it.
-						<a href="#socialized-male-ref" aria-label="Back to content">↵</a>
-					</p>
-				</li>
-			</ul>
 		</main>
 		<aside class="toc">
 			<h3 class="light">Contents</h3>
@@ -373,16 +338,6 @@
 		ul {
 			padding-left: 0;
 		}
-	}
-
-	.footnotes {
-		padding: 0;
-	}
-
-	p.footnote {
-		margin-top: 4.096rem;
-		font-size: 0.769rem;
-		width: 100%;
 	}
 
 	.to-top {
