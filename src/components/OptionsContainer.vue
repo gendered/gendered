@@ -9,7 +9,7 @@
 		ref="controls"
 	>
 		<FilterPanel :options="gender" @filter="handleFilter" />
-		<ScrollToTopButton @scrollToTop="$emit('scrollToTop')" />
+		<!-- <ScrollToTopButton @scrollToTop="$emit('scrollToTop')" /> -->
 		<input
 			class="random can-open-modal"
 			type="button"
@@ -72,14 +72,3 @@ export default {
 	}
 };
 </script>
-<style lang="scss" scoped>
-.options {
-	position: fixed;
-	bottom: 6rem;
-	right: 0;
-	background: white;
-	border: 1px solid black;
-	display: flex;
-	flex-wrap: wrap;
-}
-</style>

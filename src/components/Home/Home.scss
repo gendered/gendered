@@ -1,50 +1,95 @@
-
+@import '../../mixins.scss';
 
 .controls {
-	position: fixed;
-	bottom: 2.56rem;
-	margin: 0 2.56rem;
 	z-index: 999;
 
+	.search-container {
+		position: fixed;
+		bottom: 2.56rem;
+		left: 35%;
+		width: 30%;
+		min-width: 20rem;
+
+		@include break(medium) {
+			left: 15%;
+		}
+
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		border: 1.6px solid;
+		background: white;
+
+		img {
+			padding-bottom: 0.391rem;
+			padding-left: 0.625rem;
+			padding-right: 0.625rem;
+			padding-top: 0.625rem;
+		}
+
+		.search {
+			width: 80%;
+			box-shadow: none;
+			border: none;
+			line-height: 1.6rem;
+
+			&:hover {
+				cursor: text;
+			}
+
+			&:focus {
+				color: black;
+				outline: none;
+			}
+		}
+	}
+
 	#show-controls {
-		padding: 0.5rem 0.5rem 0;
-		margin-top: 1rem;
-		box-shadow: 2px 3px 0px black;
+		position: fixed;
+		bottom: 2.56rem;
+		right: 2.56rem;
+		padding-top: 0.625rem;
+		padding-left: 0.625rem;
+		padding-right: 0.625rem;
+		padding-bottom: 0;
+
+		border: 1.6px solid black;
+
+		@include break(small) {
+			right: 1.6rem;
+		}
+
+		img {
+			margin: 0;
+		}
 	}
 }
 
-.controls, .options {
+.options {
+	display: inline-block;
+	position: fixed;
+	right: 2.56rem;
+	bottom: 6rem;
+	// 	background: white;
+	// 	border: 1px solid black;
+
+	@include break(small) {
+		right: 1.6rem;
+	}
+
 	button, input {
 		font-size: 1rem;
 		border-radius: 0;
-		border: 1px solid black;
+		border: 1.6px solid black;
 		padding: 0.5rem 1rem;
 	}
-}
 
-.search-container {
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	border: 1px solid;
-	background: white;
-
-	img {
-		padding: 0.5rem;
-	}
-
-	.search {
-		box-shadow: none;
-		border: none;
-		line-height: 1.6rem;
-
-		&:hover {
-			cursor: text;
-		}
-
-		&:focus {
-			color: black;
-			outline: none;
+	.filter-list {
+		.filter {
+			input {
+				text-transform: capitalize;
+				margin: 0.5rem;
+			}
 		}
 	}
 }
