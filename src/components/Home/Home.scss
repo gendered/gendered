@@ -14,10 +14,17 @@
 			left: 15%;
 		}
 
+		@include break(small) {
+			left: 1.6rem;
+			bottom: 1.6rem;
+			width: 65%;
+			min-width: 65%;
+		}
+
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
-		border: 1.6px solid;
+		border: 1.6px solid rgba(0,0,0,0.90);;
 		background: white;
 
 		img {
@@ -28,7 +35,7 @@
 		}
 
 		.search {
-			width: 80%;
+			width: 70%;
 			box-shadow: none;
 			border: none;
 			line-height: 1.6rem;
@@ -51,12 +58,13 @@
 		padding-top: 0.625rem;
 		padding-left: 0.625rem;
 		padding-right: 0.625rem;
-		padding-bottom: 0;
+		padding-bottom: 0.153rem;
 
-		border: 1.6px solid black;
+		border: 1.6px solid rgba(0,0,0,0.90);
 
 		@include break(small) {
 			right: 1.6rem;
+			bottom: 1.6rem;
 		}
 
 		img {
@@ -69,26 +77,44 @@
 	display: inline-block;
 	position: fixed;
 	right: 2.56rem;
-	bottom: 6rem;
+	bottom: 6.554rem;
 	// 	background: white;
 	// 	border: 1px solid black;
 
-	@include break(small) {
+	@include break(medium) {
 		right: 1.6rem;
+		width: 25%;
 	}
 
+	@include break(small) {
+		right: 1.6rem;
+		width: 50%;
+	}
+
+
 	button, input {
+		margin: 0.625rem;
 		font-size: 1rem;
 		border-radius: 0;
-		border: 1.6px solid black;
-		padding: 0.5rem 1rem;
+		border: 1.6px solid rgba(0,0,0,0.90);
+		padding: 0.625rem 1rem;
+	}
+
+	.random {
+		@include break(small) {
+			width: 95%;
+		}
 	}
 
 	.filter-list {
+		margin: 0;
+		padding: 0;
 		.filter {
 			input {
 				text-transform: capitalize;
-				margin: 0.5rem;
+				@include break(medium) {
+					margin-right: 0;
+				}
 			}
 		}
 	}
