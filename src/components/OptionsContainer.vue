@@ -9,7 +9,6 @@
 		ref="controls"
 	>
 		<FilterPanel :options="gender" @filter="handleFilter" />
-		<!-- <ScrollToTopButton @scrollToTop="$emit('scrollToTop')" /> -->
 		<input
 			class="random can-open-modal"
 			type="button"
@@ -20,13 +19,11 @@
 </template>
 <script>
 import FilterPanel from "@/components/FilterPanel";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default {
 	name: "OptionsContainer",
 	components: {
 		FilterPanel,
-		ScrollToTopButton
 	},
 	props: {
 		isActive: {

@@ -18,12 +18,12 @@
 				+
 			</button>
 		</div>
-		<ul class="words" ref="words">
+		<transition-group class="words" name="list" tag="ul">
 			<li
 				class="word"
 				:ref="'word-' + index"
 				v-for="(word, index) in wordsToDisplay"
-				:key="index"
+				:key="'word-' + index"
 			>
 				<router-link
 					:to="{
@@ -36,7 +36,7 @@
 					{{ word.word }}
 				</router-link>
 			</li>
-		</ul>
+		</transition-group>
 	</li>
 </template>
 <style lang="scss" scoped>
@@ -144,6 +144,16 @@
 
 .invisible {
 	visibility: hidden;
+}
+
+.list-enter-active,
+.list-leave-active {
+	transition: all 1s;
+}
+
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+	opacity: 0;
+	transform: translateY(30px);
 }
 </style>
 <script>
