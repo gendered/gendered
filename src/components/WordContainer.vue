@@ -141,8 +141,8 @@ export default {
 				.then(res => res.json())
 				.then(res => {
 					if (callback) {
-						callback(res);
-					} else return res;
+						callback(res.data);
+					} else return res.data;
 				});
 		},
 		navigateHome() {

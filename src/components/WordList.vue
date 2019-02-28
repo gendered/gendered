@@ -91,7 +91,7 @@
 	bottom: 2.56rem;
 	margin-bottom: 2.56rem;
 	background: none;
-  position: -webkit-sticky;
+	position: -webkit-sticky;
 	position: sticky;
 
 	&:hover {

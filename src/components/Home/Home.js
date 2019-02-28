@@ -111,7 +111,7 @@ export default {
 		fetch(`${API}/letter/AZ`)
 			.then(res => res.json())
 			.then(res => {
-				this.words = res;
+				this.words = res.data;
 			});
 	},
 	computed: {
