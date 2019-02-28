@@ -5,7 +5,34 @@ import "isomorphic-fetch";
 import localforage from "localforage";
 
 const API = "https://gendered-api.glitch.me/api/words";
-
+const letters = [
+	{ letter: "A" },
+	{ letter: "B" },
+	{ letter: "C" },
+	{ letter: "D" },
+	{ letter: "E" },
+	{ letter: "F" },
+	{ letter: "G" },
+	{ letter: "H" },
+	{ letter: "I" },
+	{ letter: "J" },
+	{ letter: "K" },
+	{ letter: "L" },
+	{ letter: "M" },
+	{ letter: "N" },
+	{ letter: "O" },
+	{ letter: "P" },
+	{ letter: "Q" },
+	{ letter: "R" },
+	{ letter: "S" },
+	{ letter: "T" },
+	{ letter: "U" },
+	{ letter: "V" },
+	{ letter: "W" },
+	{ letter: "X" },
+	{ letter: "Y" },
+	{ letter: "Z" }
+];
 export default {
 	name: "HomePage",
 	head: {
@@ -100,7 +127,7 @@ export default {
 	data() {
 		return {
 			activeFilters: [],
-			words: [],
+			words: letters,
 			count: 0,
 			searchText: "",
 			toggleAllLists: false,
@@ -136,26 +163,28 @@ export default {
 			for (let i = 0; i < length; i++) {
 				const item = filtered[i];
 				const words = item["words"];
-				item["words"] = words.filter(entry => {
-					if (!len) {
-						entry.state = "";
-					}
-					for (let i = 0; i < len; i++) {
-						let option = activeFilters[i];
-						switch (option.category) {
-							case "gender":
+				item["words"] = words
+					? words.filter(entry => {
+							if (!len) {
 								entry.state = "";
-								if (entry["gender"] === option.type) {
-									entry.state = "highlight";
-								} else break;
-						}
-					}
-					if (entry["word"] && !!this.searchText) {
-						return entry["word"].match(searchFilter);
-					} else {
-						return true;
-					}
-				});
+							}
+							for (let i = 0; i < len; i++) {
+								let option = activeFilters[i];
+								switch (option.category) {
+									case "gender":
+										entry.state = "";
+										if (entry["gender"] === option.type) {
+											entry.state = "highlight";
+										} else break;
+								}
+							}
+							if (entry["word"] && !!this.searchText) {
+								return entry["word"].match(searchFilter);
+							} else {
+								return true;
+							}
+					  })
+					: [];
 			}
 			this.count = filtered.reduce((count, obj) => {
 				return (count += obj.words.length);

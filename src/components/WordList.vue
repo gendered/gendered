@@ -1,11 +1,5 @@
 <template>
-	<li
-		v-if="list.length > 0"
-		class="word-list"
-		tabindex="0"
-		ref="list"
-		@keydown="moveWithin"
-	>
+	<li class="word-list" tabindex="0" ref="list" @keydown="moveWithin">
 		<div class="letter">
 			<span>{{ letter }}</span>
 			<button
@@ -121,6 +115,27 @@
 	}
 }
 
+.words:empty {
+	background-image: linear-gradient(
+			100deg,
+			rgba(255, 255, 255, 0),
+			rgba(255, 255, 255, 0.5) 50%,
+			rgba(255, 255, 255, 0) 80%
+		),
+		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0);
+
+	background-repeat: repeat-y;
+
+	background-size: 50px 200px, /* highlight */ 150px 200px, 350px 200px,
+		300px 200px, 250px 200px;
+
+	background-position: 0 0, /* highlight */ 120px 0, 120px 40px, 120px 80px,
+		120px 120px;
+}
+
 .highlight {
 	&.female,
 	&.male {
@@ -170,7 +185,8 @@ export default {
 			required: true,
 			validator(value) {
 				return value === null || Array.isArray(value);
-			}
+			},
+			default: () => []
 		}
 	},
 	computed: {
