@@ -20,13 +20,11 @@
 </template>
 <script>
 import FilterPanel from "@/components/FilterPanel";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default {
 	name: "OptionsContainer",
 	components: {
-		FilterPanel,
-		ScrollToTopButton
+		FilterPanel
 	},
 	props: {
 		isActive: {

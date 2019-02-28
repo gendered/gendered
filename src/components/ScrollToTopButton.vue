@@ -19,4 +19,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.to-top {
+	font-size: 1.6rem;
+	padding: 0.625rem 1rem;
+}
+</style>

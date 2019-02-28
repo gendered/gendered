@@ -74,6 +74,7 @@
 <script>
 const API = "https://gendered-api.glitch.me/api/words";
 import WordInfo from "@/components/WordInfo";
+import localforage from "localforage";
 
 export default {
 	name: "WordContainer",
@@ -117,24 +118,31 @@ export default {
 		let setData = function(res) {
 			if (res.word) {
 				this.entry = res;
+				localforage.setItem(res.word, res);
 				let equivalent = this.entry.equivalent;
 				if (equivalent) {
-					this.getWord(
-						equivalent,
-						function(res) {
-							this.equivalent = res;
-						}.bind(this)
-					);
+					localforage.getItem(equivalent).then(equiv => {
+						if (!equiv) {
+							this.getWord(
+								equivalent,
+								function(res) {
+									this.equivalent = res;
+									localforage.setItem(equivalent, res);
+								}.bind(this)
+							);
+						} else this.equivalent = equiv;
+					});
 				}
 			}
 		}.bind(this);
-		this.getWord(currentWord, setData);
+		localforage.getItem(currentWord).then(data => {
+			if (!data) {
+				this.getWord(currentWord, setData);
+			} else setData(data);
+		});
 		document.querySelector("body").classList.add("modal-open");
 	},
 	methods: {
-		_getXPath(el, txt) {
-			return `//${el}[normalize-space()="${txt}"]`;
-		},
 		getWord(word, callback) {
 			let url = `${API}/${word}`;
 			fetch(url)

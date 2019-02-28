@@ -2,6 +2,7 @@ import WordListContainer from "@/components/WordListContainer";
 import OptionsContainer from "@/components/OptionsContainer";
 import SearchFilter from "@/components/SearchFilter";
 import "isomorphic-fetch";
+import localforage from "localforage";
 
 const API = "https://gendered-api.glitch.me/api/words";
 
@@ -106,12 +107,20 @@ export default {
 			optionsIsActive: false
 		};
 	},
-	mounted() {},
 	created() {
-		fetch(`${API}/letter/AZ`)
-			.then(res => res.json())
-			.then(res => {
-				this.words = res.data;
+		localforage
+			.getItem("data")
+			.then(data => {
+				let version = localforage.getItem("version");
+				let currentVersion = 1;
+				if (!data || !version || version < currentVersion) {
+					this.fetchData(currentVersion);
+					return;
+				}
+				this.words = data;
+			})
+			.catch(function() {
+				this.fetchData();
 			});
 	},
 	computed: {
@@ -156,6 +165,16 @@ export default {
 		}
 	},
 	methods: {
+		fetchData(currentVersion) {
+			fetch(`${API}/letter/AZ`)
+				.then(res => res.json())
+				.then(res => {
+					let d = res.data;
+					this.words = d;
+					localforage.setItem("data", d);
+					localforage.setItem("version", currentVersion);
+				});
+		},
 		toggleOptions() {
 			this.optionsIsActive = !this.optionsIsActive;
 		},
