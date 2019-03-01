@@ -49,6 +49,9 @@ html, body {
 body {
 	max-width: 1500px;
 	margin: 0 auto;
+	min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
 }
 
 body.modal-open {
