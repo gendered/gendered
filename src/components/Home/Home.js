@@ -76,7 +76,8 @@ export default {
 			count: 0,
 			searchText: "",
 			toggleAllLists: false,
-			optionsIsActive: false
+			optionsIsActive: false,
+			loading: true
 		};
 	},
 	created() {
@@ -90,6 +91,7 @@ export default {
 					return;
 				}
 				this.words = data;
+				this.loading = false;
 			})
 			.catch(function() {
 				this.fetchData();
@@ -128,7 +130,7 @@ export default {
 							} else {
 								return true;
 							}
-						})
+					  })
 					: [];
 			}
 			this.count = filtered.reduce((count, obj) => {
@@ -145,6 +147,7 @@ export default {
 				.then(res => {
 					let d = res.data;
 					this.words = d;
+					this.loading = false;
 					localforage.setItem("data", d);
 					localforage.setItem("version", currentVersion);
 				});

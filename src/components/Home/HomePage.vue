@@ -9,6 +9,7 @@
 			<WordListContainer
 				:words="filteredWords"
 				:toggleAllLists="toggleAllLists"
+				:loading="loading"
 			/>
 		</keep-alive>
 		<div id="search-updates" class="visuallyhidden" aria-live="polite">

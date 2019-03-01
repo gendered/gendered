@@ -1,5 +1,11 @@
 <template>
-	<li class="word-list" tabindex="0" ref="list" @keydown="moveWithin">
+	<li
+		class="word-list"
+		tabindex="0"
+		ref="list"
+		@keydown="moveWithin"
+		v-if="list.length > 0 || loading"
+	>
 		<div class="letter">
 			<span>{{ letter }}</span>
 			<button
@@ -12,6 +18,7 @@
 				+
 			</button>
 		</div>
+		<span class="visuallyhidden" v-if="loading">Loading content</span>
 		<ul class="words" ref="words">
 			<li
 				class="word"
@@ -179,6 +186,9 @@ export default {
 			required: true
 		},
 		toggleAllLists: {
+			type: Boolean
+		},
+		loading: {
 			type: Boolean
 		},
 		list: {
