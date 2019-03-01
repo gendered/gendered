@@ -59,7 +59,7 @@
 		padding-left: 0.625rem;
 		padding-right: 0.625rem;
 		padding-bottom: 0.153rem;
-
+		box-sizing: content-box;
 		border: 1.6px solid rgba(0,0,0,0.90);
 
 		@include break(small) {
