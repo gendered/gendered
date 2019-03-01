@@ -5,6 +5,7 @@
 				@click.native="closeModal"
 				:to="{ name: 'home' }"
 				class="modal-link"
+				aria-label="Close modal"
 			>
 				✕
 			</router-link>
@@ -16,6 +17,7 @@
 				@click.native="closeModal"
 				:to="{ name: 'about' }"
 				class="modal-link"
+				aria-label="More about project"
 			>
 				<img
 					src="../assets/imgs/info.svg"

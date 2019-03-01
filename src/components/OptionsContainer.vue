@@ -4,6 +4,7 @@
 		@blur="closeOptions"
 		v-show="isActive"
 		class="options"
+		id="options"
 		v-focus
 		tabindex="-1"
 		ref="controls"

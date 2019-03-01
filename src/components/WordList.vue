@@ -13,6 +13,7 @@
 				@click="toggleDisplay"
 				:aria-expanded="!this.toggleListOpen"
 				tabindex="-1"
+				:aria-label="`Toggle ${letter} list`"
 				v-bind:class="{ invisible: shouldShowToggleButton }"
 			>
 				+

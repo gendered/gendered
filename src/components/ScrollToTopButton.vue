@@ -1,5 +1,5 @@
 <template>
-	<button class="to-top" @click="handleScrollAction">
+	<button class="to-top" @click="handleScrollAction" aria-label="Scroll to top">
 		↑
 	</button>
 </template>
