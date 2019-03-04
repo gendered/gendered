@@ -81,7 +81,7 @@
 	position: -webkit-sticky;
 	position: sticky;
 	top: 1.6rem;
-	height: 100px;
+	height: 50px;
 	background: white;
 	overflow: visible;
 }

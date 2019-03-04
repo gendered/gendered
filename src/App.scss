@@ -58,13 +58,13 @@ body.modal-open {
 	position: fixed;
 	overflow: hidden;
 
-	*:not(modal *) {
+	:not(.modal) {
 		pointer-events: none;
 		color: transparent;
 		text-shadow: 0 0 5px rgba(0,0,0,0.5);
 	}
 
-	.modal * {
+	.modal, .modal * {
 		text-shadow: none;
 		color: black;
 		pointer-events: auto;
