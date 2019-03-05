@@ -73,7 +73,6 @@ body.modal-open {
 
 h1, h2, h3 {
 	margin: 0.67em 0;
-	letter-spacing: -0.02125em;
 	line-height: 1em;
 }
 
@@ -138,7 +137,6 @@ a {
 
 	&:hover {
 		cursor: pointer;
-		font-weight: bold;
 	}
 }
 
@@ -235,6 +233,7 @@ nav {
 
 		h1 {
 			margin: 0;
+			letter-spacing: -0.02125em;
 			margin-left: -0.75rem;
 
 			@include break(small) {

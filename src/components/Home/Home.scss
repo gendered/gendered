@@ -4,11 +4,13 @@
 	z-index: 999;
 
 	.search-container {
+		font-size: 1.6rem;
 		position: fixed;
 		bottom: 2.56rem;
 		left: 35%;
 		width: 30%;
 		min-width: 20rem;
+		padding: 1rem;
 
 		@include break(medium) {
 			left: 15%;
@@ -28,16 +30,14 @@
 		background: white;
 
 		img {
-			padding-bottom: 0.391rem;
-			padding-left: 0.625rem;
-			padding-right: 0.625rem;
-			padding-top: 0.625rem;
+			width: 0.75em;
 		}
 
 		.search {
 			width: 70%;
 			box-shadow: none;
 			border: none;
+			margin-left: 1rem;
 			line-height: 1.6rem;
 
 			&:hover {
@@ -48,6 +48,10 @@
 				color: black;
 				outline: none;
 			}
+
+			&:placeholder {
+				color: red;
+			}
 		}
 	}
 
@@ -55,10 +59,11 @@
 		position: fixed;
 		bottom: 2.56rem;
 		right: 2.56rem;
+		padding: 1rem;
 		padding-top: 0.625rem;
-		padding-left: 0.625rem;
-		padding-right: 0.625rem;
-		padding-bottom: 0.153rem;
+		// padding-left: 0.625rem;
+		// padding-right: 0.625rem;
+		padding-bottom: 0.625rem;
 		box-sizing: content-box;
 		border: 1.6px solid rgba(0,0,0,0.90);
 
@@ -78,8 +83,6 @@
 	position: fixed;
 	right: 2.56rem;
 	bottom: 6.554rem;
-	// 	background: white;
-	// 	border: 1px solid black;
 
 	@include break(medium) {
 		right: 1.6rem;

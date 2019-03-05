@@ -109,6 +109,7 @@
 
 	.word {
 		margin: 0;
+		margin-top: 0.244rem;
 		margin-right: 0.625rem;
 		line-height: 1.6em;
 		display: inline-block;
@@ -127,20 +128,20 @@
 	&.male {
 		&::after {
 			display: inline-block;
-			font-size: 0.769rem;
-			transform: translateY(-50%);
+			font-size: 0.244rem;
+			transform: translateY(-12.5%);
 		}
 	}
 
 	&.female {
 		&::after {
-			content: "+";
+			content: "(F)";
 		}
 	}
 
 	&.male {
 		&::after {
-			content: "↓";
+			content: "(M)";
 		}
 	}
 }
