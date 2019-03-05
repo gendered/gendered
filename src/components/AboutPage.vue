@@ -4,11 +4,11 @@
 		<main class="">
 			<section id="what" class="about-section">
 				<h2 class="light">What is this?</h2>
-				<p>
+				<p class="about-paragraph">
 					The Gendered Project is a growing library of gendered words in the
 					English dictionary.
 				</p>
-				<p>
+				<p class="about-paragraph">
 					Early in 2017, during a discussion with my friends, I used the word
 					fuckboy to describe a man I had dealt with. I wondered out loud why it
 					took so long for a word that so aptly describes a common type of man
@@ -20,20 +20,23 @@
 					men, women and those who do not fit in those binaries.
 				</p>
 
-				<blockquote cite="https://archive.org/details/p15957coll6_681_0">
-					<p>
+				<blockquote
+					class="quote"
+					cite="https://archive.org/details/p15957coll6_681_0"
+				>
+					<p class="about-paragraph">
 						The act of naming is defining the boundaries and terms of our own
 						existence and that of others. Naming embodies our judgments as
 						inherent features of the objects to which we attend.
 					</p>
-					<cite
+					<cite class="citation"
 						>–
 						<a href="https://archive.org/details/p15957coll6_681_0"
 							>THE PROSTITUTE: Paradigmatic Woman</a
 						>, Julia P. Stanley</cite
 					>
 				</blockquote>
-				<p>
+				<p class="about-paragraph">
 					The words we have (and don’t) matter. They reflect the biases we
 					embrace and the ideas we value. The word imbalance for negatively
 					describing men’s sexuality versus women’s reflects our culture of
@@ -46,7 +49,7 @@
 			</section>
 			<section id="why" class="about-section">
 				<h2 class="light">Why did we make this?</h2>
-				<ul>
+				<ul class="list">
 					<li>
 						To provide data to use in our ongoing dialogue about the
 						<a
@@ -91,7 +94,7 @@
 			</section>
 			<section id="who" class="about-section">
 				<h2 class="light">Who are we?</h2>
-				<ul>
+				<ul class="list">
 					<li>
 						Idea, data collection and analysis:
 						<a href="https://www.omayeli.com" class="about-link">
@@ -129,7 +132,7 @@
 			</section>
 			<section id="notes" class="about-section">
 				<h2 class="light">Notes</h2>
-				<p>
+				<p class="about-paragraph">
 					This project is <strong>not</strong> an invitation to "even" out the
 					language and create or adopt more words that punch down. I do not
 					believe in replacing male domination (exerting power over and at the
@@ -159,7 +162,7 @@
 					</a>
 					in the prison system.
 				</p>
-				<p>
+				<p class="about-paragraph">
 					While I hope this project can provide a space for deconstructing and
 					examining gendered language, it does remain within and thus a part of
 					the binary gender categorical system. It is a study of it, not an
@@ -170,7 +173,7 @@
 					unwelcome departure from “normal,” is a part of the system of labeling
 					that I want to make data available to explore.
 				</p>
-				<p>
+				<p class="about-paragraph">
 					Lastly this idea is not new. In the 1970s Julia Stanley scoured the
 					Oxford English dictionary and found 220 terms referring to “women as
 					prostitutes” compared to 20 for men. I’m maintaining a
@@ -193,7 +196,7 @@
 			<section id="faq" class="about-section">
 				<h2 class="light">FAQ</h2>
 				<h4>Where is the data from?</h4>
-				<p>
+				<p class="about-paragraph">
 					The words are gotten from many different sources. Downloadable sources
 					are in this
 					<a
@@ -205,7 +208,7 @@
 					<a href="https://www.wordnik.com">Wordnik</a>.
 				</p>
 				<h4>Will you be updating?</h4>
-				<p>
+				<p class="about-paragraph">
 					Yes. The library is not fixed: it can be updated, parts of it added or
 					removed, or augmented with more sources at any time. Language is
 					complex and software is unable of understanding all its nuances.
@@ -216,7 +219,7 @@
 					contribute in any way.
 				</p>
 				<h4>Can I access the data?</h4>
-				<p>
+				<p class="about-paragraph">
 					Yes. I'm still working out how to streamline this process but for now
 					send a <a href="https://twitter.com/GenderedProject">DM</a> with
 					information about how you intend to use the data to request. If you
@@ -226,7 +229,7 @@
 					access to a zipped json file. A public API is coming.
 				</p>
 				<h4>How can I contribute?</h4>
-				<p>
+				<p class="about-paragraph">
 					Right now, you can
 					<a href="http://eepurl.com/gbf1Qb">
 						sign up
@@ -234,15 +237,15 @@
 					and I’ll email when I have a process for contribution.
 				</p>
 				<h4>Future plans</h4>
-				<p>
+				<p class="about-paragraph">
 					Check out the
 					<a href="https://github.com/oa495/gendered/issues">GitHub!</a>
 				</p>
 			</section>
 		</main>
 		<aside class="toc">
-			<h3 class="light">Contents</h3>
-			<ul>
+			<h3 class="light toc-heading">Contents</h3>
+			<ul class="list">
 				<li><a href="#what">What</a></li>
 				<li><a href="#why">Why</a></li>
 				<li><a href="#who">Who</a></li>
@@ -288,25 +291,25 @@
 		}
 
 		.about-section {
-			ul {
+			.list {
 				padding-left: 1.6rem;
 				list-style-type: square;
 			}
 
-			blockquote {
+			.quote {
 				padding: 1rem;
 
 				@include break(small) {
 					margin: 0;
 				}
 
-				p {
+				.about-paragraph {
 					font-size: 1.3rem;
 					margin-top: 0;
 					margin-bottom: 1.3rem;
 					line-height: 1.3em;
 				}
-				cite {
+				.citation {
 					font-size: 1rem;
 				}
 			}
@@ -326,7 +329,7 @@
 		@include break(medium) {
 			left: 80%;
 
-			h3 {
+			.toc-heading {
 				font-size: 1rem;
 			}
 		}
@@ -335,7 +338,7 @@
 			display: none;
 		}
 
-		ul {
+		.list {
 			padding-left: 0;
 		}
 	}
