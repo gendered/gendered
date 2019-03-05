@@ -3,6 +3,7 @@ import OptionsContainer from "@/components/OptionsContainer";
 import SearchFilter from "@/components/SearchFilter";
 import "isomorphic-fetch";
 import localforage from "localforage";
+let base64 = require("base-64");
 
 const API = "https://gendered-api.glitch.me/api/words";
 
@@ -108,6 +109,7 @@ export default {
 		};
 	},
 	created() {
+		let self = this;
 		localforage
 			.getItem("data")
 			.then(data => {
@@ -120,7 +122,7 @@ export default {
 				this.words = data;
 			})
 			.catch(function() {
-				this.fetchData();
+				self.fetchData();
 			});
 	},
 	computed: {
@@ -166,7 +168,14 @@ export default {
 	},
 	methods: {
 		fetchData(currentVersion) {
-			fetch(`${API}/letter/AZ`)
+			let headers = new Headers();
+			let username = process.env.VUE_APP_API_USERNAME;
+			let password = process.env.VUE_APP_API_SECRET;
+			headers.set(
+				"Authorization",
+				"Basic " + base64.encode(username + ":" + password)
+			);
+			fetch(`${API}/letter/AZ`, { headers: headers })
 				.then(res => res.json())
 				.then(res => {
 					let d = res.data;
