@@ -30,10 +30,11 @@
 						name: 'word',
 						params: { word: word.word, wordRef: $refs['word-' + index] }
 					}"
-					:class="`word-link ${word.state} ${word.gender} can-open-modal`"
+					:class="`word-link can-open-modal`"
 					tabindex="-1"
 				>
 					{{ word.word }}
+					<span v-if="word.state" class="gender">({{word.gender[0]}})</span>
 				</router-link>
 			</li>
 		</ul>
@@ -118,35 +119,19 @@
 		margin-right: 0.625rem;
 		line-height: 1.6em;
 		display: inline-block;
-
-		.word-link {
-			margin-right: 0.625rem;
-			font-size: 1rem;
-			font-weight: 400;
-		}
 	}
 }
 
-.highlight {
-	&.female,
-	&.male {
-		&::after {
-			display: inline-block;
-			font-size: 0.244rem;
-			transform: translateY(-12.5%);
-		}
-	}
+.word-link {
+	margin-right: 0.625rem;
+	font-size: 1rem;
+	font-weight: 400;
 
-	&.female {
-		&::after {
-			content: "(F)";
-		}
-	}
-
-	&.male {
-		&::after {
-			content: "(M)";
-		}
+	.gender {
+		line-height: 0;
+    vertical-align: middle;
+		font-size: 0.244rem;
+		text-transform: uppercase;
 	}
 }
 

@@ -1,7 +1,8 @@
 <template>
 	<section>
 		<h2 class="word light">
-			{{ entry.word }}
+			<span>{{ entry.word }}</span>
+			<sup class="gender">({{entry.gender[0]}})</sup>
 		</h2>
 		<p class="def">{{ entry.definition }}</p>
 		<h4 class="syn-header" v-if="synsLen > 0">Synonyms</h4>
@@ -28,6 +29,12 @@
 .word {
 	text-transform: capitalize;
 	margin-top: 1.6em;
+
+	.gender {
+		padding-left: 0.244em;
+		top: -0.75em;
+    font-size: 50%;
+	}
 }
 
 .def:first-letter {
