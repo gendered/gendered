@@ -3,6 +3,7 @@
 		ref="search"
 		aria-label="Search for word"
 		type="text"
+		id="search"
 		name="textfield"
 		placeholder="Search for words.."
 		@input="updateSearchFilter"

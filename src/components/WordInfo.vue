@@ -1,16 +1,18 @@
 <template>
 	<section>
-		<h2 class="word">
-			{{ entry.word }}
+		<h2 class="word light">
+			<span>{{ entry.word }}</span>
+			<sup class="gender">({{entry.gender[0]}})</sup>
 		</h2>
-		<p>{{ entry.definition }}</p>
+		<p class="def">{{ entry.definition }}</p>
+		<h4 class="syn-header" v-if="synsLen > 0">Synonyms</h4>
 		<ul class="word-set">
-			<li v-for="syn in entry.syns" :key="syn">
+			<li v-for="(syn, index) in entry.syns" :key="syn">
 				<router-link
 					:to="{ name: 'word', params: { word: syn } }"
 					class="can-open-modal"
 				>
-					{{ syn }}
+					{{ syn }}<span v-if=" index + 1 < synsLen">,</span>
 				</router-link>
 			</li>
 		</ul>
@@ -22,18 +24,55 @@
 	</section>
 </template>
 <style lang="scss" scoped>
+@import "../mixins.scss";
+
 .word {
 	text-transform: capitalize;
+	margin-top: 1.6em;
+
+	.gender {
+		padding-left: 0.244em;
+		top: -0.75em;
+    font-size: 50%;
+	}
 }
+
+.def:first-letter {
+	text-transform: capitalize;
+}
+
+.syn-header {
+	font-size: 1.3rem;
+	font-weight: 400;
+	margin-bottom: 0.244rem;
+}
+
+.word-set {
+	margin: 0;
+	padding: 0;
+	li {
+		display: inline-block;
+		margin-right: 0.5rem;
+	}
+}
+
 .tag-list {
-	padding: 0.25rem 0;
-	font-size: 0.75rem;
 	color: rgba(0, 0, 0, 0.7);
+	padding-left: 0;
+	li {
+		font-size: 0.625rem;
+		text-transform: capitalize;
+	}
 }
 </style>
 <script>
 export default {
 	name: "WordInfo",
+	data() {
+		return {
+			synsLen: null
+		}
+	},
 	props: {
 		entry: {
 			type: Object,
@@ -46,6 +85,7 @@ export default {
 		let syns = entry["syns"];
 		if (!syns) return;
 		this.entry.syns = syns.filter(syn => syn !== word);
+		this.synsLen = this.entry.syns.length;
 	}
 };
 </script>

@@ -2,6 +2,8 @@ import WordListContainer from "@/components/WordListContainer";
 import OptionsContainer from "@/components/OptionsContainer";
 import SearchFilter from "@/components/SearchFilter";
 import "isomorphic-fetch";
+import localforage from "localforage";
+let base64 = require("base-64");
 
 const API = "https://gendered-api.glitch.me/api/words";
 
@@ -106,12 +108,21 @@ export default {
 			optionsIsActive: false
 		};
 	},
-	mounted() {},
 	created() {
-		fetch(`${API}/letter/AZ`)
-			.then(res => res.json())
-			.then(res => {
-				this.words = res;
+		let self = this;
+		localforage
+			.getItem("data")
+			.then(data => {
+				let version = localforage.getItem("version");
+				let currentVersion = 1;
+				if (!data || !version || version < currentVersion) {
+					this.fetchData(currentVersion);
+					return;
+				}
+				this.words = data;
+			})
+			.catch(function() {
+				self.fetchData();
 			});
 	},
 	computed: {
@@ -156,6 +167,23 @@ export default {
 		}
 	},
 	methods: {
+		fetchData(currentVersion) {
+			let headers = new Headers();
+			let username = process.env.VUE_APP_API_USERNAME;
+			let password = process.env.VUE_APP_API_SECRET;
+			headers.set(
+				"Authorization",
+				"Basic " + base64.encode(username + ":" + password)
+			);
+			fetch(`${API}/letter/AZ`, { headers: headers })
+				.then(res => res.json())
+				.then(res => {
+					let d = res.data;
+					this.words = d;
+					localforage.setItem("data", d);
+					localforage.setItem("version", currentVersion);
+				});
+		},
 		toggleOptions() {
 			this.optionsIsActive = !this.optionsIsActive;
 		},

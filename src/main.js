@@ -1,6 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+require("dotenv").config();
+
 Vue.config.productionTip = false;
 
 Vue.directive("focus", {

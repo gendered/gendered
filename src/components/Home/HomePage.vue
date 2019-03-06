@@ -29,7 +29,9 @@
 			<button
 				@click="toggleOptions"
 				@keyup.esc="closeOptions"
+				aria-label="Controls"
 				:aria-expanded="optionsIsActive"
+				aria-controls="options"
 				id="show-controls"
 			>
 				<img src="../../assets/imgs/filter.svg" alt="Controls" />
