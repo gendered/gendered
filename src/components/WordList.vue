@@ -6,18 +6,18 @@
 		@keydown="moveWithin"
 		v-if="list.length > 0 || loading"
 	>
-		<div class="letter">
-			<span>{{ letter }}</span>
-			<button
-				class="toggle"
-				@click="toggleDisplay"
-				:aria-expanded="!this.toggleListOpen"
-				tabindex="-1"
-				v-bind:class="{ invisible: shouldShowToggleButton }"
+		<button
+			class="toggle-container"
+			@click="toggleDisplay"
+			:aria-expanded="!this.toggleListOpen"
+			tabindex="-1"
+			:aria-label="`Toggle ${letter} list`"
+		>
+			<span class="letter">{{ letter }}</span>
+			<span class="toggle" v-bind:class="{ invisible: shouldShowToggleButton }"
+				>+</span
 			>
-				+
-			</button>
-		</div>
+		</button>
 		<span class="visuallyhidden" v-if="loading">Loading content</span>
 		<ul class="words" ref="words">
 			<li
@@ -31,10 +31,11 @@
 						name: 'word',
 						params: { word: word.word, wordRef: $refs['word-' + index] }
 					}"
-					:class="`word-link ${word.state} ${word.gender} can-open-modal`"
+					:class="`word-link can-open-modal`"
 					tabindex="-1"
 				>
 					{{ word.word }}
+					<span v-if="word.state" class="gender">({{word.gender[0]}})</span>
 				</router-link>
 			</li>
 		</ul>
@@ -69,34 +70,40 @@
 	}
 }
 
-.letter {
-	font-size: 2.56rem;
+.toggle-container {
+	width: 100%;
 	text-align: right;
+	padding: 0;
 	margin-top: 0;
+	margin-bottom: 0.625rem;
 	line-height: 0.85em;
 	height: -webkit-fit-content;
 	height: -moz-fit-content;
 	height: fit-content;
-	font-family: "Romana Std Bold", Arial, sans-serif;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 1.6rem;
-	height: 100px;
+	height: 50px;
 	background: white;
 	overflow: visible;
+
+	@include break(small) {
+		text-align: left;
+	}
+}
+
+.letter {
+	font-family: "Romana Std Bold", Arial, sans-serif;
+	font-size: 2.56rem;
 }
 
 .toggle {
 	font-size: 1.6rem;
 	margin-right: 0;
-	bottom: 2.56rem;
-	margin-bottom: 2.56rem;
-	background: none;
-	position: -webkit-sticky;
-	position: sticky;
+	display: inline-block;
+	padding: 0 0.244em;
 
 	&:hover {
-		// font-style: italic;
 		transform: skew(-15deg);
 		cursor: pointer;
 	}
@@ -109,19 +116,14 @@
 
 	.word {
 		margin: 0;
+    margin-top: 0.1525rem;
 		margin-right: 0.625rem;
 		line-height: 1.6em;
 		display: inline-block;
-
-		.word-link {
-			margin-right: 0.625rem;
-			margin-bottom: 0.625rem;
-			font-size: 1rem;
-			font-weight: 400;
-		}
 	}
 }
 
+<<<<<<< HEAD
 .words:empty {
 	background-image: linear-gradient(
 			100deg,
@@ -152,17 +154,18 @@
 			transform: translateY(-50%);
 		}
 	}
+=======
+.word-link {
+	margin-right: 0.625rem;
+	font-size: 1rem;
+	font-weight: 400;
+>>>>>>> cfb00e106f0f522387cce9342b06c9dabe3cac1d
 
-	&.female {
-		&::after {
-			content: "+";
-		}
-	}
-
-	&.male {
-		&::after {
-			content: "↓";
-		}
+	.gender {
+		line-height: 0;
+    vertical-align: middle;
+		font-size: 0.244rem;
+		text-transform: uppercase;
 	}
 }
 
@@ -222,7 +225,7 @@ export default {
 	},
 	methods: {
 		toggleDisplay(e) {
-			let el = e.target;
+			let el = e.target.querySelector('.toggle');
 			this.toggleOpen = !this.toggleOpen;
 			el.textContent = this.toggleOpen ? "-" : "+";
 		},

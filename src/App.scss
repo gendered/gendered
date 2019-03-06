@@ -49,19 +49,22 @@ html, body {
 body {
 	max-width: 1500px;
 	margin: 0 auto;
+	min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
 }
 
 body.modal-open {
 	position: fixed;
 	overflow: hidden;
 
-	*:not(modal *) {
+	:not(.modal) {
 		pointer-events: none;
 		color: transparent;
 		text-shadow: 0 0 5px rgba(0,0,0,0.5);
 	}
 
-	.modal * {
+	.modal, .modal * {
 		text-shadow: none;
 		color: black;
 		pointer-events: auto;
@@ -70,7 +73,6 @@ body.modal-open {
 
 h1, h2, h3 {
 	margin: 0.67em 0;
-	letter-spacing: -0.02125em;
 	line-height: 1em;
 }
 
@@ -122,18 +124,6 @@ p, sup {
 	}
 }
 
-.home {
-	// margin: 0 2.56rem;
-	-webkit-column-count: 2;
-	column-count: 2;
-
-	@include break(small) {
-		-webkit-column-count: 1;
-		column-count: 1;
-		// margin: 1.6rem;
-	}
-}
-
 main, nav, section {
 	display: block;
 }
@@ -147,7 +137,6 @@ a {
 
 	&:hover {
 		cursor: pointer;
-		font-weight: bold;
 	}
 }
 
@@ -244,6 +233,7 @@ nav {
 
 		h1 {
 			margin: 0;
+			letter-spacing: -0.02125em;
 			margin-left: -0.75rem;
 
 			@include break(small) {

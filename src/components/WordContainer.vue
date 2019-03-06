@@ -4,7 +4,8 @@
 			<router-link
 				@click.native="closeModal"
 				:to="{ name: 'home' }"
-				class="modal-link"
+				class="modal-link exit"
+				aria-label="Close modal"
 			>
 				✕
 			</router-link>
@@ -15,7 +16,8 @@
 			<router-link
 				@click.native="closeModal"
 				:to="{ name: 'about' }"
-				class="modal-link"
+				class="modal-link info"
+				aria-label="More about project"
 			>
 				<img
 					src="../assets/imgs/info.svg"
@@ -45,6 +47,7 @@
 
 	@include break(small) {
 		width: 80%;
+		padding: 1.6rem;
 	}
 
 	@include break(medium) {
@@ -61,8 +64,13 @@
 	opacity: 0;
 }
 
-.modal-link {
-	font-size: 2rem;
+.info {
+	margin-top: 2.56rem;
+}
+
+.exit {
+	font-size: 1.6rem;
+	text-align: right;
 }
 
 .word-set-container {
