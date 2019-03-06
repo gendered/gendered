@@ -2,7 +2,7 @@
 	<section>
 		<h2 class="word light">
 			<span>{{ entry.word }}</span>
-			<sup class="gender">({{entry.gender[0]}})</sup>
+			<sup v-if="entry.gender" class="gender">({{entry.gender[0]}})</sup>
 		</h2>
 		<p class="def">{{ entry.definition }}</p>
 		<h4 class="syn-header" v-if="synsLen > 0">Synonyms</h4>
