@@ -23,7 +23,7 @@
 	</section>
 </template>
 <style lang="scss" scoped>
-@import '../mixins.scss';
+@import "../mixins.scss";
 
 .word {
 	text-transform: capitalize;
@@ -58,7 +58,6 @@
 		text-transform: capitalize;
 	}
 }
-
 </style>
 <script>
 export default {
