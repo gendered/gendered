@@ -93,6 +93,7 @@
 	position: -webkit-sticky;
 	position: sticky;
 	padding: 0.391em 0.625em;
+	bottom: 2.56rem;
 
 	&:hover {
 		// font-style: italic;
