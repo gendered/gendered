@@ -35,7 +35,7 @@
 					tabindex="-1"
 				>
 					{{ word.word }}
-					<span v-if="word.state" class="gender">({{word.gender[0]}})</span>
+					<span v-if="word.state" class="gender">({{ word.gender[0] }})</span>
 				</router-link>
 			</li>
 		</ul>
@@ -116,14 +116,13 @@
 
 	.word {
 		margin: 0;
-    margin-top: 0.1525rem;
+		margin-top: 0.1525rem;
 		margin-right: 0.625rem;
 		line-height: 1.6em;
 		display: inline-block;
 	}
 }
 
-<<<<<<< HEAD
 .words:empty {
 	background-image: linear-gradient(
 			100deg,
@@ -145,25 +144,14 @@
 		120px 120px;
 }
 
-.highlight {
-	&.female,
-	&.male {
-		&::after {
-			display: inline-block;
-			font-size: 0.769rem;
-			transform: translateY(-50%);
-		}
-	}
-=======
 .word-link {
 	margin-right: 0.625rem;
 	font-size: 1rem;
 	font-weight: 400;
->>>>>>> cfb00e106f0f522387cce9342b06c9dabe3cac1d
 
 	.gender {
 		line-height: 0;
-    vertical-align: middle;
+		vertical-align: middle;
 		font-size: 0.244rem;
 		text-transform: uppercase;
 	}
@@ -225,7 +213,7 @@ export default {
 	},
 	methods: {
 		toggleDisplay(e) {
-			let el = e.target.querySelector('.toggle');
+			let el = e.target.querySelector(".toggle");
 			this.toggleOpen = !this.toggleOpen;
 			el.textContent = this.toggleOpen ? "-" : "+";
 		},
