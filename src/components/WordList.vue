@@ -6,19 +6,18 @@
 		ref="list"
 		@keydown="moveWithin"
 	>
-		<div class="letter">
-			<span>{{ letter }}</span>
-			<button
-				class="toggle"
-				@click="toggleDisplay"
-				:aria-expanded="!this.toggleListOpen"
-				tabindex="-1"
-				:aria-label="`Toggle ${letter} list`"
-				v-bind:class="{ invisible: shouldShowToggleButton }"
+		<button
+			class="toggle-container"
+			@click="toggleDisplay"
+			:aria-expanded="!this.toggleListOpen"
+			tabindex="-1"
+			:aria-label="`Toggle ${letter} list`"
+		>
+			<span class="letter">{{ letter }}</span>
+			<span class="toggle" v-bind:class="{ invisible: shouldShowToggleButton }"
+				>+</span
 			>
-				+
-			</button>
-		</div>
+		</button>
 		<ul class="words" ref="words">
 			<li
 				class="word"
@@ -69,34 +68,40 @@
 	}
 }
 
-.letter {
-	font-size: 2.56rem;
+.toggle-container {
+	width: 100%;
 	text-align: right;
+	padding: 0;
 	margin-top: 0;
+	margin-bottom: 0.625rem;
 	line-height: 0.85em;
 	height: -webkit-fit-content;
 	height: -moz-fit-content;
 	height: fit-content;
-	font-family: "Romana Std Bold", Arial, sans-serif;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 1.6rem;
 	height: 50px;
 	background: white;
 	overflow: visible;
+
+	@include break(small) {
+		text-align: left;
+	}
+}
+
+.letter {
+	font-family: "Romana Std Bold", Arial, sans-serif;
+	font-size: 2.56rem;
 }
 
 .toggle {
 	font-size: 1.6rem;
 	margin-right: 0;
-	background: none;
-	position: -webkit-sticky;
-	position: sticky;
-	padding: 0.391em 0.625em;
-	bottom: 2.56rem;
+	display: inline-block;
+	padding: 0 0.244em;
 
 	&:hover {
-		// font-style: italic;
 		transform: skew(-15deg);
 		cursor: pointer;
 	}
@@ -198,7 +203,7 @@ export default {
 	},
 	methods: {
 		toggleDisplay(e) {
-			let el = e.target;
+			let el = e.target.querySelector('.toggle');
 			this.toggleOpen = !this.toggleOpen;
 			el.textContent = this.toggleOpen ? "-" : "+";
 		},
