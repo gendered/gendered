@@ -124,6 +124,7 @@
 }
 
 .words:empty {
+	height: 140px;
 	background-image: linear-gradient(
 			100deg,
 			rgba(255, 255, 255, 0),
@@ -135,13 +136,8 @@
 		linear-gradient(lightgray 20px, transparent 0),
 		linear-gradient(lightgray 20px, transparent 0);
 
-	background-repeat: repeat-y;
-
-	background-size: 50px 200px, /* highlight */ 150px 200px, 350px 200px,
-		300px 200px, 250px 200px;
-
-	background-position: 0 0, /* highlight */ 120px 0, 120px 40px, 120px 80px,
-		120px 120px;
+	background-repeat: space;
+	background-size: 21% 22%;
 }
 
 .word-link {
