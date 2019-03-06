@@ -4,14 +4,14 @@
 			{{ entry.word }}
 		</h2>
 		<p class="def">{{ entry.definition }}</p>
-		<h4 class="syn-header" v-if="entry.syns.length > 0">Synonyms</h4>
+		<h4 class="syn-header" v-if="synsLen > 0">Synonyms</h4>
 		<ul class="word-set">
-			<li v-for="syn in entry.syns" :key="syn">
+			<li v-for="(syn, index) in entry.syns" :key="syn">
 				<router-link
 					:to="{ name: 'word', params: { word: syn } }"
 					class="can-open-modal"
 				>
-					{{ syn }},
+					{{ syn }}<span v-if=" index + 1 < synsLen">,</span>
 				</router-link>
 			</li>
 		</ul>
@@ -37,7 +37,6 @@
 .syn-header {
 	font-size: 1.3rem;
 	font-weight: 400;
-	// text-transform: uppercase;
 	margin-bottom: 0.244rem;
 }
 
@@ -62,6 +61,11 @@
 <script>
 export default {
 	name: "WordInfo",
+	data() {
+		return {
+			synsLen: null
+		}
+	},
 	props: {
 		entry: {
 			type: Object,
@@ -74,6 +78,7 @@ export default {
 		let syns = entry["syns"];
 		if (!syns) return;
 		this.entry.syns = syns.filter(syn => syn !== word);
+		this.synsLen = this.entry.syns.length;
 	}
 };
 </script>
