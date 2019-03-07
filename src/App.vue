@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div id="app" @click="closeModal">
 		<nav ref="nav" class="container">
 			<section class="logo">
 				<h1>
@@ -21,6 +21,7 @@
 	</div>
 </template>
 <script>
+import router from "./router";
 import VFooter from "@/components/VFooter";
 const navRoutes = {
 	home: 1,
@@ -63,6 +64,15 @@ export default {
 			setTimeout(() => {
 				list.focus();
 			}, 200);
+		},
+		closeModal: function(e) {
+			const target = e.target;
+			const body = document.querySelector("body");
+			if (target.classList.contains("can-open-modal")) return;
+			if (body.classList.contains("modal-open")) {
+				router.push({ name: "home" });
+				document.querySelector("body").classList.remove("modal-open");
+			}
 		}
 	}
 };

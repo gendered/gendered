@@ -21,10 +21,8 @@
 				<SearchFilter class="search" @input="updateSearchText" />
 			</form>
 			<OptionsContainer
-				@close="closeOptions"
 				@filter="handleFilter"
 				@random="getRandomWord"
-				@scrollToTop="closeOptions"
 				:isActive="optionsIsActive"
 			/>
 			<button

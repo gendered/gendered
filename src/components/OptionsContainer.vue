@@ -1,14 +1,5 @@
 <template>
-	<div
-		@keyup.esc="closeOptions"
-		@blur="closeOptions"
-		v-show="isActive"
-		class="options"
-		id="options"
-		v-focus
-		tabindex="-1"
-		ref="controls"
-	>
+	<div v-show="isActive" class="options" id="options" v-focus tabindex="-1">
 		<FilterPanel :options="gender" @filter="handleFilter" />
 		<input
 			class="random can-open-modal"
@@ -53,19 +44,6 @@ export default {
 			let len = this[option.category].length;
 			// If there are only two filters, it should be a toggle
 			this.$emit("filter", option, len == 2, options);
-		},
-		closeOptions(e) {
-			let refs = this.$refs;
-			let parent = refs.controls;
-			let relatedTarget = e.relatedTarget || e.target;
-			if (
-				relatedTarget &&
-				(parent === relatedTarget || parent.contains(relatedTarget))
-			) {
-				return;
-			} else {
-				this.$emit("close");
-			}
 		}
 	}
 };

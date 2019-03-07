@@ -73,7 +73,7 @@ export default {
 	name: "WordInfo",
 	data() {
 		return {
-			synsLen: null
+			synsLen: -1
 		};
 	},
 	props: {
