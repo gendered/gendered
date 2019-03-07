@@ -124,6 +124,7 @@
 }
 
 .words:empty {
+	width: 100%;
 	height: 140px;
 	background-image: linear-gradient(
 			100deg,
