@@ -6,85 +6,57 @@ import localforage from "localforage";
 let base64 = require("base-64");
 
 const API = "https://gendered-api.glitch.me/api/words";
-
+const letters = [
+	{ letter: "A" },
+	{ letter: "B" },
+	{ letter: "C" },
+	{ letter: "D" },
+	{ letter: "E" },
+	{ letter: "F" },
+	{ letter: "G" },
+	{ letter: "H" },
+	{ letter: "I" },
+	{ letter: "J" },
+	{ letter: "K" },
+	{ letter: "L" },
+	{ letter: "M" },
+	{ letter: "N" },
+	{ letter: "O" },
+	{ letter: "P" },
+	{ letter: "Q" },
+	{ letter: "R" },
+	{ letter: "S" },
+	{ letter: "T" },
+	{ letter: "U" },
+	{ letter: "V" },
+	{ letter: "W" },
+	{ letter: "X" },
+	{ letter: "Y" },
+	{ letter: "Z" }
+];
 export default {
 	name: "HomePage",
 	head: {
-		title: {
-			inner: "The Gendered Project - Home"
-		},
+		title: { inner: "The Gendered Project - Home" },
 		meta: [
-			{
-				name: "description",
-				content: "A library of gendered words."
-			},
-			{
-				itemprop: "name",
-				content: "The Gendered Project."
-			},
-			{
-				itemprop: "description",
-				content: "A library of gendered words."
-			},
-			{
-				itemprop: "image",
-				content: ""
-			},
-			{
-				property: "og:url",
-				content: ""
-			},
-			{
-				property: "og:type",
-				content: "website"
-			},
-			{
-				property: "og:title",
-				content: "The Gendered Project."
-			},
-			{
-				property: "og:description",
-				content: "A library of gendered words."
-			},
-			{
-				property: "og:image",
-				content: ""
-			},
-			{
-				name: "twitter:card",
-				content: "summary_large_image"
-			},
-			{
-				name: "twitter:creator",
-				content: "Yellzheard"
-			},
-			{
-				name: "twitter:site",
-				content: "GenderedProject"
-			},
-			{
-				name: "twitter:title",
-				content: "The Gendered Project."
-			},
-			{
-				name: "twitter:description",
-				content: "A library of gendered words."
-			},
-			{
-				name: "twitter:image",
-				content: ""
-			},
-			{
-				name: "twitter:image:alt",
-				content: ""
-			}
+			{ name: "description", content: "A library of gendered words." },
+			{ itemprop: "name", content: "The Gendered Project." },
+			{ itemprop: "description", content: "A library of gendered words." },
+			{ itemprop: "image", content: "" },
+			{ property: "og:url", content: "" },
+			{ property: "og:type", content: "website" },
+			{ property: "og:title", content: "The Gendered Project." },
+			{ property: "og:description", content: "A library of gendered words." },
+			{ property: "og:image", content: "" },
+			{ name: "twitter:card", content: "summary_large_image" },
+			{ name: "twitter:creator", content: "Yellzheard" },
+			{ name: "twitter:site", content: "GenderedProject" },
+			{ name: "twitter:title", content: "The Gendered Project." },
+			{ name: "twitter:description", content: "A library of gendered words." },
+			{ name: "twitter:image", content: "" },
+			{ name: "twitter:image:alt", content: "" }
 		],
-		link: [
-			{
-				rel: "preconnect",
-				href: "https://gendered-api.glitch.me"
-			}
-		],
+		link: [{ rel: "preconnect", href: "https://gendered-api.glitch.me" }],
 		script: [
 			{
 				type: "text/javascript",
@@ -101,11 +73,12 @@ export default {
 	data() {
 		return {
 			activeFilters: [],
-			words: [],
+			words: letters,
 			count: 0,
 			searchText: "",
 			toggleAllLists: false,
-			optionsIsActive: false
+			optionsIsActive: false,
+			loading: true
 		};
 	},
 	created() {
@@ -120,6 +93,7 @@ export default {
 					return;
 				}
 				this.words = data;
+				this.loading = false;
 			})
 			.catch(function() {
 				self.fetchData();
@@ -138,26 +112,28 @@ export default {
 			for (let i = 0; i < length; i++) {
 				const item = filtered[i];
 				const words = item["words"];
-				item["words"] = words.filter(entry => {
-					if (!len) {
-						entry.state = "";
-					}
-					for (let i = 0; i < len; i++) {
-						let option = activeFilters[i];
-						switch (option.category) {
-							case "gender":
+				item["words"] = words
+					? words.filter(entry => {
+							if (!len) {
 								entry.state = "";
-								if (entry["gender"] === option.type) {
-									entry.state = "highlight";
-								} else break;
-						}
-					}
-					if (entry["word"] && !!this.searchText) {
-						return entry["word"].match(searchFilter);
-					} else {
-						return true;
-					}
-				});
+							}
+							for (let i = 0; i < len; i++) {
+								let option = activeFilters[i];
+								switch (option.category) {
+									case "gender":
+										entry.state = "";
+										if (entry["gender"] === option.type) {
+											entry.state = "highlight";
+										} else break;
+								}
+							}
+							if (entry["word"] && !!this.searchText) {
+								return entry["word"].match(searchFilter);
+							} else {
+								return true;
+							}
+					  })
+					: [];
 			}
 			this.count = filtered.reduce((count, obj) => {
 				return (count += obj.words.length);
@@ -180,6 +156,7 @@ export default {
 				.then(res => {
 					let d = res.data;
 					this.words = d;
+					this.loading = false;
 					localforage.setItem("data", d);
 					localforage.setItem("version", currentVersion);
 				});

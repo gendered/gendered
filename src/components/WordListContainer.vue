@@ -8,6 +8,7 @@
 				:letter="value.letter"
 				:key="value.letter"
 				:toggleAllLists="toggleAllLists"
+				:loading="loading"
 			/>
 		</ul>
 		<router-view :key="$route.fullPath" />
@@ -48,6 +49,9 @@ export default {
 			default: () => []
 		},
 		toggleAllLists: {
+			type: Boolean
+		},
+		loading: {
 			type: Boolean
 		}
 	}

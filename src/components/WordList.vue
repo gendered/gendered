@@ -1,10 +1,10 @@
 <template>
 	<li
-		v-if="list.length > 0"
 		class="word-list"
 		tabindex="0"
 		ref="list"
 		@keydown="moveWithin"
+		v-if="list.length > 0 || loading"
 	>
 		<button
 			class="toggle-container"
@@ -18,6 +18,7 @@
 				>+</span
 			>
 		</button>
+		<span class="visuallyhidden" v-if="loading">Loading content</span>
 		<ul class="words" ref="words">
 			<li
 				class="word"
@@ -34,7 +35,7 @@
 					tabindex="-1"
 				>
 					{{ word.word }}
-					<span v-if="word.state" class="gender">({{word.gender[0]}})</span>
+					<span v-if="word.state" class="gender">({{ word.gender[0] }})</span>
 				</router-link>
 			</li>
 		</ul>
@@ -115,11 +116,32 @@
 
 	.word {
 		margin: 0;
-    margin-top: 0.1525rem;
+		margin-top: 0.1525rem;
 		margin-right: 0.625rem;
 		line-height: 1.6em;
 		display: inline-block;
 	}
+}
+
+.words:empty {
+	width: 100%;
+	height: 140px;
+	background-image: linear-gradient(
+			100deg,
+			rgba(255, 255, 255, 0),
+			rgba(255, 255, 255, 0.5) 50%,
+			rgba(255, 255, 255, 0) 80%
+		),
+		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0);
+
+	background-repeat: repeat-y;
+	background-size: 500px 180px, 440px 180px, 480px 180px, 520px 180px,
+		180px 180px;
+	background-position: 0 0px, 0 30px, 0 60px, 0 90px, 0 120px;
 }
 
 .word-link {
@@ -129,7 +151,7 @@
 
 	.gender {
 		line-height: 0;
-    vertical-align: middle;
+		vertical-align: middle;
 		font-size: 0.244rem;
 		text-transform: uppercase;
 	}
@@ -157,11 +179,15 @@ export default {
 		toggleAllLists: {
 			type: Boolean
 		},
+		loading: {
+			type: Boolean
+		},
 		list: {
 			required: true,
 			validator(value) {
 				return value === null || Array.isArray(value);
-			}
+			},
+			default: () => []
 		}
 	},
 	computed: {
@@ -187,7 +213,7 @@ export default {
 	},
 	methods: {
 		toggleDisplay(e) {
-			let el = e.target.querySelector('.toggle');
+			let el = e.target.querySelector(".toggle");
 			this.toggleOpen = !this.toggleOpen;
 			el.textContent = this.toggleOpen ? "-" : "+";
 		},
