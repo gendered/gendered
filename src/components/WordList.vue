@@ -1,10 +1,10 @@
 <template>
 	<li
-		v-if="list.length > 0"
 		class="word-list"
 		tabindex="0"
 		ref="list"
 		@keydown="moveWithin"
+		v-if="list.length > 0 || loading"
 	>
 		<button
 			class="toggle-container"
@@ -18,6 +18,7 @@
 				>+</span
 			>
 		</button>
+		<span class="visuallyhidden" v-if="loading">Loading content</span>
 		<transition-group class="words" name="list" tag="ul">
 			<li
 				class="word"
@@ -76,9 +77,6 @@
 	margin-top: 0;
 	margin-bottom: 0.625rem;
 	line-height: 0.85em;
-	height: -webkit-fit-content;
-	height: -moz-fit-content;
-	height: fit-content;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 1.6rem;
@@ -124,6 +122,27 @@
 		line-height: 1.6em;
 		display: inline-block;
 	}
+}
+
+.words:empty {
+	width: 100%;
+	height: 140px;
+	background-image: linear-gradient(
+			100deg,
+			rgba(255, 255, 255, 0),
+			rgba(255, 255, 255, 0.5) 50%,
+			rgba(255, 255, 255, 0) 80%
+		),
+		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0);
+
+	background-repeat: repeat-y;
+	background-size: 500px 180px, 440px 180px, 480px 180px, 520px 180px,
+		180px 180px;
+	background-position: 0 0px, 0 30px, 0 60px, 0 90px, 0 120px;
 }
 
 .word-link {
@@ -174,11 +193,15 @@ export default {
 		toggleAllLists: {
 			type: Boolean
 		},
+		loading: {
+			type: Boolean
+		},
 		list: {
 			required: true,
 			validator(value) {
 				return value === null || Array.isArray(value);
-			}
+			},
+			default: () => []
 		}
 	},
 	computed: {
