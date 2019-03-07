@@ -151,7 +151,6 @@
 	font-weight: 400;
 
 	.gender {
-		line-height: 0;
 		vertical-align: middle;
 		font-size: 0.244rem;
 		text-transform: uppercase;
