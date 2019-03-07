@@ -134,10 +134,13 @@
 		linear-gradient(lightgray 20px, transparent 0),
 		linear-gradient(lightgray 20px, transparent 0),
 		linear-gradient(lightgray 20px, transparent 0),
+		linear-gradient(lightgray 20px, transparent 0),
 		linear-gradient(lightgray 20px, transparent 0);
 
-	background-repeat: space;
-	background-size: 21% 22%;
+	background-repeat: repeat-y;
+	background-size: 500px 180px, 440px 180px, 480px 180px, 520px 180px,
+		180px 180px;
+	background-position: 0 0px, 0 30px, 0 60px, 0 90px, 0 120px;
 }
 
 .word-link {
