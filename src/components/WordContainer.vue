@@ -57,10 +57,10 @@
 
 .modal-enter-active,
 .modal-leave-active {
-	-webkit-transition: transform 0.35s ease-out, opacity 0.4s ease-out;
-	-moz-transition: transform 0.35s ease-out, opacity 0.4s ease-out;
-	-o-transition: transform 0.35s ease-out, opacity 0.4s ease-out;
-	transition: transform 0.35s ease-out, opacity 0.4s ease-out;
+	-webkit-transition: transform 0.35s ease-out, opacity 0.2s ease-out;
+	-moz-transition: transform 0.35s ease-out, opacity 0.2s ease-out;
+	-o-transition: transform 0.35s ease-out, opacity 0.2s ease-out;
+	transition: transform 0.35s ease-out, opacity 0.2s ease-out;
 }
 
 .modal-enter /* .fade-leave-active below version 2.1.8 */ {
