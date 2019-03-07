@@ -77,9 +77,6 @@
 	margin-top: 0;
 	margin-bottom: 0.625rem;
 	line-height: 0.85em;
-	height: -webkit-fit-content;
-	height: -moz-fit-content;
-	height: fit-content;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 1.6rem;
@@ -102,6 +99,10 @@
 	margin-right: 0;
 	display: inline-block;
 	padding: 0 0.244em;
+	// Needed to stop disappearing bug
+	position: -webkit-sticky;
+	position: sticky;
+	bottom: 2.56rem;
 
 	&:hover {
 		transform: skew(-15deg);
