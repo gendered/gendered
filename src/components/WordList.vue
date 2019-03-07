@@ -164,10 +164,10 @@
 
 .list-enter-active,
 .list-leave-active {
-	-webkit-transition: ease all 0.25s;
-	-moz-transition: ease all 0.25s;
-	-o-transition: ease all 0.25s;
-	transition: ease all 0.25s;
+	-webkit-transition: ease all 0.5s;
+	-moz-transition: ease all 0.5s;
+	-o-transition: ease all 0.5s;
+	transition: ease all 0.5s;
 }
 
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
