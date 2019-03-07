@@ -55,9 +55,6 @@
 		margin-right: 0.5rem;
 		a {
 			text-decoration: underline;
-			&:hover {
-				text-decoration: none;
-			}
 		}
 	}
 }
