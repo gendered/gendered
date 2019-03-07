@@ -1,5 +1,5 @@
 <template>
-	<transition name="fade">
+	<transition name="modal">
 		<div class="modal" v-focus tabindex="-1" @keydown.esc="navigateHome">
 			<router-link
 				@click.native="closeModal"
@@ -55,13 +55,22 @@
 	}
 }
 
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 0.3s ease;
+.modal-enter-active,
+.modal-leave-active {
+	-webkit-transition: transform 0.35s ease-out, opacity 0.2s ease-out;
+	-moz-transition: transform 0.35s ease-out, opacity 0.2s ease-out;
+	-o-transition: transform 0.35s ease-out, opacity 0.2s ease-out;
+	transition: transform 0.35s ease-out, opacity 0.2s ease-out;
 }
 
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.modal-enter /* .fade-leave-active below version 2.1.8 */ {
 	opacity: 0;
+	transform: translateX(300px);
+}
+
+.modal-leave-to {
+	opacity: 0;
+	transform: translateX(400px);
 }
 
 .info {

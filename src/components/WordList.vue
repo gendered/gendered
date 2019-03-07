@@ -19,12 +19,12 @@
 			>
 		</button>
 		<span class="visuallyhidden" v-if="loading">Loading content</span>
-		<ul class="words" ref="words">
+		<transition-group class="words" name="list" tag="ul">
 			<li
 				class="word"
 				:ref="'word-' + index"
 				v-for="(word, index) in wordsToDisplay"
-				:key="index"
+				:key="'word-' + index"
 			>
 				<router-link
 					:to="{
@@ -38,7 +38,7 @@
 					<span v-if="word.state" class="gender">({{ word.gender[0] }})</span>
 				</router-link>
 			</li>
-		</ul>
+		</transition-group>
 	</li>
 </template>
 <style lang="scss" scoped>
@@ -99,13 +99,13 @@
 	margin-right: 0;
 	display: inline-block;
 	padding: 0 0.244em;
-	// Needed to stop disappearing bug
-	position: -webkit-sticky;
-	position: sticky;
-	bottom: 2.56rem;
+	-webkit-transition: ease all 0.15s;
+	-moz-transition: ease all 0.15s;
+	-o-transition: ease all 0.15s;
+	transition: ease all 0.15s;
 
 	&:hover {
-		transform: skew(-15deg);
+		opacity: 0.8;
 		cursor: pointer;
 	}
 }
@@ -160,6 +160,19 @@
 
 .invisible {
 	visibility: hidden;
+}
+
+.list-enter-active,
+.list-leave-active {
+	-webkit-transition: ease all 0.5s;
+	-moz-transition: ease all 0.5s;
+	-o-transition: ease all 0.5s;
+	transition: ease all 0.5s;
+}
+
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+	opacity: 0;
+	transform: translateY(-10px);
 }
 </style>
 <script>

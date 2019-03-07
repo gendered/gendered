@@ -28,7 +28,7 @@
 
 .word {
 	text-transform: capitalize;
-	margin-top: 1.6em;
+	margin-top: 2.56rem;
 
 	.gender {
 		padding-left: 0.244em;
@@ -53,6 +53,9 @@
 	li {
 		display: inline-block;
 		margin-right: 0.5rem;
+		a {
+			text-decoration: underline;
+		}
 	}
 }
 
