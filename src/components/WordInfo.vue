@@ -2,7 +2,7 @@
 	<section>
 		<h2 class="word light">
 			<span>{{ entry.word }}</span>
-			<sup v-if="entry.gender" class="gender">({{entry.gender[0]}})</sup>
+			<sup v-if="entry.gender" class="gender">({{ entry.gender[0] }})</sup>
 		</h2>
 		<p class="def">{{ entry.definition }}</p>
 		<h4 class="syn-header" v-if="synsLen > 0">Synonyms</h4>
@@ -12,7 +12,7 @@
 					:to="{ name: 'word', params: { word: syn } }"
 					class="can-open-modal"
 				>
-					{{ syn }}<span v-if=" index + 1 < synsLen">,</span>
+					{{ syn }}<span v-if="index + 1 < synsLen">,</span>
 				</router-link>
 			</li>
 		</ul>
@@ -28,12 +28,12 @@
 
 .word {
 	text-transform: capitalize;
-	margin-top: 1.6em;
+	margin-top: 2.56rem;
 
 	.gender {
 		padding-left: 0.244em;
 		top: -0.75em;
-    font-size: 50%;
+		font-size: 50%;
 	}
 }
 
@@ -53,6 +53,12 @@
 	li {
 		display: inline-block;
 		margin-right: 0.5rem;
+		a {
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 }
 
@@ -71,7 +77,7 @@ export default {
 	data() {
 		return {
 			synsLen: null
-		}
+		};
 	},
 	props: {
 		entry: {

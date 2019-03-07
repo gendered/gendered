@@ -314,10 +314,6 @@
 				}
 			}
 		}
-
-		.about-link {
-			text-decoration: underline;
-		}
 	}
 
 	.toc {

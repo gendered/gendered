@@ -24,7 +24,7 @@ import FilterPanel from "@/components/FilterPanel";
 export default {
 	name: "OptionsContainer",
 	components: {
-		FilterPanel,
+		FilterPanel
 	},
 	props: {
 		isActive: {

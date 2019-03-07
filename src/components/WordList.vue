@@ -34,7 +34,7 @@
 					tabindex="-1"
 				>
 					{{ word.word }}
-					<span v-if="word.state" class="gender">({{word.gender[0]}})</span>
+					<span v-if="word.state" class="gender">({{ word.gender[0] }})</span>
 				</router-link>
 			</li>
 		</transition-group>
@@ -101,9 +101,13 @@
 	margin-right: 0;
 	display: inline-block;
 	padding: 0 0.244em;
+	-webkit-transition: ease all 0.15s;
+	-moz-transition: ease all 0.15s;
+	-o-transition: ease all 0.15s;
+	transition: ease all 0.15s;
 
 	&:hover {
-		transform: skew(-15deg);
+		opacity: 0.8;
 		cursor: pointer;
 	}
 }
@@ -115,7 +119,7 @@
 
 	.word {
 		margin: 0;
-    margin-top: 0.1525rem;
+		margin-top: 0.1525rem;
 		margin-right: 0.625rem;
 		line-height: 1.6em;
 		display: inline-block;
@@ -129,7 +133,7 @@
 
 	.gender {
 		line-height: 0;
-    vertical-align: middle;
+		vertical-align: middle;
 		font-size: 0.244rem;
 		text-transform: uppercase;
 	}
@@ -141,12 +145,15 @@
 
 .list-enter-active,
 .list-leave-active {
-	transition: all 1s;
+	-webkit-transition: ease all 0.25s;
+	-moz-transition: ease all 0.25s;
+	-o-transition: ease all 0.25s;
+	transition: ease all 0.25s;
 }
 
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
 	opacity: 0;
-	transform: translateY(30px);
+	transform: translateY(-10px);
 }
 </style>
 <script>
@@ -197,7 +204,7 @@ export default {
 	},
 	methods: {
 		toggleDisplay(e) {
-			let el = e.target.querySelector('.toggle');
+			let el = e.target.querySelector(".toggle");
 			this.toggleOpen = !this.toggleOpen;
 			el.textContent = this.toggleOpen ? "-" : "+";
 		},
