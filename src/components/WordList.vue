@@ -153,8 +153,8 @@
 	font-weight: 400;
 
 	.gender {
-		vertical-align: middle;
-		font-size: 0.244rem;
+		vertical-align: top;
+		font-size: 0.625rem;
 		text-transform: uppercase;
 	}
 }
