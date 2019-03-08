@@ -13,25 +13,6 @@ export default {
 	name: "HomePage",
 	head: {
 		title: { inner: "The Gendered Project - Home" },
-		meta: [
-			{ name: "description", content: "A library of gendered words" },
-			{ itemprop: "name", content: "The Gendered Project" },
-			{ itemprop: "description", content: "A library of gendered words" },
-			{ itemprop: "image", content: "assets/imgs/gendered-logo.png" },
-			{ property: "og:url", content: "https://genderedproject.org" },
-			{ property: "og:type", content: "website" },
-			{ property: "og:title", content: "The Gendered Project." },
-			{ property: "og:description", content: "A library of gendered words" },
-			{ property: "og:image", content: "assets/imgs/gendered-logo.png" },
-			{ name: "twitter:card", content: "summary_large_image" },
-			{ name: "twitter:creator", content: "Yellzheard" },
-			{ name: "twitter:site", content: "GenderedProject" },
-			{ name: "twitter:title", content: "The Gendered Project" },
-			{ name: "twitter:description", content: "A library of gendered words" },
-			{ name: "twitter:image", content: "assets/imgs/gendered-logo.png" },
-			{ name: "twitter:image:alt", content: "The Gendered Project, a library of gendered words" }
-		],
-		link: [{ rel: "preconnect", href: "https://gendered-api.glitch.me" }],
 		script: [
 			{
 				type: "text/javascript",
