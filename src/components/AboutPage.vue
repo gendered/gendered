@@ -31,7 +31,9 @@
 					</p>
 					<cite class="citation"
 						>–
-						<a class="focusable-animate" href="https://archive.org/details/p15957coll6_681_0"
+						<a
+							class="focusable-animate"
+							href="https://archive.org/details/p15957coll6_681_0"
 							>THE PROSTITUTE: Paradigmatic Woman</a
 						>, Julia P. Stanley</cite
 					>
@@ -122,8 +124,10 @@
 					</li>
 					<li>
 						With help / advice / miscalleanous support from:
-						<a href="https://iheanyi.com/" class="focusable-animate"> Iheanyi</a>,
-						<a href="https://netabomani.com/" class="focusable-animate"> Neta</a>, and
+						<a href="https://iheanyi.com/" class="focusable-animate"> Iheanyi</a
+						>,
+						<a href="https://netabomani.com/" class="focusable-animate"> Neta</a
+						>, and
 						<a href="https://itsthisnow.com/" class="focusable-animate">
 							Syd.
 						</a>
@@ -137,7 +141,10 @@
 					language and create or adopt more words that punch down. I do not
 					believe in replacing male domination (exerting power over and at the
 					expense of others) with female domination. As
-					<a href="https://twitter.com/theafrolegalise" class="focusable-animate">
+					<a
+						href="https://twitter.com/theafrolegalise"
+						class="focusable-animate"
+					>
 						Nnennaya Amuchie
 					</a>
 					says, “I don't want to be equal to men. Men are not the standard of

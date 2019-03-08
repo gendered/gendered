@@ -3,6 +3,17 @@
 .controls {
 	z-index: 999;
 
+	.search-container, button {
+		-webkit-transition: ease all 0.15s;
+		-moz-transition: ease all 0.15s;
+		-o-transition: ease all 0.15s;
+		transition: ease all 0.15s;
+
+		&:hover, &:focus, &:active {
+			transform: translateY(-0.1525rem);
+		}
+	}
+
 	.search-container {
 		font-size: 1.6rem;
 		position: fixed;
