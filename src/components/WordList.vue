@@ -228,7 +228,7 @@ export default {
 		toggleDisplay(e) {
 			let el = e.target.querySelector(".toggle");
 			this.toggleOpen = !this.toggleOpen;
-			el.textContent = this.toggleOpen ? "-" : "+";
+			if (el) el.textContent = this.toggleOpen ? "-" : "+";
 		},
 		_getFocusableElements(el) {
 			const selectorArray = [

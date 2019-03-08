@@ -71,10 +71,12 @@
 <script>
 export default {
 	name: "WordInfo",
-	data() {
-		return {
-			synsLen: -1
-		};
+	computed: {
+		synsLen() {
+			if (this.entry && this.entry.syns) {
+		 		return this.entry.syns.length;
+			}
+		}
 	},
 	props: {
 		entry: {
@@ -88,7 +90,6 @@ export default {
 		let syns = entry["syns"];
 		if (!syns) return;
 		this.entry.syns = syns.filter(syn => syn !== word);
-		this.synsLen = this.entry.syns.length;
 	}
 };
 </script>
