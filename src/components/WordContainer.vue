@@ -153,7 +153,7 @@ export default {
 		}.bind(this);
 		localforage.getItem(currentWord).then(data => {
 			let version = localforage.getItem("version");
-			let currentVersion = 2;
+			let currentVersion = process.env.VUE_APP_VERSION;
 			if (!data || !version || version < currentVersion) {
 				this.getWord(currentWord, currentVersion, setData);
 			} else setData(data);

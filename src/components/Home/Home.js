@@ -40,7 +40,7 @@ export default {
 			.getItem("data")
 			.then(data => {
 				let version = localforage.getItem("version");
-				let currentVersion = 2;
+				let currentVersion = process.env.VUE_APP_VERSION;
 				if (!data || !version || version < currentVersion) {
 					this.fetchData(currentVersion);
 					return;
