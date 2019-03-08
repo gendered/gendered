@@ -107,7 +107,7 @@
 	transition: ease all 0.15s;
 
 	&:hover {
-		opacity: 0.8;
+		opacity: 0.77;
 		cursor: pointer;
 	}
 }

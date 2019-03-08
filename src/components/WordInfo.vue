@@ -74,7 +74,7 @@ export default {
 	computed: {
 		synsLen() {
 			if (this.entry && this.entry.syns) {
-		 		return this.entry.syns.length;
+				return this.entry.syns.length;
 			}
 		}
 	},

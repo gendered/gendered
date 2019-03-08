@@ -103,6 +103,7 @@ h3 {
 
 .light {
 	font-family: "RomanaBTWXX-Roman";
+	letter-spacing: -0.75px;
 	line-height: 1.0625em;
 }
 
@@ -236,7 +237,8 @@ nav {
 
 		h1 {
 			margin: 0;
-			letter-spacing: -0.02125em;
+			// letter-spacing: -0.02em;
+			letter-spacing: -1.5px;
 			margin-left: -0.75rem;
 
 			@include break(small) {

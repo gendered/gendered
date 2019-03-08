@@ -3,7 +3,7 @@ import OptionsContainer from "@/components/OptionsContainer";
 import SearchFilter from "@/components/SearchFilter";
 import "isomorphic-fetch";
 import localforage from "localforage";
-import letters from './letters';
+import letters from "./letters";
 
 let base64 = require("base-64");
 
@@ -126,7 +126,7 @@ export default {
 			controlButton.focus();
 		},
 		onSubmit() {
-			document.querySelector('.word-link').focus();
+			document.querySelector(".word-link").focus();
 		},
 		updateSearchText(value) {
 			this.searchText = value;
