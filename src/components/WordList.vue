@@ -92,7 +92,7 @@
 }
 
 .letter {
-	font-family: 'Romana Std Bold', Georgia, Times, "Times New Roman", serif;
+	font-family: "Romana Std Bold", Georgia, Times, "Times New Roman", serif;
 	font-size: 2.56rem;
 }
 

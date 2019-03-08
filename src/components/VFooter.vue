@@ -1,14 +1,20 @@
 <template>
 	<footer class="footer container">
 		<!-- <div> -->
-			<span class="twitter-icon">
-				<a href="https://twitter.com/@GenderedProject">
-					<img src="../assets/imgs/twitter.svg" alt="Twitter for The Gendered Project"/>
-				</a>
-			</span>
-			<span class="license">
-				Content is licensed under <br> <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>
-			</span>
+		<span class="twitter-icon">
+			<a href="https://twitter.com/@GenderedProject">
+				<img
+					src="../assets/imgs/twitter.svg"
+					alt="Twitter for The Gendered Project"
+				/>
+			</a>
+		</span>
+		<span class="license">
+			Content is licensed under <br />
+			<a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"
+				>CC BY-NC-SA 2.0</a
+			>
+		</span>
 		<!-- </div> -->
 	</footer>
 </template>
@@ -26,7 +32,7 @@
 
 	display: -ms-grid;
 	display: grid;
-	-ms-grid-columns: (1fr)[10];
+	-ms-grid-columns: (1fr) [10];
 	grid-template-columns: repeat(10, 1fr);
 	grid-gap: 1rem;
 
