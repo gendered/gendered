@@ -14,7 +14,7 @@
 			:aria-label="`Toggle ${letter} list`"
 		>
 			<span class="letter">{{ letter }}</span>
-			<span class="toggle" v-bind:class="{ invisible: shouldShowToggleButton }"
+			<span class="toggle focusable-animate" v-bind:class="{ invisible: shouldShowToggleButton }"
 				>+</span
 			>
 		</button>
@@ -101,13 +101,8 @@
 	margin-right: 0;
 	display: inline-block;
 	padding: 0 0.625rem;
-	-webkit-transition: ease all 0.15s;
-	-moz-transition: ease all 0.15s;
-	-o-transition: ease all 0.15s;
-	transition: ease all 0.15s;
 
 	&:hover {
-		opacity: 0.77;
 		cursor: pointer;
 	}
 }

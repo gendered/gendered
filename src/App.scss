@@ -288,3 +288,14 @@ nav {
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
+
+.focusable-animate {
+	-webkit-transition: ease all 0.15s;
+	-moz-transition: ease all 0.15s;
+	-o-transition: ease all 0.15s;
+	transition: ease all 0.15s;
+}
+
+.focusable-animate:hover, .focusable-animate:focus, .focusable-animate:active {
+	opacity: 0.65;
+}

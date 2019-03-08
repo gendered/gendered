@@ -10,7 +10,7 @@
 			<li v-for="(syn, index) in entry.syns" :key="syn">
 				<router-link
 					:to="{ name: 'word', params: { word: syn } }"
-					class="can-open-modal"
+					class="can-open-modal focusable-animate"
 				>
 					{{ syn }}<span v-if="index + 1 < synsLen">,</span>
 				</router-link>

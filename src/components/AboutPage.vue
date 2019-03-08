@@ -31,7 +31,7 @@
 					</p>
 					<cite class="citation"
 						>–
-						<a href="https://archive.org/details/p15957coll6_681_0"
+						<a class="focusable-animate" href="https://archive.org/details/p15957coll6_681_0"
 							>THE PROSTITUTE: Paradigmatic Woman</a
 						>, Julia P. Stanley</cite
 					>
@@ -54,7 +54,7 @@
 						To provide data to use in our ongoing dialogue about the
 						<a
 							href="https://imaginenoborders.org/pdf/zines/UnderstandingPatriarchy.pdf"
-							class="about-link"
+							class="focusable-animate"
 						>
 							patriarchy
 						</a>
@@ -74,7 +74,7 @@
 								What words have undergone
 								<a
 									href="https://aslstem.cs.washington.edu/topics/view/8079"
-									class="about-link"
+									class="focusable-animate"
 								>
 									semantic derogation
 								</a>
@@ -97,7 +97,7 @@
 				<ul class="list">
 					<li>
 						Idea, data collection and analysis:
-						<a href="https://www.omayeli.com" class="about-link">
+						<a href="https://www.omayeli.com" class="focusable-animate">
 							Omayeli Arenyeka
 						</a>
 					</li>
@@ -122,9 +122,9 @@
 					</li>
 					<li>
 						With help / advice / miscalleanous support from:
-						<a href="https://iheanyi.com/" class="about-link"> Iheanyi</a>,
-						<a href="https://netabomani.com/" class="about-link"> Neta</a>, and
-						<a href="https://itsthisnow.com/" class="about-link">
+						<a href="https://iheanyi.com/" class="focusable-animate"> Iheanyi</a>,
+						<a href="https://netabomani.com/" class="focusable-animate"> Neta</a>, and
+						<a href="https://itsthisnow.com/" class="focusable-animate">
 							Syd.
 						</a>
 					</li>
@@ -137,7 +137,7 @@
 					language and create or adopt more words that punch down. I do not
 					believe in replacing male domination (exerting power over and at the
 					expense of others) with female domination. As
-					<a href="https://twitter.com/theafrolegalise" class="about-link">
+					<a href="https://twitter.com/theafrolegalise" class="focusable-animate">
 						Nnennaya Amuchie
 					</a>
 					says, “I don't want to be equal to men. Men are not the standard of
@@ -147,7 +147,7 @@
 					roots still lie in continual rape and abuse of
 					<a
 						href="https://www.theatlantic.com/politics/archive/2015/02/rape-in-the-american-prison/385550/"
-						class="about-link"
+						class="focusable-animate"
 					>
 						feminized bodies
 					</a>
@@ -156,7 +156,7 @@
 					the word labels. There has been
 					<a
 						href="https://www.themarshallproject.org/2018/07/25/prison-rape-allegations-are-on-the-rise"
-						class="about-link"
+						class="focusable-animate"
 					>
 						no such reckoning
 					</a>
@@ -179,14 +179,14 @@
 					prostitutes” compared to 20 for men. I’m maintaining a
 					<a
 						href="https://github.com/gendered/reading-list/blob/master/README.md"
-						class="about-link"
+						class="focusable-animate"
 					>
 						reading list
 					</a>
 					of gender and language as well as a
 					<a
 						href="https://www.are.na/omayeli-arenyeka/gender-and-language"
-						class="about-link"
+						class="focusable-animate"
 					>
 						channel
 					</a>
