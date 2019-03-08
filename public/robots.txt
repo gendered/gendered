@@ -1,6 +1,0 @@
-$ curl https://s.tmatch.com/robots.txt
-User-agent: *
-Disallow: /
-
-User-agent: Twitterbot
-Disallow:
