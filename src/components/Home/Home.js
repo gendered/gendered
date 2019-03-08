@@ -6,9 +6,6 @@ import localforage from "localforage";
 import letters from './letters';
 
 let base64 = require("base-64");
-
-const API = "https://gendered-api.glitch.me/api/words";
-
 export default {
 	name: "HomePage",
 	head: {
@@ -107,7 +104,7 @@ export default {
 				"Authorization",
 				"Basic " + base64.encode(username + ":" + password)
 			);
-			fetch(`${API}/letter/AZ`, { headers: headers })
+			fetch(`${process.env.VUE_APP_API}/letter/AZ`, { headers: headers })
 				.then(res => res.json())
 				.then(res => {
 					let d = res.data;

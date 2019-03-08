@@ -89,7 +89,6 @@
 </style>
 
 <script>
-const API = "https://gendered-api.glitch.me/api/words";
 import WordInfo from "@/components/WordInfo";
 import localforage from "localforage";
 
@@ -163,7 +162,7 @@ export default {
 	},
 	methods: {
 		getWord(word, version, callback) {
-			let url = `${API}/${word}`;
+			let url = `${process.env.VUE_APP_API}/${word}`;
 			fetch(url)
 				.then(res => res.json())
 				.then(res => {
