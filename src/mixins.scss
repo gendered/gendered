@@ -5,12 +5,12 @@
   //   }
   // }
   @if $point == small {
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 425px) {
       @content;
     }
   }
   @else if $point == medium {
-    @media screen and (min-width: 415px) and (max-width: 769px) {
+    @media screen and (min-width: 426px) and (max-width: 769px) {
       @content;
     }
   }
