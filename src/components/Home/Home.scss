@@ -10,7 +10,12 @@
 		left: 35%;
 		width: 30%;
 		min-width: 20rem;
-		padding: 1rem;
+
+		padding: 0.625rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		border-radius: 999px;
+		box-shadow: 2.5px 4px 5px rgba(0,0,0,0.27);
 
 		@include break(medium) {
 			left: 15%;
@@ -19,14 +24,14 @@
 		@include break(small) {
 			left: 1.6rem;
 			bottom: 1.6rem;
-			width: 65%;
-			min-width: 65%;
+			width: 60%;
+			min-width: 60%;
 		}
 
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
-		border: 1.6px solid rgba(0,0,0,0.90);;
+		border: 1.3px solid rgba(0,0,0,0.90);
 		background: white;
 
 		img {
@@ -59,12 +64,11 @@
 		position: fixed;
 		bottom: 2.56rem;
 		right: 2.56rem;
-		padding-top: 0.625rem;
-		padding-left: 0.625rem;
-		padding-right: 0.625rem;
-		padding-bottom: 0.625rem;
+		padding: 0.625rem;
 		box-sizing: content-box;
-		border: 1.6px solid rgba(0,0,0,0.90);
+		border: 1.3px solid rgba(0,0,0,0.90);
+		box-shadow: 2.5px 4px 5px rgba(0,0,0,0.27);
+		border-radius: 999px;
 
 		@include break(small) {
 			right: 1.6rem;
@@ -97,8 +101,9 @@
 	button, input {
 		margin: 0.625rem;
 		font-size: 1rem;
-		border-radius: 0;
-		border: 1.6px solid rgba(0,0,0,0.90);
+		border: 1.3px solid rgba(0,0,0,0.90);
+		box-shadow: 2.5px 4px 5px rgba(0,0,0,0.27);
+		border-radius: 999px;
 		padding: 0.625rem 1rem;
 	}
 

@@ -50,13 +50,21 @@ body {
 	max-width: 1500px;
 	margin: 0 auto;
 	min-height: 400px;
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
   clear: both;
+	-webkit-transition: ease all 0.3s;
+	-moz-transition: ease all 0.3s;
+	-o-transition: ease all 0.3s;
+	transition: ease all 0.3s;
 }
 
 body.modal-open {
 	position: fixed;
 	overflow: hidden;
+	-webkit-transition: ease all 0.3s;
+	-moz-transition: ease all 0.3s;
+	-o-transition: ease all 0.3s;
+	transition: ease all 0.3s;
 
 	button, a, input {
 		pointer-events: none;
@@ -109,14 +117,6 @@ p, li {
 
 p, sup {
 	max-width: 32em;
-}
-
-.ba {
-	border: 1px solid black;
-}
-
-.by {
-	border: 1px solid gold;
 }
 
 .container {
@@ -208,8 +208,8 @@ nav {
 		@include break(small) {
 			-ms-grid-column: 6;
 			grid-column-start: 6;
-			font-size: 1.6rem;
-			margin-top: 1.6rem;
+			font-size: 1.3rem;
+			margin-top: 1.8rem;
 		}
 
 		a {
