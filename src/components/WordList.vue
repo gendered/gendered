@@ -85,12 +85,14 @@
 	overflow: visible;
 
 	@include break(small) {
+		top: 0;
 		text-align: left;
+		height: 4.096rem;
 	}
 }
 
 .letter {
-	font-family: "Romana Std Bold", Arial, sans-serif;
+	font-family: 'Romana Std Bold', Georgia, Times, "Times New Roman", serif;
 	font-size: 2.56rem;
 }
 
@@ -98,7 +100,7 @@
 	font-size: 1.6rem;
 	margin-right: 0;
 	display: inline-block;
-	padding: 0 0.244em;
+	padding: 0 0.625rem;
 	-webkit-transition: ease all 0.15s;
 	-moz-transition: ease all 0.15s;
 	-o-transition: ease all 0.15s;
@@ -133,11 +135,11 @@
 			rgba(255, 255, 255, 0.5) 50%,
 			rgba(255, 255, 255, 0) 80%
 		),
-		linear-gradient(lightgray 20px, transparent 0),
-		linear-gradient(lightgray 20px, transparent 0),
-		linear-gradient(lightgray 20px, transparent 0),
-		linear-gradient(lightgray 20px, transparent 0),
-		linear-gradient(lightgray 20px, transparent 0);
+		linear-gradient(rgb(237, 237, 237) 20px, transparent 0),
+		linear-gradient(rgb(237, 237, 237) 20px, transparent 0),
+		linear-gradient(rgb(237, 237, 237) 20px, transparent 0),
+		linear-gradient(rgb(237, 237, 237) 20px, transparent 0),
+		linear-gradient(rgb(237, 237, 237) 20px, transparent 0);
 
 	background-repeat: repeat-y;
 	background-size: 500px 180px, 440px 180px, 480px 180px, 520px 180px,
