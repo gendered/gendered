@@ -169,6 +169,9 @@ export default {
 			const controlButton = document.getElementById("show-controls");
 			controlButton.focus();
 		},
+		onSubmit() {
+			document.querySelector('.word-link').focus();
+		},
 		updateSearchText(value) {
 			this.searchText = value;
 			this.toggleAllLists = !!this.searchText;

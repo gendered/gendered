@@ -16,7 +16,7 @@
 			<!-- content will be updated with Javascript -->
 		</div>
 		<section class="controls">
-			<form class="search-container" role="search">
+			<form class="search-container" role="search" v-on:submit.prevent="onSubmit">
 				<img src="../../assets/imgs/search.svg" alt="Search in word list" />
 				<SearchFilter class="search" @input="updateSearchText" />
 			</form>
