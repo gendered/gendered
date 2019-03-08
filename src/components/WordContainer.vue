@@ -153,19 +153,22 @@ export default {
 			}
 		}.bind(this);
 		localforage.getItem(currentWord).then(data => {
-			if (!data) {
-				this.getWord(currentWord, setData);
+			let version = localforage.getItem("version");
+			let currentVersion = 2;
+			if (!data || !version || version < currentVersion) {
+				this.getWord(currentWord, currentVersion, setData);
 			} else setData(data);
 		});
 		document.querySelector("body").classList.add("modal-open");
 	},
 	methods: {
-		getWord(word, callback) {
+		getWord(word, version, callback) {
 			let url = `${API}/${word}`;
 			fetch(url)
 				.then(res => res.json())
 				.then(res => {
 					if (callback) {
+						localforage.setItem("version", version);
 						callback(res.data);
 					} else return res.data;
 				});

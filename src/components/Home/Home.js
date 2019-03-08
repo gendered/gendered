@@ -87,7 +87,7 @@ export default {
 			.getItem("data")
 			.then(data => {
 				let version = localforage.getItem("version");
-				let currentVersion = 1;
+				let currentVersion = 2;
 				if (!data || !version || version < currentVersion) {
 					this.fetchData(currentVersion);
 					return;
