@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?genderedproject.org$ [NC]
+RewriteRule \.(eot|woff|otf|ttf|ttc|svg)$ - [NC,F,L]
