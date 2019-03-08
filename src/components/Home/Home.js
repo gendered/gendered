@@ -3,58 +3,33 @@ import OptionsContainer from "@/components/OptionsContainer";
 import SearchFilter from "@/components/SearchFilter";
 import "isomorphic-fetch";
 import localforage from "localforage";
+import letters from './letters';
+
 let base64 = require("base-64");
 
 const API = "https://gendered-api.glitch.me/api/words";
-const letters = [
-	{ letter: "A" },
-	{ letter: "B" },
-	{ letter: "C" },
-	{ letter: "D" },
-	{ letter: "E" },
-	{ letter: "F" },
-	{ letter: "G" },
-	{ letter: "H" },
-	{ letter: "I" },
-	{ letter: "J" },
-	{ letter: "K" },
-	{ letter: "L" },
-	{ letter: "M" },
-	{ letter: "N" },
-	{ letter: "O" },
-	{ letter: "P" },
-	{ letter: "Q" },
-	{ letter: "R" },
-	{ letter: "S" },
-	{ letter: "T" },
-	{ letter: "U" },
-	{ letter: "V" },
-	{ letter: "W" },
-	{ letter: "X" },
-	{ letter: "Y" },
-	{ letter: "Z" }
-];
+
 export default {
 	name: "HomePage",
 	head: {
 		title: { inner: "The Gendered Project - Home" },
 		meta: [
-			{ name: "description", content: "A library of gendered words." },
-			{ itemprop: "name", content: "The Gendered Project." },
-			{ itemprop: "description", content: "A library of gendered words." },
-			{ itemprop: "image", content: "" },
-			{ property: "og:url", content: "" },
+			{ name: "description", content: "A library of gendered words" },
+			{ itemprop: "name", content: "The Gendered Project" },
+			{ itemprop: "description", content: "A library of gendered words" },
+			{ itemprop: "image", content: "../../assets/imgs/gendered-logo.png" },
+			{ property: "og:url", content: "https://genderedproject.org" },
 			{ property: "og:type", content: "website" },
 			{ property: "og:title", content: "The Gendered Project." },
-			{ property: "og:description", content: "A library of gendered words." },
-			{ property: "og:image", content: "" },
+			{ property: "og:description", content: "A library of gendered words" },
+			{ property: "og:image", content: "../../assets/imgs/gendered-logo.png" },
 			{ name: "twitter:card", content: "summary_large_image" },
 			{ name: "twitter:creator", content: "Yellzheard" },
 			{ name: "twitter:site", content: "GenderedProject" },
-			{ name: "twitter:title", content: "The Gendered Project." },
-			{ name: "twitter:description", content: "A library of gendered words." },
-			{ name: "twitter:image", content: "" },
-			{ name: "twitter:image:alt", content: "" }
+			{ name: "twitter:title", content: "The Gendered Project" },
+			{ name: "twitter:description", content: "A library of gendered words" },
+			{ name: "twitter:image", content: "../../assets/imgs/gendered-logo.png" },
+			{ name: "twitter:image:alt", content: "The Gendered Project, a library of gendered words" }
 		],
 		link: [{ rel: "preconnect", href: "https://gendered-api.glitch.me" }],
 		script: [
