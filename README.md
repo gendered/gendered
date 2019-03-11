@@ -1,6 +1,6 @@
 This is the website for [The Gendered Project!](https://genderedproject.org/)
 
-The API is not currently available for general use so the data won't load. Updates to the API will be made in this [repo](https://github.com/gendered/api) But you're welcome to submit feature requests :)
+The API is not currently available for general use so the data won't load. I'm in the process of cleaning that up so it's available for use! 
 
 # To get the website up and running
 
