@@ -89,7 +89,7 @@
 </style>
 
 <script>
-const API = "https://gendered-api.glitch.me/api/words";
+const API = "https://gendered-api.onrender.com/api/words";
 import WordInfo from "@/components/WordInfo";
 import localforage from "localforage";
 

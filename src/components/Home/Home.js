@@ -7,7 +7,7 @@ import letters from "./letters";
 
 let base64 = require("base-64");
 
-const API = "https://gendered-api.glitch.me/api/words";
+const API = "https://gendered-api.onrender.com/api/words";
 
 export default {
 	name: "HomePage",
